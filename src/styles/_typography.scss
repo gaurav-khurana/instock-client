@@ -1,0 +1,125 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+// TYPOGRAPHY
+
+@font-face {
+  font-family: "Titillium";
+  src: url("../assets/Fonts/Titillium_Web/TitilliumWeb-Regular.ttf") format(ttf);
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Titillium";
+  src: url("../assets/Fonts/Titillium_Web/TitilliumWeb-SemiBold.ttf")
+    format(ttf);
+  font-weight: 600;
+  font-style: normal;
+}
+
+// mobile styles //TODO- TO BE UPDATED AS PER CLASSES
+
+// .hero-video__title,
+// .upload__title {
+//   font-size: $mob-font-header;
+//   line-height: 32px;
+//   font-weight: 600;
+// }
+
+// .newcomment__title,
+// .upload-hero__title,
+// .form__title {
+//   font-size: $mob-font-section-header;
+//   line-height: 2rem;
+//   font-weight: 600;
+// }
+
+// .hero-video__name,
+// .video-comments__counter,
+// .oldcomments__name,
+// .nextvideos__heading,
+// .nextvideos__title,
+// .button {
+//   font-size: $mob-font-subheader-body;
+//   line-height: 2rem;
+//   font-weight: 600;
+// }
+
+// .hero-video__date,
+// .hero-video__seen-counter,
+// .hero-video__likes-counter,
+// .oldcomments__date,
+// .oldcomments__text,
+// .nextvideos__channel,
+// .form__input,
+// .form__textarea {
+//   font-size: $mob-font-subheader-body;
+//   line-height: 1.8rem;
+// }
+
+// .hero-video__description,
+// .newcomment__input {
+//   font-size: $mob-font-subheader-body;
+// }
+
+// .button--comment,
+// .button--navbar,
+// .button--inverted,
+// .button--publish {
+//   font-size: $mob-font-subheader-body;
+//   font-weight: 600;
+// }
+
+// // tablet mode //TODO- TO BE UPDATED AS PER CLASSES
+
+// @include tablet {
+//   .hero-video__title,
+//   .upload__title {
+//     font-size: $desk-font-header;
+//     line-height: 4.4rem;
+//   }
+
+//   .newcomment__title,
+//   .upload-hero__title,
+//   .form__title {
+//     font-size: $desk-font-section-header;
+//     line-height: 2rem;
+//   }
+
+//   .hero-video__name,
+//   .video-comments__counter,
+//   .oldcomments__name,
+//   .nextvideos__heading,
+//   .nextvideos__title,
+//   .button,
+//   .form__input,
+//   .form__textarea {
+//     font-size: $desk-font-subheader-body;
+//     line-height: 2.2rem;
+//   }
+
+//   .hero-video__date,
+//   .hero-video__seen-counter,
+//   .hero-video__likes-counter,
+//   .oldcomments__date,
+//   .oldcomments__text,
+//   .nextvideos__channel {
+//     font-size: $desk-font-subheader-body;
+//     line-height: 2.2rem;
+//   }
+
+//   .hero-video__description,
+//   .newcomment__input {
+//     font-size: $desk-font-subheader-body;
+//     line-height: 2rem;
+//   }
+
+//   .button--comment,
+//   .button--navbar,
+//   .button--inverted,
+//   .button--publish {
+//     font-size: $desk-font-subheader-body;
+//     line-height: 2rem;
+//   }
+// }

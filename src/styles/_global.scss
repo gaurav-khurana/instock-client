@@ -1,0 +1,14 @@
+@use "./typography";
+@use "./typography" as *;
+@use "./variables" as *;
+
+// universal css rules
+
+* {
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Titillium";
+  font-weight: 400;
+}
