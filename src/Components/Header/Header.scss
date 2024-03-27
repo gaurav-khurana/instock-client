@@ -1,0 +1,103 @@
+@use '../../styles/global' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/typography' as *;
+@use '../../styles/variables' as *;
+
+
+.header {
+    
+    width: 100vw;
+    background-color: $color-background-graphite;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 5rem;
+
+    &__logo {
+        padding: 2rem 0 1rem 0;
+    }
+
+    &__logo--image {
+
+    }
+
+    &__nav-bar {
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+    }
+
+    &__warehouses{
+
+    }
+
+    &__nav-link {
+       
+
+    
+    }
+
+    &__inventory {
+
+    }
+
+    &__button {
+        color: $color-primary-white;
+        background-color: $color-background-graphite;
+        border-radius: $button-form-tag-radius;
+        height: $button-form-height-mobile;
+        // padding: $button-form-padding;
+        font-size: $mob-label-link-button-body-medium;
+        border: 0;
+        padding: 1rem 3rem;
+        margin: 0 3rem;
+    }
+
+    &__button:hover {
+        background-color: $color-primary-black;
+        // background-color: $color-background-graphite;
+    }
+
+    &__blank-space {
+        flex-grow: 1;
+    }
+}
+
+.button {
+    &__warehouse {
+
+    }
+
+    &__inventory {
+
+    }
+}
+
+@include tablet {
+
+    .header {
+        &__logo-and-nav-bar {
+            display: inline-flex;
+            justify-content: space-between;
+            margin: 0 2rem;
+        } 
+        &__button {
+            margin: 0;
+        }
+    }
+
+}
+
+@include desktop {
+    .header {
+      
+    }
+
+    .header__logo-and-nav-bar {
+        display: inline-flex;
+        justify-content: space-between;
+        margin: 0 5rem;
+    }
+}
+
+
