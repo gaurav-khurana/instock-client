@@ -1,0 +1,68 @@
+// Color Pallete
+
+// primary colors
+
+$color-primary-black: #13182c; // Instock-Black: Global text color
+$color-primary-indigo: #2e66e5; // Instock-Indigo: Interactive elements
+$color-primary-white: #ffffff; // White: global white color
+
+// secondary colors
+
+$color-secondary-slate: #5c667e; // Slate: table column headers, placeholder text
+$color-secondary-cloud: #bdc5d5; // Cloud: outlines, dividers, borders, table sorting icon
+
+// background colors
+$color-background-graphite: #232940; // Graphite: top navigation header bckgrnd, CTA hover state
+$color-background-light-grey: #f7f8f9; // Light-grey: page bckgrnd, table column header bckgrnd, CTA bckgrnd
+
+// supporting colors
+$color-background-green: #158463; // Green: in-stock label
+$color-background-red: #c94515; // Red: Out-of-stock label, error state & delete icon
+
+// typography - mobile
+
+$mob-page-header: 2.8rem;
+$mob-sub-header: 2rem;
+$mob-body-large: 1.5rem;
+$mob-label-link-button-body-medium: 1.3rem;
+$mob-table-header-body-small: 1.1rem;
+
+// typography - tablet & desktop
+
+$desk-page-header: 3.2rem;
+$desk-sub-header: 2.4rem;
+$desk-body-large: 1.6rem;
+$desk-label-link-button-body-medium: 1.4rem;
+$desk-table-header-body-small: 1.2rem;
+
+// PADDING OR MARGIN - MOBILE
+
+$spacing-big: 2.4rem;
+$spacing-small: 1.6rem;
+
+// BUTTONS & FORM FIELDS
+
+$button-form-height-tablet: 3.8rem;
+$button-form-height-mobile: 3.6rem;
+$button-form-padding: 1.6rem;
+$button-form-tag-radius: 20px;
+
+// TAGS (in-stock OR out-of-stock)
+$tag-height-tablet: 2.6rem;
+$tag-height-mobile: 2.4rem;
+$tag-padding: 0.8rem;
+
+// RADIO BUTTONS
+$radio-space-big: 8px;
+$radio-space-small: 4px;
+
+// DIVIDER
+
+$divider-color: $color-secondary-cloud;
+$divider-width: 1px;
+
+// SCREEN SIZE - TABLET & DESKTOP
+
+$breakpoint-tablet: 768px;
+$breakpoint-tablet-landscape: 940px;
+$breakpoint-desktop: 1279px;
