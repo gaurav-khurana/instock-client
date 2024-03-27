@@ -1,12 +1,14 @@
+@use "../../styles/global" as *;
 @use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 @use "../../styles/typography";
 
 .searchBar {
   width: 80vw;
+  font-size: $mob-label-link-button-body-medium;
   border: $divider-width solid $divider-color;
   border-radius: $button-form-tag-radius;
-  margin-left: 2rem;
+  margin-bottom: $spacing-small;
 
   @include flexbox(row, space-between, center);
 
@@ -14,9 +16,14 @@
     border: 0;
     margin-left: 1rem;
     padding: 0.5rem;
+
+    &::placeholder {
+      color: $color-primary-black;
+    }
   }
 
   &__icon {
     margin-right: 1rem;
+    padding: 0.5rem;
   }
 }

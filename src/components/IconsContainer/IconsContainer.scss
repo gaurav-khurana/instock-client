@@ -1,0 +1,18 @@
+@use "../../styles/global" as *;
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.icons {
+  &__title--mobile {
+    font-size: $desk-label-link-button-body-medium;
+    color: $color-secondary-cloud;
+    display: none;
+
+    @include tablet {
+      display: inline-block;
+    }
+  }
+  &-container {
+    @include flexbox(row, space-between, center);
+  }
+}

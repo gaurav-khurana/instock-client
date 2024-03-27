@@ -1,9 +1,10 @@
+import "./HomePageWarehouse.scss";
 import { Link } from "react-router-dom";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import "./HomePageWarehouse.scss";
+import WarehouseCard from "../../components/WarehouseCard/WarehouseCard";
 
 function HomePageWarehouse() {
-  // func to do API call to get data from server here
+  // func to do API call to get all warehouses from server here
 
   return (
     <main className="main">
@@ -23,23 +24,29 @@ function HomePageWarehouse() {
           {" "}
           {/* remove a & move to link */}
           <Link>
-            <img src="" alt="" />
+            <button className="header__button">+ Add New Address</button>
           </Link>
         </a>
       </article>
 
-      <section>
-        <article className="warehouse+address">
-          <div>
-            <h3>Warehouse</h3>
+      {/* HAVE MAP FUNCTION HERE TO RENDER WAREHOUSE CARD */}
+      <WarehouseCard />
+      {/* <section>
+        <article className="warehouse-address-container">
+          <div className="warehouse-container">
+            <h3 className="warehouse__title">Warehouse</h3>
 
-            <img className=" default hide-mobile" src="" alt="" />
+            <img
+              className="warehouse__icon warehouse__icon--mobile"
+              src=""
+              alt=""
+            />
 
             <p>Manhattan</p>
 
             <img src="" alt="" />
           </div>
-          <div>
+          <div className="address-container">
             <h3>Address</h3>
 
             <img className="default hide-mobile" src="" alt="" />
@@ -66,14 +73,15 @@ function HomePageWarehouse() {
 
             <p>paujla@instock.com</p>
           </div>
-        </article>
+        </article> 
 
-        <div>
-          <img src="" alt="" />
+        <IconsContainer />
+        {/* <div className="icons-container">
+          <img className="icons__edit" src="" alt="" />
 
-          <img src="" alt="" />
-        </div>
-      </section>
+          <img className="icons__delete" src="" alt="" />
+        </div> */}
+      {/* </section> */}
     </main>
   );
 }

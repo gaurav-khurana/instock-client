@@ -1,3 +1,31 @@
-* {
-  font-size: 1rem;
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+// header section for warehouses with title, searchbar & button
+.main {
+  padding: 0 $spacing-small;
+}
+
+.header {
+  width: 84vw;
+  // background-color: $colo;
+
+  @include flexbox(column, center, center);
+
+  &__title {
+    font-size: $mob-page-header;
+    margin-bottom: $spacing-small;
+  }
+
+  &__button {
+    width: 84vw;
+    background-color: $color-primary-indigo;
+    color: $color-primary-white;
+    font-size: $mob-label-link-button-body-medium;
+    border: 0;
+    border-radius: $button-form-tag-radius;
+    margin-bottom: $spacing-small;
+    padding: 0.5rem;
+  }
 }
