@@ -4,16 +4,15 @@
 // TYPOGRAPHY
 
 @font-face {
-  font-family: "Titillium";
-  src: url("../assets/Fonts/Titillium_Web/TitilliumWeb-Regular.ttf") format(ttf);
+  font-family: "TitilliumWeb";
+  src: url("../assets/Fonts/Titillium_Web/TitilliumWeb-Regular.ttf");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
-  font-family: "Titillium";
-  src: url("../assets/Fonts/Titillium_Web/TitilliumWeb-SemiBold.ttf")
-    format(ttf);
+  font-family: "TitilliumWeb";
+  src: url("../assets/Fonts/Titillium_Web/TitilliumWeb-SemiBold.ttf");
   font-weight: 600;
   font-style: normal;
 }
