@@ -1,0 +1,14 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.warehouse-edit__header {
+    width: 90vw;
+    padding: 0 $spacing-small;
+
+    @include flexbox(row, space-between, center);
+}
+
+.warehouse-edit__form {
+    @include flexbox(column, center, center);
+}

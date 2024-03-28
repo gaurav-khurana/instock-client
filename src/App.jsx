@@ -5,6 +5,7 @@ import Header from "./Components/Header/Header";
 import InventoryDetails from "./pages/InventoryDetails/InventoryDetails";
 import HomePageWarehouse from "./pages/HomePageWarehouse/HomePageWarehouse";
 import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
+import WarehouseEdit from "./pages/WarehouseEdit/WarehouseEdit";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             element={<WarehouseDetails />}
           />
           <Route path="/*" element={<PageNotFound />} />
+          <Route path="/editwarehouse" element={<WarehouseEdit />} />
         </Routes>
       </BrowserRouter>
     </div>
