@@ -1,0 +1,158 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+// header section for warehouses with title, searchbar & button
+.warehouse-details-main {
+  width: 100vw;
+  background-color: $color-background-light-grey;
+
+  &__content {
+    width: 90vw;
+    margin: 0 $spacing-small;
+    background-color: $color-primary-white;
+    // border: $divider-width solid $divider-color; // remove later
+    border-radius: 5px;
+    position: relative;
+    top: -4rem;
+  }
+}
+
+// warehouse header section with name & icon to edit
+
+.warehouse-details-header {
+  width: 90vw;
+  padding: 0 $spacing-small;
+
+  @include flexbox(row, space-between, center);
+}
+
+.warehouse-details {
+  padding: $spacing-small;
+  padding-top: $spacing-big;
+  border-top: $divider-width solid $divider-color;
+
+  @include flexbox(column, center, flex-start);
+
+  &__name-container,
+  &__icon-container {
+    margin-top: $spacing-big;
+    margin-bottom: $spacing-small;
+
+    @include flexbox(row, space-between, center);
+  }
+
+  &__title {
+    font-size: $mob-page-header;
+    color: $color-primary-black;
+    margin-left: $radio-space-big;
+  }
+
+  &__icon-container {
+    background-color: $color-primary-indigo;
+    color: $color-primary-white;
+    border-radius: 100%;
+    padding: 0.8rem;
+    // margin-left: 0.2rem;
+
+    @include tablet {
+      padding: 0.8rem 1.6rem;
+      border-radius: $button-form-tag-radius;
+    }
+  }
+
+  &__icon {
+    color: $color-primary-white;
+    margin-right: $radio-space-small;
+  }
+
+  &__text {
+    font-size: $desk-label-link-button-body-medium;
+    color: $color-primary-black;
+    display: none;
+
+    @include tablet {
+      display: inline-block;
+    }
+  }
+}
+
+// warehouse address styles
+
+.warehouse-address {
+  padding-bottom: $spacing-small;
+  &__title {
+    font-size: $mob-table-header-body-small;
+    color: $color-secondary-slate;
+    margin-bottom: 0.8rem;
+  }
+
+  &__text {
+    font-size: $mob-label-link-button-body-medium;
+    color: $color-primary-black;
+  }
+}
+
+// warehouse contact name & info section
+
+.warehouse-name-info-container {
+  width: 90vw;
+
+  @include flexbox(row, flex-start, flex-start);
+}
+
+.warehouse-contact-name {
+  &-container {
+    width: 40vw;
+    margin-right: $spacing-small;
+  }
+  &__title {
+    font-size: $mob-table-header-body-small;
+    color: $color-secondary-slate;
+    margin-bottom: 0.8rem;
+  }
+
+  &__text {
+    font-size: $mob-label-link-button-body-medium;
+    color: $color-primary-black;
+    &--position {
+      font-size: $mob-label-link-button-body-medium;
+      color: $color-primary-black;
+    }
+  }
+}
+
+.warehouse-info {
+  &-container {
+  }
+  &__title {
+    font-size: $mob-table-header-body-small;
+    color: $color-secondary-slate;
+    margin-bottom: 0.8rem;
+  }
+
+  &__text {
+    font-size: $mob-label-link-button-body-medium;
+    color: $color-primary-black;
+  }
+}
+
+// old styles see if usable
+// &__title {
+//   font-size: $mob-page-header;
+//   margin-top: $spacing-big;
+//   margin-bottom: $spacing-small;
+// }
+
+// &__button {
+//   width: 80vw;
+//   background-color: $color-primary-indigo;
+//   color: $color-primary-white;
+//   font-size: $mob-label-link-button-body-medium;
+//   border: 0;
+//   border-radius: $button-form-tag-radius;
+//   margin-bottom: $spacing-small;
+//   padding: 0.5rem;
+// }
+
+// tablet view
