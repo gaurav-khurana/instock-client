@@ -1,0 +1,22 @@
+@use '../../styles/mixins' as *;
+@use '../../styles/variables' as *;
+
+.inventory-details {
+    @include flexbox;
+
+    &__edit-pic {
+        // color: $color-primary-white;
+        // background-color: $color-primary-indigo;
+    }
+    &__item {
+     display: inline-flex;
+  
+    }
+    &__info {
+        border: solid 3px red;
+    }
+}
+
+.details__description-and-category {
+    border: solid 3px blue;
+}
