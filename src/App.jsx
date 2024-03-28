@@ -12,14 +12,12 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          TODO
-          {/* <Route path="/InventoryDetails" element={<InventoryDetails />} /> */}
+          <Route path="/" element={<HomePageWarehouse />} />
+
           <Route path="/InventoryDetails" element={<InventoryDetails />} />
-          {/* <Route path="/*" element={<PageNotFound />} /> */}
-          <Route path="/" element={<HomePageWarehouse />} />
+
           <Route path="/warehousesdetails" element={<WarehouseDetails />} />
-          <Route path="/*" element={<PageNotFound />} />
-          <Route path="/" element={<HomePageWarehouse />} />
+
           <Route
             path="/warehouses/:id/inventories"
             element={<WarehouseDetails />}
