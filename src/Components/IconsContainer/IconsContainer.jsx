@@ -3,7 +3,6 @@ import EditIcon from "../../assets/Icons/edit-24px.svg";
 import DeleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import { Link } from "react-router-dom";
 
-function IconsContainer() {
 import { useState } from "react";
 
 import Modal from "react-modal";
