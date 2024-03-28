@@ -2,7 +2,7 @@ import "./WarehouseDetails.scss";
 import { Link } from "react-router-dom";
 import EditIcon from "../../assets/Icons/edit-white-24dp.svg";
 import BackArrow from "../../assets/Icons/arrow_back-24px.svg";
-import InventoryCard from "../../components/InventoryCard/InventoryCard";
+import InventoryCard from "../../Components/InventoryCard/InventoryCard";
 
 // function WarehouseDetails({ warehouse }) {
 function WarehouseDetails() {

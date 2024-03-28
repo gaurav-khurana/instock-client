@@ -1,7 +1,7 @@
 import "./HomePageWarehouse.scss";
 import { Link } from "react-router-dom";
-import SearchBar from "../../components/SearchBar/SearchBar";
-import WarehouseCard from "../../components/WarehouseCard/WarehouseCard";
+import SearchBar from "../../Components/SearchBar/SearchBar";
+import WarehouseCard from "../../Components/WarehouseCard/WarehouseCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -16,8 +16,8 @@ function HomePageWarehouse() {
     try {
       async function getAllWarehouses() {
         const response = await axios.get(
-          `${process.env.REACT_APP_BASE_URL}/warehouses`
-          // `http://localhost:8080/warehouses`
+          // `${process.env.REACT_APP_BASE_URL}/warehouses`
+          `http://localhost:8080/warehouses`
         );
         console.log(response.data);
         setAllWarehouses(response.data);
