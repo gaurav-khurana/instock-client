@@ -1,0 +1,173 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.warehouse {
+  width: 90vw;
+  padding: 0 $spacing-small;
+
+  @include flexbox(column, center, flex-start);
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.warehouse-card {
+  width: 80vw;
+  border-top: $divider-width solid $divider-color;
+
+  @include flexbox(row, flex-start, flex-start);
+}
+
+.warehouse-address-container,
+.name-info-container {
+  @include flexbox(column, center, flex-start);
+}
+
+.warehouse-address-container {
+  width: 35vw;
+  margin-right: $spacing-big;
+}
+
+.name-info-container {
+  width: 42vw;
+}
+
+// warehouse styles
+
+.warehouse {
+  &__title {
+    font-size: $mob-table-header-body-small;
+    color: $color-secondary-slate;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+
+    &-container {
+      margin-bottom: 0.8rem;
+
+      @include flexbox(row, flex-start, center);
+    }
+  }
+
+  &-name {
+    &-container {
+      @include flexbox(row, flex-start, center);
+    }
+
+    &__title-name {
+      font-size: $mob-label-link-button-body-medium;
+      color: $color-primary-indigo;
+      margin-bottom: 0.8rem;
+    }
+
+    &__image {
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    display: none;
+
+    @include tablet {
+      &--mobile {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+// address styles
+
+.address {
+  @include flexbox(column, center, flex-start);
+
+  &-container {
+    @include flexbox(row, center, center);
+  }
+
+  &__title {
+    color: $color-secondary-slate;
+    font-size: $mob-table-header-body-small;
+    margin-bottom: 0.8rem;
+  }
+
+  &__text {
+    font-size: $mob-label-link-button-body-medium;
+    color: $color-primary-black;
+    margin-bottom: 0.8rem;
+  }
+}
+
+// contact name styles
+
+.contact-name {
+  &-container {
+    margin-bottom: 0.8rem;
+
+    @include flexbox(row, flex-start, center);
+  }
+
+  &__title {
+    font-size: $mob-table-header-body-small;
+    color: $color-secondary-slate;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  &__text {
+    font-size: $mob-label-link-button-body-medium;
+    color: $color-primary-black;
+    margin-bottom: 0.8rem;
+  }
+
+  &__image {
+    width: 24px;
+    height: 24px;
+    display: none;
+
+    @include tablet {
+      &--mobile {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+// contact info styles
+
+.info {
+  &-container {
+    width: 45vw;
+    @include flexbox(row, flex-start, center);
+  }
+
+  &__title {
+    font-size: $mob-table-header-body-small;
+    color: $color-secondary-slate;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    font-size: $mob-label-link-button-body-medium;
+    color: $color-primary-black;
+    margin-bottom: 0.4rem;
+  }
+
+  &__image {
+    width: 24px;
+    height: 24px;
+    display: none;
+
+    @include tablet {
+      &--mobile {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+// tablet view
