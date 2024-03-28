@@ -4,6 +4,8 @@
 .inventory-details {
     @include flexbox;
 
+    font-size: 6rem; 
+       
     &__edit-pic {
         // color: $color-primary-white;
         // background-color: $color-primary-indigo;
@@ -17,6 +19,13 @@
     }
 }
 
-.details__description-and-category {
-    border: solid 3px blue;
+.details {
+    &__description-and-category {
+        border: solid 3px blue;
+    }
+    &__status-quantity {
+        display: flex;
+        justify-content: space-between;
+    }
+
 }
