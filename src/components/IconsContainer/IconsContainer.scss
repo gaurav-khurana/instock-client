@@ -3,6 +3,11 @@
 @use "../../styles/mixins" as *;
 
 .icons {
+  width: 84vw;
+  margin: $spacing-small 0;
+
+  @include flexbox(column, center, flex-start);
+
   &__title--mobile {
     font-size: $desk-label-link-button-body-medium;
     color: $color-secondary-cloud;
@@ -13,6 +18,7 @@
     }
   }
   &-container {
+    width: 80vw;
     @include flexbox(row, space-between, center);
   }
 }

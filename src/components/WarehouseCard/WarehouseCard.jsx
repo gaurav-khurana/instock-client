@@ -1,51 +1,80 @@
+import "./WarehouseCard.scss";
 import IconsContainer from "../IconsContainer/IconsContainer";
-import "./WarehouseCard";
+import ChevronIcon from "../../assets/Icons/chevron_right-24px.svg";
+import SortIcon from "../../assets/Icons/sort-24px.svg";
 
 function WarehouseCard() {
   return (
-    <section className="warehouse-card">
-      <article className="warehouse-address-container">
-        <div className="warehouse-container">
-          <h3 className="warehouse__title">Warehouse</h3>
+    <section className="warehouse">
+      <section className="warehouse-card">
+        <article className="warehouse-address-container">
+          <div className="warehouse-container">
+            <div className="warehouse__title-container">
+              <h3 className="warehouse__title">WAREHOUSE</h3>
 
-          <img
-            className="warehouse__icon warehouse__icon--mobile"
-            src=""
-            alt=""
-          />
+              <img
+                className="warehouse__icon warehouse__icon--mobile"
+                src={SortIcon}
+                alt="Sort Icon"
+              />
+            </div>
 
-          <p>Manhattan</p>
+            <div className="warehouse-name-container">
+              <p className="warehouse-name__title-name">MANHATTAN</p>
 
-          <img src="" alt="" />
-        </div>
-        <div className="address-container">
-          <h3>Address</h3>
+              <img
+                className="warehouse-name__image"
+                src={ChevronIcon}
+                alt="Chevron Icon"
+              />
+            </div>
+          </div>
+          <div className="address">
+            <div className="address-container">
+              <h3 className="address__title">ADDRESS</h3>
 
-          <img className="default hide-mobile" src="" alt="" />
+              <img
+                className="warehouse__icon warehouse__icon--mobile"
+                src={SortIcon}
+                alt="Sort Icon"
+              />
+            </div>
+            {/* <img className="default hide-mobile" src="" alt="" /> */}
 
-          <p>503 Broadway, New York, USA</p>
-        </div>
-      </article>
+            <p className="address__text">503 Broadway, New York, USA</p>
+          </div>
+        </article>
 
-      <article className="name+info">
-        <div>
-          <h3>contact name</h3>
+        <article className="name-info-container">
+          <div className="contact-name">
+            <div className="contact-name-container">
+              <h3 className="contact-name__title">CONTACT NAME</h3>
+              <img
+                className="contact-name__image contact-name__image--mobile"
+                src={SortIcon}
+                alt="Sort Icon"
+              />
+            </div>
 
-          <img className="default hide-mobile" src="" alt="" />
+            <p className="contact-name__text">Parmin Aujla</p>
+          </div>
 
-          <p>Parmin Aujla</p>
-        </div>
+          <div className="info">
+            <div className="info-container">
+              <h3 className="info__title">CONTACT INFORMATION</h3>
+              <img
+                className="info__image info__image--mobile"
+                src={SortIcon}
+                alt="Sort Icon"
+              />
+            </div>
 
-        <div>
-          <h3>Contact Information</h3>
+            <p className="info__text">+1 (629) 555-0129</p>
 
-          <img className="default hide-mobile" src="" alt="" />
-
-          <p>+1 (629) 555-0129</p>
-
-          <p>paujla@instock.com</p>
-        </div>
-      </article>
+            <p className="info__text">paujla@instock.com</p>
+          </div>
+        </article>
+      </section>
 
       <IconsContainer />
       {/* <div className="icons-container">

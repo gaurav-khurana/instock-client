@@ -7,8 +7,8 @@ function IconsContainer() {
     <div className="icons">
       <h3 className="icons__title--mobile">ACTIONS</h3>
       <div className="icons-container">
-        <img className="icons__edit" src={EditIcon} alt="Edit Icon" />
         <img className="icons__delete" src={DeleteIcon} alt="Delete Icon" />
+        <img className="icons__edit" src={EditIcon} alt="Edit Icon" />
       </div>
     </div>
   );
