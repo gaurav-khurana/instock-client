@@ -18,7 +18,7 @@ const customStyles = {
 };
 
 function IconsContainer() {
-  let subtitle;
+  // let subtitle;
   const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {

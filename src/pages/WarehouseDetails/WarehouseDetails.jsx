@@ -1,5 +1,5 @@
 import "./WarehouseDetails.scss";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import EditIcon from "../../assets/Icons/edit-white-24dp.svg";
 import BackArrow from "../../assets/Icons/arrow_back-24px.svg";
 import InventoryCard from "../../Components/InventoryCard/InventoryCard";
@@ -51,7 +51,7 @@ function WarehouseDetails() {
     } catch (error) {
       console.log("Cant get Single warehouse & its inventories", error);
     }
-  }, [setSingleWarehouse, setallInventoriesForThatWarehouse]);
+  }, [setSingleWarehouse, setallInventoriesForThatWarehouse, warehouseId.id]);
   console.log("single warehouse ", singleWarehouse);
   console.log("all inventories ", allInventoriesForThatWarehouse);
   return (
