@@ -8,6 +8,12 @@
 
   @include flexbox(column, center, flex-start);
 }
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .warehouse-card {
   width: 80vw;
   border-top: $divider-width solid $divider-color;

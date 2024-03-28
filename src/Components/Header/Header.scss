@@ -64,6 +64,11 @@
   }
 }
 
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 @include tablet {
   .header {
     &__logo-and-nav-bar {
