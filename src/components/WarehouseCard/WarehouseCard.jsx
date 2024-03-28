@@ -31,7 +31,7 @@ function WarehouseCard({ warehouse }) {
               />
             </div>
 
-            <Link to={`/${warehouse.warehouse_name}warehousesdetails`}>
+            <Link to={`/warehousesdetails`}>
               <div className="warehouse-name-container">
                 {/* <p className="warehouse-name__title-name">MANHATTAN</p> */}
                 <p className="warehouse-name__title-name">
