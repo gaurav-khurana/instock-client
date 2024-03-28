@@ -13,6 +13,7 @@
   @include flexbox(row, space-between, center);
 
   &__input {
+    font-size: $mob-table-header-body-small;
     border: 0;
     margin-left: 1rem;
     padding: 0.5rem;

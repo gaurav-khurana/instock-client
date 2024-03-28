@@ -2,8 +2,20 @@ import "./WarehouseCard.scss";
 import IconsContainer from "../IconsContainer/IconsContainer";
 import ChevronIcon from "../../assets/Icons/chevron_right-24px.svg";
 import SortIcon from "../../assets/Icons/sort-24px.svg";
+import { Link } from "react-router-dom";
 
-function WarehouseCard() {
+// function WarehouseCard({
+//   warehouse_name,
+//   address,
+//   city,
+//   country,
+//   contact_name,
+//   contact_position,
+//   contact_phone,
+//   contact_email,
+// }) {
+
+function WarehouseCard({ warehouse }) {
   return (
     <section className="warehouse">
       <section className="warehouse-card">
@@ -19,15 +31,20 @@ function WarehouseCard() {
               />
             </div>
 
-            <div className="warehouse-name-container">
-              <p className="warehouse-name__title-name">MANHATTAN</p>
+            <Link to={`/${warehouse.warehouse_name}warehousesdetails`}>
+              <div className="warehouse-name-container">
+                {/* <p className="warehouse-name__title-name">MANHATTAN</p> */}
+                <p className="warehouse-name__title-name">
+                  {warehouse.warehouse_name}
+                </p>
 
-              <img
-                className="warehouse-name__image"
-                src={ChevronIcon}
-                alt="Chevron Icon"
-              />
-            </div>
+                <img
+                  className="warehouse-name__image"
+                  src={ChevronIcon}
+                  alt="Chevron Icon"
+                />
+              </div>
+            </Link>
           </div>
           <div className="address">
             <div className="address-container">
@@ -41,7 +58,10 @@ function WarehouseCard() {
             </div>
             {/* <img className="default hide-mobile" src="" alt="" /> */}
 
-            <p className="address__text">503 Broadway, New York, USA</p>
+            {/* <p className="address__text">503 Broadway, New York, USA</p> */}
+            <p className="address__text">
+              {warehouse.address},{warehouse.city},{warehouse.country}
+            </p>
           </div>
         </article>
 
@@ -56,7 +76,8 @@ function WarehouseCard() {
               />
             </div>
 
-            <p className="contact-name__text">Parmin Aujla</p>
+            {/* <p className="contact-name__text">Parmin Aujla</p> */}
+            <p className="contact-name__text">{warehouse.contact_name}</p>
           </div>
 
           <div className="info">
@@ -69,19 +90,16 @@ function WarehouseCard() {
               />
             </div>
 
-            <p className="info__text">+1 (629) 555-0129</p>
+            {/* <p className="info__text">+1 (629) 555-0129</p> */}
+            <p className="info__text">{warehouse.contact_phone}</p>
 
-            <p className="info__text">paujla@instock.com</p>
+            {/* <p className="info__text">paujla@instock.com</p> */}
+            <p className="info__text">{warehouse.contact_email}</p>
           </div>
         </article>
       </section>
 
       <IconsContainer />
-      {/* <div className="icons-container">
-          <img className="icons__edit" src="" alt="" />
-
-          <img className="icons__delete" src="" alt="" />
-        </div> */}
     </section>
   );
 }
