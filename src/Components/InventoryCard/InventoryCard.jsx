@@ -114,7 +114,10 @@ function InventoryCard({ inventory }) {
           </article>
         </section>
 
-        <IconsContainer />
+        <IconsContainer
+          inventoryId={inventory.id}
+          inventoryName={inventory.item_name}
+        />
       </section>
     </div>
   );
