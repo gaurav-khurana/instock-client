@@ -56,11 +56,10 @@ function IconsContainer() {
           contentLabel="Example Modal"
         >
           {/* <div>
-            <h1>Yo</h1>
-            <span>Do you want to delete</span>
+            <h1>Yo</h1><span>Do you want to delete</span>
           </div> */}
 
-          <CustomModal />
+          <CustomModal onRequestClose={closeModal} />
         </Modal>
       </div>
     </div>

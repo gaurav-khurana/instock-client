@@ -9,6 +9,11 @@
 
   @include flexbox(column, space-between, flex-end);
 
+  @include tablet {
+    width: 80vw;
+    height: 30vh;
+  }
+
   &__heading {
     font-size: $mob-page-header;
     color: $color-primary-black;

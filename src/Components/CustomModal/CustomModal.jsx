@@ -1,9 +1,11 @@
 import "./CustomModal.scss";
 
-function CustomModal() {
+function CustomModal({ onRequestClose }) {
   return (
     <div className="modal">
-      <p className="modal__text"> X </p>
+      <p onClick={onRequestClose} className="modal__text">
+        X
+      </p>
 
       <div className="modal__text-container">
         <h2 className="modal__heading">Delete Washington warehouse?</h2>
