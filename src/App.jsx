@@ -6,6 +6,7 @@ import InventoryDetails from "./pages/InventoryDetails/InventoryDetails";
 import HomePageWarehouse from "./pages/HomePageWarehouse/HomePageWarehouse";
 import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
 import WarehouseEdit from "./pages/WarehouseEdit/WarehouseEdit";
+import InventoryListPage from "./pages/InventoryListPage/InventoryListPage";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePageWarehouse />} />
+
+          <Route path="/inventory" element={<InventoryListPage />} />
 
           <Route path="/InventoryDetails" element={<InventoryDetails />} />
 
