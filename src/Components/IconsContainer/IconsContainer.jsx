@@ -17,7 +17,12 @@ const customStyles = {
   },
 };
 
-function IconsContainer({ warehouseId, warehouseName }) {
+function IconsContainer({
+  warehouseId,
+  warehouseName,
+  inventoryId,
+  inventoryName,
+}) {
   // let subtitle;
   const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -63,6 +68,8 @@ function IconsContainer({ warehouseId, warehouseName }) {
             onRequestClose={closeModal}
             warehouseId={warehouseId}
             warehouseName={warehouseName}
+            inventoryId={inventoryId}
+            inventoryName={inventoryName}
           />
         </Modal>
       </div>
