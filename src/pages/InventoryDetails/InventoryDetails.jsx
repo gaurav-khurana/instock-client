@@ -8,50 +8,56 @@ import axios from 'axios';
 function InventoryDetails() {
 
     const [inventoryDetails, setInventoryDetails] = useState([]);
-    const [currentInventoryDetails, setCurrentInventoryDetails] = useState([]);
-    const { inventoryID } = useParams();
+    // const [currentInventoryDetails, setCurrentInventoryDetails] = useState([]);
+    const { inventoryId } = useParams();
 
 
 
     useEffect(() => {
         const getInventoryDetails = async () => {
             try {
-                const response = await axios.get("http://localhost:8080/inventories/")
-                const inventoryDetails = response.data;
-                setInventoryDetails(inventoryDetails);
+                console.log(inventoryId)
+                const response = await axios.get(`http://localhost:8080/inventories/${inventoryId}`)
+                const inventoryData = response.data;
+                console.log(inventoryData.foundInventory)
+                setInventoryDetails(inventoryData.foundInventory);
+                // console.log(inventoryData.foundInventory)
+                // setInventoryDetails(inventoryData.foundInventory);
             } catch (error) {
                 console.error("No Inventory Details for you, my friend: ", error);
             }
         }
         getInventoryDetails();
-    }, []);
+    }, [inventoryId]);
 
-    useEffect(() => {
-        const defaultId = "1";
-        const enableDefault = inventoryID || defaultId;
+    // useEffect(() => {
+    //     const defaultId = "0";
+    //     const enableDefault = inventoryId || defaultId;
 
-        const getCurrentInventoryDetails = async (id) => {
-            try {
-                const response = await axios.get(`http://localhost:8080/inventories/${id}`);
-                setInventoryDetails(response.data);
-            } catch (error) {
-                console.error("Failed to fetch current inventory: ", error);
-            }
-        };
-        getCurrentInventoryDetails(enableDefault);
-    }, [inventoryID]);
+    //     const getCurrentInventoryDetails = async (id) => {
+    //         try {
+    //             // const response = await axios.get(`http://localhost:8080/warehouses/${id}/inventories/`);
+    //             const response = await axios.get(`http://localhost:8080/inventories/${id}//`);
+    //             setCurrentInventoryDetails(response.data);
+    //         } catch (error) {
+    //             console.error("Failed to fetch current inventory: ", error);
+    //         }
+    //     };
+    //     getCurrentInventoryDetails(enableDefault);
+    // }, [inventoryId]);
 
     return (
 
         <div>
             
-                <div className='inventory-details' key={inventoryDetails[0].id}>
+                <div className='inventory-details' key={inventoryDetails.id}>
 
                     <div className='inventory-details__item' >
                         <img className='inventory-details__back-arrow' src={BackArrow} ></img>
                         <h1 className='inventory-details__product-name'>
                             {/* Television  */}
-                            {inventoryDetails[0].item_name}</h1>
+                            {inventoryDetails.item_name}
+                            </h1>
                         {/* need to change this to accept API call */}
                         <img className='inventory-details__edit-pic' src={EditPic} ></img>
                     </div>
@@ -65,14 +71,14 @@ function InventoryDetails() {
                                 ITEM DESCRIPTION
                             </div>
                             <div className='details__description--data'>
-                                {inventoryDetails[0].description}
+                                {inventoryDetails.description}
                                 {/* This 50", 4K LED TV provides a crystal-clear picture and vivid colors. */}
                             </div>
                             <div className='details__category'>
                                 CATEGORY
                             </div>
                             <div className='details__category--data'>
-                                {inventoryDetails[0].category}
+                                {inventoryDetails.category}
                                 {/* Electronics */}
                             </div>
                         </div>
@@ -86,7 +92,7 @@ function InventoryDetails() {
                                 <div className='details__quantity'>
                                     QUANTITY:
                                     <div className='details__quantity--data'>
-                                        {inventoryDetails[0].quantity}
+                                        {inventoryDetails.quantity}
                                         {/* 500 */}
                                     </div>
                                 </div>

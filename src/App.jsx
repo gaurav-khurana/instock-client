@@ -5,6 +5,7 @@ import Header from "./Components/Header/Header";
 import InventoryDetails from "./pages/InventoryDetails/InventoryDetails";
 import HomePageWarehouse from "./pages/HomePageWarehouse/HomePageWarehouse";
 import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
+import InventoryCard from "./Components/InventoryCard/InventoryCard";
 
 function App() {
   return (
@@ -12,11 +13,9 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-        TODO
-        {/* <Route path="/InventoryDetails" element={<InventoryDetails />} /> */}
-        <Route path="/InventoryDetails" element={<InventoryDetails />} />
-        {/* <Route path="/*" element={<PageNotFound />} /> */}
-        <Route path="/" element={<HomePageWarehouse />} />
+          <Route path="/InventoryDetails/:inventoryId" element={<InventoryDetails />} />
+          {/* <Route path="/InventoryDetails" element={<InventoryDetails />} /> */}
+          <Route path="/" element={<HomePageWarehouse />} />
           <Route path="/warehousesdetails" element={<WarehouseDetails />} />
           <Route path="/*" element={<PageNotFound />} />
         </Routes >
