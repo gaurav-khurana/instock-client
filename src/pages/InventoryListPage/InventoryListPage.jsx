@@ -14,8 +14,8 @@ function InventoryListPage() {
     try {
       async function getallInventories() {
         const response = await axios.get(
-          // `${process.env.REACT_APP_BASE_URL}/inventories`
-          `http://localhost:8080/inventories`
+          `${process.env.REACT_APP_BASE_URL}/inventories`
+          // `http://localhost:8080/inventories`
         );
         console.log(response.data);
         setallInventories(response.data);

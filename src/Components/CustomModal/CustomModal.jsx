@@ -18,7 +18,8 @@ function CustomModal({
   async function deleteWarehouse() {
     try {
       const response = await axios.delete(
-        `http://localhost:8080/warehouses/${warehouseId}`
+        `${process.env.REACT_APP_BASE_URL}/warehouses/${warehouseId}`
+        // `http://localhost:8080/warehouses/${warehouseId}`
       );
       console.log("Warehouse deleted", response.data);
     } catch (error) {
@@ -31,7 +32,8 @@ function CustomModal({
   async function deleteInventory() {
     try {
       const response = await axios.delete(
-        `http://localhost:8080/inventories/${inventoryId}`
+        `${process.env.REACT_APP_BASE_URL}/inventories/${inventoryId}`
+        // `http://localhost:8080/inventories/${inventoryId}`
       );
       console.log("Inventory Deleted", response.data);
     } catch (error) {

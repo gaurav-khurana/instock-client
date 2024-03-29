@@ -7,6 +7,7 @@ import axios from "axios";
 
 function HomePageWarehouse() {
   // func to do API call to get all warehouses from server here
+  console.log(process.env.REACT_APP_BASE_URL);
 
   // state to get all warehouses
   const [allwarehouses, setAllWarehouses] = useState([]);
@@ -16,8 +17,8 @@ function HomePageWarehouse() {
     try {
       async function getAllWarehouses() {
         const response = await axios.get(
-          // `${process.env.REACT_APP_BASE_URL}/warehouses`
-          `http://localhost:8080/warehouses`
+          `${process.env.REACT_APP_BASE_URL}/warehouses`
+          // `http://localhost:8080/warehouses`
         );
         console.log(response.data);
         setAllWarehouses(response.data);

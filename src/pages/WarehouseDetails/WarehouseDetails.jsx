@@ -25,8 +25,8 @@ function WarehouseDetails() {
 
       async function getSingleWarehouse() {
         const response = await axios.get(
-          // `${process.env.REACT_APP_BASE_URL}/warehouses/${warehouseId}`
-          `http://localhost:8080/warehouses/${warehouseId.id}`
+          `${process.env.REACT_APP_BASE_URL}/warehouses/${warehouseId.id}`
+          // `http://localhost:8080/warehouses/${warehouseId.id}`
           // `http://localhost:8080/warehouses/1`
         );
         console.log(response.data);
@@ -39,9 +39,8 @@ function WarehouseDetails() {
 
       async function getallInventoriesForThatWarehouse() {
         const response = await axios.get(
-          // `${process.env.REACT_APP_BASE_URL}/warehouses/${warehouseId}`
-          `http://localhost:8080/warehouses/${warehouseId.id}/inventories`
-          // `http://localhost:8080/warehouses/1/inventories`
+          `${process.env.REACT_APP_BASE_URL}/warehouses/${warehouseId.id}/inventories`
+          // `http://localhost:8080/warehouses/${warehouseId.id}/inventories`
         );
 
         console.log(response.data);
