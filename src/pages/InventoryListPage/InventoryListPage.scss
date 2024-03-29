@@ -1,0 +1,45 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+// header section for warehouses with title, searchbar & button
+.inventory-main {
+  width: 100vw;
+  background-color: $color-background-light-grey;
+
+  &__content {
+    width: 90vw;
+    margin: 0 $spacing-small;
+    background-color: $color-primary-white;
+    // border: $divider-width solid $divider-color; // remove later
+    border-radius: 5px;
+    position: relative;
+    top: -4rem;
+  }
+}
+
+.inventory-header {
+  width: 90vw;
+  padding: 0 $spacing-small;
+
+  @include flexbox(column, center, flex-start);
+
+  &__title {
+    font-size: $mob-page-header;
+    margin-top: $spacing-big;
+    margin-bottom: $spacing-small;
+  }
+
+  &__button {
+    width: 80vw;
+    background-color: $color-primary-indigo;
+    color: $color-primary-white;
+    font-size: $mob-label-link-button-body-medium;
+    border: 0;
+    border-radius: $button-form-tag-radius;
+    margin-bottom: $spacing-small;
+    padding: 0.5rem;
+  }
+}
+
+// tablet view

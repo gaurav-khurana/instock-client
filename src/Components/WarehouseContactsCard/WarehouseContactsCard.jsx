@@ -1,6 +1,6 @@
 import "./WarehouseContactsCard.scss";
 
-function WarehouseContactsCard() {
+function WarehouseContactsCard(singlewarehouse) {
   // NOTE! Need to passdown data to show what to edit.
   return (
     <section className="warehouse-edit">
@@ -12,7 +12,7 @@ function WarehouseContactsCard() {
             type="text"
             id="warehouseContact"
             name="warehouseContact"
-            value=""
+            value={singlewarehouse.singleWarehouse.contact_name}
             onSubmit={""}
           />
           <label htmlFor="warehousePosition">Position</label>
@@ -20,7 +20,7 @@ function WarehouseContactsCard() {
             type="text"
             id="warehousePosition"
             name="warehousePosition"
-            value=""
+            value={singlewarehouse.singleWarehouse.contact_position}
             onSubmit={""}
           />
           <label htmlFor="warehousePhone">Phone Number</label>
@@ -28,7 +28,7 @@ function WarehouseContactsCard() {
             type="text"
             id="warehousePhone"
             name="warehousePhone"
-            value=""
+            value={singlewarehouse.singleWarehouse.contact_phone}
             onSubmit={""}
           />
           <label htmlFor="warehouseEmail">Email</label>
@@ -36,7 +36,7 @@ function WarehouseContactsCard() {
             type="email"
             id="warehouseEmail"
             name="warehouseEmail"
-            value=""
+            value={singlewarehouse.singleWarehouse.contact_email}
             onSubmit={""}
           />
         </form>

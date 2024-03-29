@@ -17,8 +17,13 @@ const customStyles = {
   },
 };
 
-function IconsContainer() {
-  let subtitle;
+function IconsContainer({
+  warehouseId,
+  warehouseName,
+  inventoryId,
+  inventoryName,
+}) {
+  // let subtitle;
   const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
@@ -56,11 +61,16 @@ function IconsContainer() {
           contentLabel="Example Modal"
         >
           {/* <div>
-            <h1>Yo</h1>
-            <span>Do you want to delete</span>
+            <h1>Yo</h1><span>Do you want to delete</span>
           </div> */}
 
-          <CustomModal />
+          <CustomModal
+            onRequestClose={closeModal}
+            warehouseId={warehouseId}
+            warehouseName={warehouseName}
+            inventoryId={inventoryId}
+            inventoryName={inventoryName}
+          />
         </Modal>
       </div>
     </div>

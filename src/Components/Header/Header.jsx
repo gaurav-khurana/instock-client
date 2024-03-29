@@ -18,17 +18,19 @@ function Header() {
 
         <div className="header__nav-bar">
           {/* <div className="header__warehouses header__nav-link"> */}
-         <Link to="/">
-          <button className="header__button button__warehouse">
-            Warehouses
-          </button>
-         </Link>
+          <Link to={"/"}>
+            <button className="header__button button__warehouse">
+              Warehouses
+            </button>
+          </Link>
           {/* </div> */}
 
           {/* <div className="header__inventory header__nav-link"> */}
-          <button className="header__button button__inventory">
-            Inventory
-          </button>
+          <Link to={"/inventory"}>
+            <button className="header__button button__inventory">
+              Inventory
+            </button>
+          </Link>
           {/* </div> */}
         </div>
       </div>

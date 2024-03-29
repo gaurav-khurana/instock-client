@@ -1,6 +1,8 @@
 import "./WarehouseDetailsCard.scss";
 
-function WarehouseDetailsCard() {
+function WarehouseDetailsCard(singlewarehouse) {
+  console.log(singlewarehouse.singleWarehouse.warehouse_name);
+  console.log(singlewarehouse.warehouse_name);
   // NOTE! Need to passdown data to show what to edit.
   return (
     <section className="warehouse-edit">
@@ -12,15 +14,17 @@ function WarehouseDetailsCard() {
             type="text"
             id="warehouseName"
             name="warehouseName"
-            value=""
+            // value={singlewarehouse}
+            value={singlewarehouse.singleWarehouse.warehouse_name}
             onSubmit={""}
           />
+
           <label htmlFor="warehouseAddress">Street Address</label>
           <input
             type="text"
             id="warehouseAddress"
             name="warehouseAddress"
-            value=""
+            value={singlewarehouse.singleWarehouse.address}
             onSubmit={""}
           />
           <label htmlFor="warehouseCity">City</label>
@@ -28,7 +32,7 @@ function WarehouseDetailsCard() {
             type="text"
             id="warehouseCity"
             name="warehouseCity"
-            value=""
+            value={singlewarehouse.singleWarehouse.city}
             onSubmit={""}
           />
           <label htmlFor="warehouseCountry">Country</label>
@@ -36,7 +40,7 @@ function WarehouseDetailsCard() {
             type="text"
             id="warehouseCountry"
             name="warehouseCountry"
-            value=""
+            value={singlewarehouse.singleWarehouse.country}
             onSubmit={""}
           />
         </form>
