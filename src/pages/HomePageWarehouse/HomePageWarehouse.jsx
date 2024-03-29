@@ -30,29 +30,31 @@ function HomePageWarehouse() {
   }, [setAllWarehouses]);
 
   return (
-    <main className="main">
-      <div className="main__content">
-        <article className="warehouse-header">
-          <h1 className="warehouse-header__title">Warehouses</h1>
+    allwarehouses && (
+      <main className="main">
+        <div className="main__content">
+          <article className="warehouse-header">
+            <h1 className="warehouse-header__title">Warehouses</h1>
 
-          <SearchBar />
+            <SearchBar />
 
-          <Link>
-            {" "}
-            {/* add path to link */}
-            <button className="warehouse-header__button">
-              + Add New Address
-            </button>
-          </Link>
-        </article>
+            <Link>
+              {" "}
+              {/* add path to link */}
+              <button className="warehouse-header__button">
+                + Add New Address
+              </button>
+            </Link>
+          </article>
 
-        {/* HAVE MAP FUNCTION HERE TO RENDER WAREHOUSE CARD WORKS */}
-        {allwarehouses.map((warehouse) => (
-          <WarehouseCard key={warehouse.id} warehouse={warehouse} />
-        ))}
-        {/* <WarehouseCard /> */}
-      </div>
-    </main>
+          {/* HAVE MAP FUNCTION HERE TO RENDER WAREHOUSE CARD WORKS */}
+          {allwarehouses.map((warehouse) => (
+            <WarehouseCard key={warehouse.id} warehouse={warehouse} />
+          ))}
+          {/* <WarehouseCard /> */}
+        </div>
+      </main>
+    )
   );
 }
 

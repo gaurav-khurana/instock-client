@@ -26,7 +26,7 @@ function InventoryCard({ inventory }) {
 
               {/* link path INCORRECT - probably line 29 correct; goes to Single item in Inventory */}
               {/* <Link to={`/warehousesdetails`} warehouse={warehouse}> */}
-              <Link to={`/inventories/:id`}>
+              <Link to={`/inventories/:${inventory.id}`}>
                 <div className="inventory-name-container">
                   <p className="inventory-name__title-name">
                     {inventory.item_name}

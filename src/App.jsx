@@ -18,7 +18,11 @@ function App() {
 
           <Route path="/inventory" element={<InventoryListPage />} />
 
-          <Route path="/InventoryDetails" element={<InventoryDetails />} />
+          {/* <Route path="/InventoryDetails" element={<InventoryDetails />} /> */}
+          <Route
+            path="/inventories/:inventoryId"
+            element={<InventoryDetails />}
+          />
 
           <Route path="/warehousesdetails" element={<WarehouseDetails />} />
 
