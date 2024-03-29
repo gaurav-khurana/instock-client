@@ -104,7 +104,10 @@ function WarehouseCard({ warehouse }) {
         </article>
       </section>
 
-      <IconsContainer />
+      <IconsContainer
+        warehouseId={warehouse.id}
+        warehouseName={warehouse.warehouse_name}
+      />
     </section>
   );
 }
