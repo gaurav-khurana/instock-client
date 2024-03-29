@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import IconsContainer from "../IconsContainer/IconsContainer";
 import InventoryDetails from "../../pages/InventoryDetails/InventoryDetails";
 
-function InventoryCard() {
+function InventoryCard({ inventory }) {
   return (
     <div>
       {/* InventoryCard */}
@@ -30,7 +30,10 @@ function InventoryCard() {
               <Link to="/InventoryDetails/:inventoryId">
               {/* <Link to={`/inventories/:id`}> */}
                 <div className="inventory-name-container">
-                  <p className="inventory-name__title-name">Television</p>
+                  <p className="inventory-name__title-name">
+                    {inventory.item_name}
+                  </p>
+                  {/* <p className="inventory-name__title-name">Television</p> */}
                   {/* <p className="inventory-name__title-name">
                   {warehouse.warehouse_name}
                 </p> */}
@@ -56,7 +59,8 @@ function InventoryCard() {
               </div>
               {/* <img className="default hide-mobile" src="" alt="" /> */}
 
-              <p className="category__text">Electronics</p>
+              <p className="category__text">{inventory.category}</p>
+              {/* <p className="category__text">Electronics</p> */}
               {/* <p className="category__text">
               {warehouse.address},{warehouse.city},{warehouse.country}
             </p> */}
@@ -74,11 +78,22 @@ function InventoryCard() {
                   alt="Sort Icon"
                 />
               </div>
-
               {/* use ternary operator to in-stock ? 'status__text--green' : 'status__text--red */}
-              <div className="status__text status__text--green">In Stock</div>
-              {/* <div className="status__text status__text--red">Out of Stock</div> */}
+              {inventory.status === "In Stock" ? (
+                <div className="status__text status__text--green">
+                  {inventory.status}
+                </div>
+              ) : (
+                <div className="status__text status__text--red">
+                  {inventory.status}
+                </div>
+              )}
 
+              {/* <div className="status__text status__text--green">
+                {inventory.status}
+              </div> */}
+              {/* <div className="status__text status__text--green">In Stock</div> */}
+              {/* <div className="status__text status__text--red">Out of Stock</div> */}
               {/* <p className="status__text">Parmin Aujla</p> */}
               {/* <p className="status__text">{warehouse.contact_name}</p> */}
             </div>
@@ -94,7 +109,8 @@ function InventoryCard() {
                 />
               </div>
 
-              <p className="QTY__text">500</p>
+              <p className="QTY__text">{inventory.quantity}</p>
+              {/* <p className="QTY__text">500</p> */}
               {/* <p className="QTY__text">{warehouse.contact_phone}</p> */}
             </div>
           </article>

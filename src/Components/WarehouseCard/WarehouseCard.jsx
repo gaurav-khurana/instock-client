@@ -4,6 +4,8 @@ import ChevronIcon from "../../assets/Icons/chevron_right-24px.svg";
 import SortIcon from "../../assets/Icons/sort-24px.svg";
 import { Link } from "react-router-dom";
 
+// function WarehouseCard(props) {
+//   console.log(props);
 // function WarehouseCard({
 //   warehouse_name,
 //   address,
@@ -14,8 +16,9 @@ import { Link } from "react-router-dom";
 //   contact_phone,
 //   contact_email,
 // }) {
-
 function WarehouseCard({ warehouse }) {
+  console.log(warehouse);
+  console.log(warehouse.id);
   return (
     <section className="warehouse">
       <section className="warehouse-card">
@@ -32,7 +35,8 @@ function WarehouseCard({ warehouse }) {
             </div>
 
             {/* link path INCORRECT - /warehouses/:id/inventories */}
-            <Link to={`/warehousesdetails`} warehouse={warehouse}>
+            <Link to={`/warehouses/${warehouse.id}/inventories`}>
+              {/* <Link to={`/warehousesdetails`}> */}
               <div className="warehouse-name-container">
                 {/* <p className="warehouse-name__title-name">MANHATTAN</p> */}
                 <p className="warehouse-name__title-name">
