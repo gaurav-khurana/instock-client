@@ -32,11 +32,17 @@
     text-decoration: none;
     font-size: $mob-label-link-button-body-medium;
     margin-left: 1rem;
+    padding: 0.4rem $spacing-small;
+    border-radius: $button-form-tag-radius;
 
     &--cancel {
+      color: $color-secondary-slate;
+      border: $divider-width solid $divider-color;
     }
     &--delete {
-      font-size: $mob-label-link-button-body-medium;
+      // font-size: $mob-label-link-button-body-medium;
+      color: $color-primary-white;
+      background-color: $color-background-red;
     }
   }
 }
