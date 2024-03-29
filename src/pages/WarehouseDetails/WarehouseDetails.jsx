@@ -54,6 +54,8 @@ function WarehouseDetails() {
   }, [setSingleWarehouse, setallInventoriesForThatWarehouse]);
   console.log("single warehouse ", singleWarehouse);
   console.log("all inventories ", allInventoriesForThatWarehouse);
+
+  
   return (
     singleWarehouse &&
     allInventoriesForThatWarehouse && (

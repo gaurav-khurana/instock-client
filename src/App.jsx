@@ -8,17 +8,21 @@ import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
 import WarehouseEdit from "./pages/WarehouseEdit/WarehouseEdit";
 import InventoryCard from "./Components/InventoryCard/InventoryCard";
 
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Header />
-        <Routes>    <Route path="/InventoryDetails/:inventoryId" element={<InventoryDetails />} />
+        <Routes>    
           {/* <Route path="/InventoryDetails" element={<InventoryDetails />} /> */}
           <Route path="/" element={<HomePageWarehouse />} />
           <Route path="/warehousesdetails" element={<WarehouseDetails />} />
 
-          <Route path="/InventoryDetails" element={<InventoryDetails />} />
+          {/* <Route path="/InventoryDetails" element={<InventoryDetails />} /> */}
+          {/* <Route path="/InventoryDetails/:inventoryId" element={<InventoryDetails />} /> */}
+          
+          <Route path="/inventories/:inventoryId" element={<InventoryDetails />} />
 
           <Route
             path="/warehouses/:id/inventories"
