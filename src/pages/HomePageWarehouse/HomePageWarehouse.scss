@@ -80,36 +80,41 @@
     width: 90vw;
     background-color: $color-background-light-grey;
     padding: 0 $spacing-big;
-    // @include flexbox(row, space-between, center);
     @include flexbox(row, flex-start, center);
   }
 
   .warehouse__title--tablet {
     width: 13vw;
-    // margin-left: $spacing-big;
-    // margin-right: 3rem;
   }
 }
-// .address__title--tablet,
-// .contact-name__title--tablet {
-//   margin-bottom: 0;
-// }
 
 // desktop mode
 
 @include desktop {
   .main {
     &__content {
-      width: 80vw;
+      width: 83vw;
     }
   }
 
+  .warehouse-card-header--tablet {
+    width: 83vw;
+    padding: 0.8rem $spacing-big;
+
+    @include flexbox(row, flex-start, center);
+    // @include flexbox(row, space-between, center);
+  }
+
   .warehouse-header {
-    width: 80vw;
+    width: 83vw;
     // padding: 0 $spacing-big;
 
     &__button {
       width: 12vw;
     }
+  }
+
+  .address-container {
+    @include flexbox(row, flex-start, center);
   }
 }

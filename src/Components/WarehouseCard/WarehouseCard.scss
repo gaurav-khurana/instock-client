@@ -94,7 +94,7 @@ a {
   @include flexbox(column, center, flex-start);
 
   &-container {
-    @include flexbox(row, center, center);
+    @include flexbox(row, flex-start, center);
   }
 
   &__title {
@@ -241,13 +241,14 @@ a {
   }
 
   .warehouse__title-container {
-    margin-right: 2rem;
+    margin-right: 3.5rem;
   }
   .address-container {
-    margin-right: 5rem;
+    margin-right: 4rem;
   }
+
   .contact-name-container {
-    margin-right: 3rem;
+    margin-right: 2.5rem;
   }
   .info-container {
     margin-right: 5rem;
@@ -284,5 +285,68 @@ a {
 
   .info {
     word-break: break-all;
+  }
+}
+
+// desktop mode
+
+@include desktop {
+  .warehouse__title-container--tablet,
+  .address-container--tablet,
+  .contact-name-container--tablet,
+  .info-container--tablet {
+    width: 20vw;
+  }
+
+  .warehouse__title-container {
+    margin-right: 3.5rem;
+    margin-bottom: 0;
+  }
+  .warehouse {
+    &__title {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .address-container {
+    margin-right: 6.5vw;
+    margin-bottom: 0;
+  }
+  .address {
+    &__title {
+      margin-bottom: 0;
+    }
+  }
+  .contact-name-container {
+    // margin-right: 2vw;
+    margin-bottom: 0;
+  }
+  .contact-name {
+    &__title {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .info-container {
+    width: 16vw;
+    // padding: 0.8rem 0;
+    // margin-right: 5rem;
+  }
+
+  .info {
+    &__title {
+      margin-bottom: 0;
+    }
+  }
+
+  .warehouse {
+    width: 83vw;
+    padding: 0 $spacing-big;
+
+    &-card {
+      width: 68vw;
+    }
   }
 }

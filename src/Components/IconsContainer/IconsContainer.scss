@@ -28,7 +28,7 @@
 
 @include tablet {
   .icons-container {
-    width: 11vw;
+    width: 9vw;
   }
 
   .icons {
@@ -39,5 +39,13 @@
     &__title--tablet {
       display: none;
     }
+  }
+}
+
+// desktop view
+
+@include desktop {
+  .icons-container {
+    width: 6vw;
   }
 }
