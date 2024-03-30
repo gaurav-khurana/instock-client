@@ -15,9 +15,26 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
+          <Route path="/" element={<HomePageWarehouse />} />
 
-        <Route path="/*" element={<PageNotFound />} />
-        </Routes >
+          <Route path="/inventory" element={<InventoryListPage />} />
+
+          {/* <Route path="/InventoryDetails" element={<InventoryDetails />} /> */}
+          <Route
+            path="/inventories/:inventoryId"
+            element={<InventoryDetails />}
+          />
+
+          <Route path="/warehousesdetails" element={<WarehouseDetails />} />
+
+          <Route
+            path="/warehouses/:id/inventories"
+            element={<WarehouseDetails />}
+          />
+          <Route path="/*" element={<PageNotFound />} />
+          <Route path="/editwarehouse" element={<WarehouseEdit />} />
+          <Route path="/addInventoryItem" element={<AddInventoryItem/>}/>
+        </Routes>
       </BrowserRouter>
     </div>
   );
