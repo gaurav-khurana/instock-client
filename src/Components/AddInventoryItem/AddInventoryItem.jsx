@@ -26,15 +26,15 @@ function AddInventoryItem() {
     const handleSelectChange1 = (event) => {
         setSelectedOption1(event.target.value);
     };
+
     const handleSelectChange2 = (event) => {
-        const selectedWarehouseName = event.target.value;
+        const selectedWarehouseName = event.target.value.trim(); // Trim whitespace
         setSelectedOption2(selectedWarehouseName);
-        const selectedWarehouse = warehouseNames.find(warehouse => warehouse.warehouse_name === selectedWarehouseName);
+        const selectedWarehouse = warehouseNames.find(warehouse => warehouse.warehouse_name.trim().toLowerCase() === selectedWarehouseName.toLowerCase());
         if (selectedWarehouse) {
-            setSelectedWarehouseId(selectedWarehouse.warehouse_id);
+            setSelectedWarehouseId(selectedWarehouse.id);
         }
     };
-
     const handleItemQuantity = (event) => {
         setItemQuantity(event.target.value);
     };
@@ -121,7 +121,7 @@ function AddInventoryItem() {
                 resetForm();
                 window.location.href = "/";
             } catch (error) {
-                console.error("Error Adding a new inventory item", error);
+                console.error("Error Adding a new inventory item", error.response);
                 alert("Failed to add a new inventory. Please try again later.");
             }
         } else {

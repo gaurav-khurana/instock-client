@@ -27,7 +27,7 @@ function EditInventoryItem() {
             <div className="details-container">
                 <h3>Item Availibity</h3>
                 <form className='form' action="">
-                   
+
                     <label htmlFor="">Warehouse</label>
                     <select name="cars" id="cars">
                         <option value="volvo">Volvo</option>

@@ -11,6 +11,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<AddInventoryItem />} />
+
         </Routes >
       </BrowserRouter>
     </div>
