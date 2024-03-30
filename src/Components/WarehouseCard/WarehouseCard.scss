@@ -44,6 +44,10 @@ a {
     margin-top: 0.8rem;
     margin-bottom: 0.8rem;
 
+    @include tablet {
+      font-size: $desk-table-header-body-small;
+    }
+
     &-container {
       margin-bottom: 0.8rem;
 
@@ -60,6 +64,10 @@ a {
       font-size: $mob-label-link-button-body-medium;
       color: $color-primary-indigo;
       margin-bottom: 0.8rem;
+
+      @include tablet {
+        font-size: $desk-label-link-button-body-medium;
+      }
     }
 
     &__image {
@@ -86,19 +94,27 @@ a {
   @include flexbox(column, center, flex-start);
 
   &-container {
-    @include flexbox(row, center, center);
+    @include flexbox(row, flex-start, center);
   }
 
   &__title {
     color: $color-secondary-slate;
     font-size: $mob-table-header-body-small;
     margin-bottom: 0.8rem;
+
+    @include tablet {
+      font-size: $desk-table-header-body-small;
+    }
   }
 
   &__text {
     font-size: $mob-label-link-button-body-medium;
     color: $color-primary-black;
     margin-bottom: 0.8rem;
+
+    @include tablet {
+      font-size: $desk-label-link-button-body-medium;
+    }
   }
 }
 
@@ -116,12 +132,20 @@ a {
     color: $color-secondary-slate;
     margin-top: 0.8rem;
     margin-bottom: 0.8rem;
+
+    @include tablet {
+      font-size: $desk-table-header-body-small;
+    }
   }
 
   &__text {
     font-size: $mob-label-link-button-body-medium;
     color: $color-primary-black;
     margin-bottom: 0.8rem;
+
+    @include tablet {
+      font-size: $desk-label-link-button-body-medium;
+    }
   }
 
   &__image {
@@ -143,18 +167,30 @@ a {
   &-container {
     width: 45vw;
     @include flexbox(row, flex-start, center);
+
+    @include tablet {
+      width: 10rem;
+    }
   }
 
   &__title {
     font-size: $mob-table-header-body-small;
     color: $color-secondary-slate;
     margin-bottom: 1rem;
+
+    @include tablet {
+      font-size: $desk-table-header-body-small;
+    }
   }
 
   &__text {
     font-size: $mob-label-link-button-body-medium;
     color: $color-primary-black;
     margin-bottom: 0.4rem;
+
+    // @include tablet {
+    //   font-size: $desk-label-link-button-body-medium;
+    // }
   }
 
   &__image {
@@ -171,3 +207,146 @@ a {
 }
 
 // tablet view
+
+@include tablet {
+  .warehouse-address-container,
+  .name-info-container {
+    @include flexbox(row, flex-start, center);
+  }
+  .warehouse-address-container {
+    margin-right: 1rem;
+    width: 34vw;
+  }
+
+  .name-info-container {
+    width: 34vw;
+  }
+
+  .warehouse__title-container--tablet,
+  .address-container--tablet,
+  .contact-name-container--tablet,
+  .info-container--tablet {
+    display: none;
+  }
+
+  .warehouse-container {
+    width: 14vw;
+  }
+  .address,
+  .contact-name {
+    width: 13vw;
+  }
+  .info {
+    width: 19vw;
+  }
+
+  .warehouse__title-container {
+    margin-right: 3.5rem;
+  }
+  .address-container {
+    margin-right: 4rem;
+  }
+
+  .contact-name-container {
+    margin-right: 2.5rem;
+  }
+  .info-container {
+    margin-right: 5rem;
+  }
+
+  .warehouse-container {
+    margin-right: 2.5rem;
+  }
+
+  .contact-name {
+    margin-right: 2rem;
+  }
+
+  .warehouse {
+    width: 90vw;
+    padding: 0 $spacing-big;
+    margin-inline: auto;
+    border-top: $divider-width solid $divider-color;
+
+    @include flexbox(row, center, center);
+
+    &-card {
+      width: 73vw;
+      border-top: 0;
+      margin-right: 1rem;
+
+      @include flexbox(row, center, center);
+      // padding: 0 $spacing-big;
+    }
+
+    &__icon--mobile {
+    }
+  }
+
+  .info {
+    word-break: break-all;
+  }
+}
+
+// desktop mode
+
+@include desktop {
+  .warehouse__title-container--tablet,
+  .address-container--tablet,
+  .contact-name-container--tablet,
+  .info-container--tablet {
+    width: 20vw;
+  }
+
+  .warehouse__title-container {
+    margin-right: 3.5rem;
+    margin-bottom: 0;
+  }
+  .warehouse {
+    &__title {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .address-container {
+    margin-right: 6.5vw;
+    margin-bottom: 0;
+  }
+  .address {
+    &__title {
+      margin-bottom: 0;
+    }
+  }
+  .contact-name-container {
+    // margin-right: 2vw;
+    margin-bottom: 0;
+  }
+  .contact-name {
+    &__title {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .info-container {
+    width: 16vw;
+    // padding: 0.8rem 0;
+    // margin-right: 5rem;
+  }
+
+  .info {
+    &__title {
+      margin-bottom: 0;
+    }
+  }
+
+  .warehouse {
+    width: 83vw;
+    padding: 0 $spacing-big;
+
+    &-card {
+      width: 68vw;
+    }
+  }
+}
