@@ -1,0 +1,48 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  padding: $spacing-small;
+
+  @include flexbox(column, space-between, flex-end);
+
+  @include tablet {
+    width: 80vw;
+    height: 30vh;
+  }
+
+  &__heading {
+    font-size: $mob-page-header;
+    color: $color-primary-black;
+    margin-bottom: $spacing-small;
+  }
+
+  &__text {
+    font-size: $mob-body-large;
+    color: $color-primary-black;
+  }
+
+  //   a {
+  //   }
+
+  &__icon {
+    text-decoration: none;
+    font-size: $mob-label-link-button-body-medium;
+    margin-left: 1rem;
+    padding: 0.4rem $spacing-small;
+    border-radius: $button-form-tag-radius;
+
+    &--cancel {
+      color: $color-secondary-slate;
+      border: $divider-width solid $divider-color;
+    }
+    &--delete {
+      // font-size: $mob-label-link-button-body-medium;
+      color: $color-primary-white;
+      background-color: $color-background-red;
+    }
+  }
+}
