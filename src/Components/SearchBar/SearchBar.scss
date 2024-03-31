@@ -30,3 +30,24 @@
 }
 
 // tablet view
+
+@include tablet {
+  .searchBar {
+    width: 25vw;
+    font-size: $desk-label-link-button-body-medium;
+    margin-bottom: 0;
+    margin-right: $spacing-small;
+
+    &__input {
+      font-size: $desk-table-header-body-small;
+    }
+  }
+}
+
+// desktop view
+
+@include desktop {
+  .searchBar {
+    width: 20vw;
+  }
+}

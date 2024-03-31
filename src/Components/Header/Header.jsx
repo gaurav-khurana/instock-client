@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <div className="header">
+    <header className="header">
       <div className="header__logo-and-nav-bar">
         <Link to={"/"}>
           <div className="header__logo">
@@ -34,8 +34,8 @@ function Header() {
           {/* </div> */}
         </div>
       </div>
-      <div className="header__blank-space"></div>
-    </div>
+      {/* <div className="header__blank-space"></div> */}
+    </header>
   );
 }
 

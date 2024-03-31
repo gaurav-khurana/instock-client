@@ -23,7 +23,6 @@ function IconsContainer({
   inventoryId,
   inventoryName,
 }) {
-  // let subtitle;
   const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
@@ -32,7 +31,6 @@ function IconsContainer({
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
-    // subtitle.style.color = "#f00";
   }
 
   function closeModal() {
@@ -41,7 +39,7 @@ function IconsContainer({
 
   return (
     <div className="icons">
-      <h3 className="icons__title--mobile">ACTIONS</h3>
+      <h3 className="icons__title--mobile icons__title--tablet ">ACTIONS</h3>
       <div className="icons-container">
         <img
           onClick={openModal}
@@ -60,10 +58,6 @@ function IconsContainer({
           style={customStyles}
           contentLabel="Example Modal"
         >
-          {/* <div>
-            <h1>Yo</h1><span>Do you want to delete</span>
-          </div> */}
-
           <CustomModal
             onRequestClose={closeModal}
             warehouseId={warehouseId}

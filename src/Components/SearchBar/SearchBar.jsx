@@ -3,8 +3,6 @@ import SearchIcon from "../../assets/Icons/search-24px.svg";
 
 function SearchBar() {
   return (
-    /* SEARCH BAR */
-
     <div className="searchBar">
       <input
         className="searchBar__input"

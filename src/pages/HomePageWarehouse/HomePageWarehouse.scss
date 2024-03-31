@@ -30,6 +30,7 @@
     font-size: $mob-page-header;
     margin-top: $spacing-big;
     margin-bottom: $spacing-small;
+    flex-grow: 1;
   }
 
   &__button {
@@ -44,4 +45,77 @@
   }
 }
 
+// hide static header section for tablet mode in mobile view
+.warehouse-card-header--tablet {
+  text-align: center;
+  display: none;
+}
+
 // tablet view
+
+@include tablet {
+  .main {
+    &__content {
+      margin-inline: auto;
+    }
+  }
+
+  .warehouse-header {
+    padding: 0 $spacing-big;
+    @include flexbox(row, flex-start, center);
+
+    &__title {
+      font-size: $desk-page-header;
+      margin-top: 2rem;
+      // cn remove margins & give height to W.H header here
+    }
+
+    &__button {
+      width: 20vw;
+      font-size: $desk-label-link-button-body-medium;
+      margin-bottom: 0;
+    }
+  }
+
+  .warehouse-card-header--tablet {
+    width: 90vw;
+    background-color: $color-background-light-grey;
+    padding: 0 $spacing-big;
+    @include flexbox(row, flex-start, center);
+  }
+
+  .warehouse__title--tablet {
+    width: 13vw;
+  }
+}
+
+// desktop mode
+
+@include desktop {
+  .main {
+    &__content {
+      width: 83vw;
+    }
+  }
+
+  .warehouse-card-header--tablet {
+    width: 83vw;
+    padding: 0.8rem $spacing-big;
+
+    @include flexbox(row, flex-start, center);
+    // @include flexbox(row, space-between, center);
+  }
+
+  .warehouse-header {
+    width: 83vw;
+    // padding: 0 $spacing-big;
+
+    &__button {
+      width: 12vw;
+    }
+  }
+
+  .address-container {
+    @include flexbox(row, flex-start, center);
+  }
+}

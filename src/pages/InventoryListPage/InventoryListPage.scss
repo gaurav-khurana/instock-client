@@ -2,7 +2,7 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/variables" as *;
 
-// header section for warehouses with title, searchbar & button
+// header section for inventories with title, searchbar & button
 .inventory-main {
   width: 100vw;
   background-color: $color-background-light-grey;
@@ -42,4 +42,87 @@
   }
 }
 
+// hide static header section for tablet mode in mobile view
+.inventory-card-header--tablet {
+  display: none;
+}
+
 // tablet view
+
+@include tablet {
+  .inventory-main {
+    &__content {
+      margin-inline: auto;
+    }
+  }
+
+  .inventory-header {
+    padding: 0 $spacing-big;
+    @include flexbox(row, flex-start, center);
+
+    &__title {
+      font-size: $desk-page-header;
+      margin-top: 2rem;
+      flex-grow: 1;
+      // cn remove margins & give height to W.H header here
+    }
+
+    &__button {
+      width: 20vw;
+      font-size: $desk-label-link-button-body-medium;
+      margin-bottom: 0;
+    }
+  }
+
+  .inventory-card-header--tablet {
+    width: 90vw;
+    background-color: $color-background-light-grey;
+    padding: 0.8rem $spacing-big;
+    text-align: center;
+
+    @include flexbox(row, flex-start, center);
+  }
+
+  .inventory__title--tablet {
+    width: 15vw;
+    // @include flexbox(row, flex-start, center);
+    @include flexbox(row, center, center);
+  }
+}
+
+// desktop mode
+
+@include desktop {
+  .inventory-main {
+    &__content {
+      width: 83vw;
+    }
+  }
+
+  .inventory-card-header--tablet {
+    width: 83vw;
+    padding: 0.8rem $spacing-big;
+
+    @include flexbox(row, flex-start, center);
+    // @include flexbox(row, space-between, center);
+  }
+
+  .inventory-header {
+    width: 83vw;
+    // padding: 0 $spacing-big;
+
+    &__button {
+      width: 12vw;
+    }
+  }
+
+  .inventory__title--tablet {
+    // width: 15vw;
+    @include flexbox(row, flex-start, center);
+    // @include flexbox(row, center, center);
+  }
+
+  .address-container {
+    @include flexbox(row, flex-start, center);
+  }
+}

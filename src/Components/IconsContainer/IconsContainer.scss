@@ -9,16 +9,46 @@
   @include flexbox(column, center, flex-start);
 
   &__title--mobile {
-    font-size: $desk-label-link-button-body-medium;
-    color: $color-secondary-cloud;
+    font-size: $mob-label-link-button-body-medium;
+    color: $color-secondary-slate;
     display: none;
 
     @include tablet {
       display: inline-block;
+      // display: none;
     }
   }
   &-container {
     width: 80vw;
     @include flexbox(row, space-between, center);
+  }
+}
+
+// tablet view
+
+@include tablet {
+  .icons {
+    width: 9vw;
+  }
+  .icons-container {
+    width: 9vw;
+  }
+
+  .icons {
+    &__title--mobile {
+      font-size: $desk-table-header-body-small;
+    }
+
+    &__title--tablet {
+      display: none;
+    }
+  }
+}
+
+// desktop view
+
+@include desktop {
+  .icons-container {
+    width: 6vw;
   }
 }

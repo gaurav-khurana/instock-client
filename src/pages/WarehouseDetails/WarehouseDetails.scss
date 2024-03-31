@@ -14,7 +14,7 @@
     // border: $divider-width solid $divider-color; // remove later
     border-radius: 5px;
     position: relative;
-    top: -4rem;
+    top: -6rem;
   }
 }
 
@@ -48,6 +48,16 @@
     margin-left: $radio-space-big;
   }
 
+  &__text {
+    font-size: $desk-label-link-button-body-medium;
+    color: $color-primary-white;
+    display: none;
+
+    @include tablet {
+      display: inline-block;
+    }
+  }
+
   &__icon-container {
     background-color: $color-primary-indigo;
     color: $color-primary-white;
@@ -64,16 +74,6 @@
   &__icon {
     color: $color-primary-white;
     margin-right: $radio-space-small;
-  }
-
-  &__text {
-    font-size: $desk-label-link-button-body-medium;
-    color: $color-primary-black;
-    display: none;
-
-    @include tablet {
-      display: inline-block;
-    }
   }
 }
 
@@ -123,8 +123,9 @@
 }
 
 .warehouse-info {
-  &-container {
-  }
+  // &-container {
+  // }
+
   &__title {
     font-size: $mob-table-header-body-small;
     color: $color-secondary-slate;
@@ -137,22 +138,13 @@
   }
 }
 
-// old styles see if usable
-// &__title {
-//   font-size: $mob-page-header;
-//   margin-top: $spacing-big;
-//   margin-bottom: $spacing-small;
-// }
-
-// &__button {
-//   width: 80vw;
-//   background-color: $color-primary-indigo;
-//   color: $color-primary-white;
-//   font-size: $mob-label-link-button-body-medium;
-//   border: 0;
-//   border-radius: $button-form-tag-radius;
-//   margin-bottom: $spacing-small;
-//   padding: 0.5rem;
-// }
-
 // tablet view
+
+@include tablet {
+  .warehouse-details {
+    &-main__content {
+      margin-inline: auto;
+      top: -8.5rem;
+    }
+  }
+}
