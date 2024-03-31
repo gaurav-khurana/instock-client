@@ -27,12 +27,8 @@ function InventoryCard({ inventory }) {
 
               {/* link path INCORRECT - probably line 29 correct; goes to Single item in Inventory */}
               {/* <Link to={`/warehousesdetails`} warehouse={warehouse}> */}
-<<<<<<< HEAD
-              <Link to={`/inventories/:${inventory.id}`}>
-=======
-              <Link to={`/inventories/${inventory.id}`}  inventory={inventory}>
-              {/* <Link to={`/inventories/:id`}> */}
->>>>>>> remotes/origin/krisInstock
+              <Link to={`/inventories/${inventory.id}`} inventory={inventory}>
+                {/* <Link to={`/inventories/:id`}> */}
                 <div className="inventory-name-container">
                   <p className="inventory-name__title-name">
                     {inventory.item_name}
