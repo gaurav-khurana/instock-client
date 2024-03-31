@@ -4,6 +4,7 @@ import SortIcon from "../../assets/Icons/sort-24px.svg";
 
 import { Link } from "react-router-dom";
 import IconsContainer from "../IconsContainer/IconsContainer";
+// import InventoryDetails from "../../pages/InventoryDetails/InventoryDetails";
 
 function InventoryCard({ inventory }) {
   return (
@@ -24,9 +25,9 @@ function InventoryCard({ inventory }) {
                 />
               </div>
 
-              {/* link path INCORRECT - probably line 29 correct; goes to Single item in Inventory */}
-              {/* <Link to={`/warehousesdetails`} warehouse={warehouse}> */}
-              <Link to={`/inventories/:${inventory.id}`}>
+              {/* link path- goes to Single item in Inventory */}
+
+              <Link to={`/inventories/${inventory.id}`}>
                 <div className="inventory-name-container">
                   <p className="inventory-name__title-name">
                     {inventory.item_name}

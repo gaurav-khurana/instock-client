@@ -1,22 +1,308 @@
-@use '../../styles/mixins' as *;
-@use '../../styles/variables' as *;
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+// header section for warehouses with title, searchbar & button
+.inventory-details-main {
+  width: 100vw;
+  background-color: $color-background-light-grey;
+
+  &__content {
+    width: 90vw;
+    margin: 0 $spacing-small;
+    background-color: $color-primary-white;
+    // border: $divider-width solid $divider-color; // remove later
+    border-radius: 5px;
+    position: relative;
+    top: -4rem;
+  }
+  
+}
+
+// warehouse header section with name & icon to edit
+
+.inventory-details-header {
+  width: 90vw;
+  padding: 0 $spacing-small;
+
+  @include flexbox(row, space-between, center);
+}
 
 .inventory-details {
-    @include flexbox;
+  padding: $spacing-small;
+  padding-top: $spacing-big;
+  border-top: $divider-width solid $divider-color;
 
-    &__edit-pic {
-        // color: $color-primary-white;
-        // background-color: $color-primary-indigo;
+  @include flexbox(column, center, flex-start);
+
+  &__name-container,
+  &__icon-container {
+    margin-top: $spacing-big;
+    margin-bottom: $spacing-small;
+
+    @include flexbox(row, space-between, center);
+  }
+
+  &__title {
+    font-size: $mob-page-header;
+    color: $color-primary-black;
+    margin-left: $radio-space-big;
+  }
+
+  &__icon-container {
+    background-color: $color-primary-indigo;
+    color: $color-primary-white;
+    border-radius: 100%;
+    padding: 0.8rem;
+    // margin-left: 0.2rem;
+
+    @include tablet {
+      padding: 0.8rem 1.6rem;
+      border-radius: $button-form-tag-radius;
     }
-    &__item {
-     display: inline-flex;
+  }
+
+  &__icon {
+    color: $color-primary-white;
+    margin-right: $radio-space-small;
+  }
+
+  &__edit {
+    font-size: $desk-label-link-button-body-medium;
+    color: $color-primary-white;
+    display: none;
+
+    @include tablet {
+      display: inline-block;
+    }
+  }
+}
+
+  .inventory-details__section {
+    width: 85vw;
+    border-top: $divider-width solid $divider-color;
+    padding: 0 $spacing-small;
   
+    @include flexbox(column, flex-start, flex-start);
+   
+    @include tablet {
+      flex-direction: row;
+// TODO
+      width: 100%;
+      flex-wrap: wrap;
+      padding: 2rem;
+//
+
     }
-    &__info {
-        border: solid 3px red;
-    }
+  }
+  
+  .inventory-category__container {
+    @include flexbox(column, center, flex-start);
+
+// TODO
+@include tablet {
+  width: 50%;
+  padding-right: $spacing-small;
+  border-right: $divider-width solid $divider-color;
 }
 
-.details__description-and-category {
-    border: solid 3px blue;
+  }
+
+  .status-QTY-warehouse__container {
+    @include tablet {
+      // display: flex;
+      // flex-direction: column;
+
+      // TODO
+      width: 50%;
+      padding-left: $spacing-small;
+
+    }
+  }
+
+  .status-QTY__container {
+    @include flexbox(row, center, flex-start);
+  align-items: baseline;
+@include tablet {
+  @include flexbox(row, center, flex-start);
+justify-content: flex-start;
+  
 }
+
+
+
+  }
+  
+  .inventory-category-container {
+    width: 35vw;
+    margin-right: $spacing-big;
+  }
+  
+  .inventory {
+    &__title-details {
+      font-size: $mob-table-header-body-small;
+      color: $color-secondary-slate;
+      margin-top: 0.8rem;
+      margin-bottom: 0.8rem;
+  
+      &--container {
+        margin-bottom: 0.8rem;
+  
+        @include flexbox(column, flex-start);
+      }
+    }
+  
+    &-name {
+      &-container {
+        @include flexbox(row, flex-start, center);
+      }
+  
+      &__title-name {
+        font-size: $mob-label-link-button-body-medium;
+        color: $color-primary-indigo;
+        margin-bottom: 0.8rem;
+      }
+  
+      &__image {
+        margin-bottom: 0.8rem;
+      }
+    }
+  
+    &__icon {
+      width: 24px;
+      height: 24px;
+      display: none;
+  
+      @include tablet {
+        &--mobile {
+          display: inline-block;
+        }
+      }
+    }
+  }
+  
+  // category styles
+  
+  .category {
+    @include flexbox(column, center, flex-start);
+
+    @include tablet{
+      padding-top: 1rem
+    }
+  
+    &-container {
+      @include flexbox(row, center, center);
+    }
+  
+    &__title {
+      color: $color-secondary-slate;
+      font-size: $mob-table-header-body-small;
+      margin-bottom: 0.8rem;
+    }
+  
+    &__text {
+      font-size: $mob-label-link-button-body-medium;
+      color: $color-primary-black;
+      margin-bottom: 0.8rem;
+    }
+
+   
+  }
+  
+  // status styles
+  
+  .status {
+    &-container {
+      margin-bottom: 0.8rem;
+      @include flexbox(row, flex-start, center);
+      width: 50vw;
+    }
+  
+    // &__title {
+    //   font-size: $mob-table-header-body-small;
+    //   color: $color-secondary-slate;
+    //   margin-top: 0.8rem;
+    //   margin-bottom: 0.8rem;
+    // }
+  
+    &__text {
+      font-size: $mob-label-link-button-body-medium;
+      margin-bottom: 0.8rem;
+      height: $tag-height-mobile;
+      padding-top: 0.2rem;
+      padding-left: 1.2rem;
+      border-radius: $button-form-tag-radius;
+  
+      &--green {
+        width: 6.5rem;
+        background-color: rgba(21, 132, 99, 0.07);
+        color: $color-background-green;
+      }
+      &--red {
+        width: 9rem;
+        background-color: rgba(201, 69, 21, 0.07);
+        color: $color-background-red;
+      }
+    }
+  
+    &__image {
+      width: 24px;
+      height: 24px;
+      display: none;
+  
+      @include tablet {
+        &--mobile {
+          display: inline-block;
+        }
+      }
+    }
+    @include tablet {
+      width: 20vw;
+      
+    }
+  }
+  
+  // quantity styles
+  
+  .QTY {
+    &-container {
+      width: 45vw;
+      @include flexbox(row, flex-start, center);
+
+    }
+    
+    @include tablet {
+      width: 20vw;
+    }
+    // &__title {
+    //   font-size: $mob-table-header-body-small;
+    //   color: $color-secondary-slate;
+    //   margin-bottom: 1rem;
+    // }
+  
+    &__text {
+      font-size: $mob-label-link-button-body-medium;
+      color: $color-primary-black;
+      margin-bottom: 0.4rem;
+    }
+  
+    &__image {
+      width: 24px;
+      height: 24px;
+      display: none;
+  
+      @include tablet {
+        &--mobile {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .warehouse-inventory-details__container {
+    @include tablet {
+      padding-top: 1rem;
+    }
+  }
+  
+  // tablet view
