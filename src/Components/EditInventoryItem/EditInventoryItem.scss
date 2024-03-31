@@ -1,0 +1,14 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+
+.item-name{
+
+}
+.item-title{
+    font-size: $mob-table-header-body-small;
+    color: $color-secondary-slate;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}

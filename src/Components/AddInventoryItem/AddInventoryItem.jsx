@@ -76,7 +76,7 @@ function AddInventoryItem() {
     useEffect(() => {
         const fetchWarehouseNames = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/warehouses/`);
+                const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/warehouses/`);
                 setWarehouseNames(response.data);
             } catch (error) {
                 console.error('Error fetching warehouse names:', error);
@@ -85,7 +85,7 @@ function AddInventoryItem() {
 
         const fetchCategoryNames = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/inventories/`);
+                const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/inventories`);
                 const uniqueCategoryNames = Array.from(new Set(response.data.map(item => item.category)));
                 setCategoryNames(uniqueCategoryNames);
             } catch (error) {
@@ -109,7 +109,7 @@ function AddInventoryItem() {
         event.preventDefault();
         if (isItemNameValid(itemName) && isItemDescriptionValid(itemDescription) && isSelectedItemValid1(selectedOption1) && isSelectedItemValid2(selectedOption2) && isItemQuantityValid(itemQuantity)) {
             try {
-                await axios.post("http://localhost:8080/inventories", {
+                await axios.post(`${process.env.REACT_APP_BASE_URL}/inventories`, {
                     item_name: itemName,
                     description: itemDescription,
                     category: selectedOption1,
@@ -143,13 +143,13 @@ function AddInventoryItem() {
             <div>
                 <form className='form' onSubmit={handleSubmit}>
                     <div className="details-container1">
-                        <h3>Item Details</h3>
-                        <label htmlFor="">Item Name</label>
-                        <input value={itemName} onChange={handleItemName} type='text' placeholder='Item Name'></input>
-                        <label htmlFor="">Description</label>
-                        <input value={itemDescription} onChange={handleDescription} type='text' placeholder='Please enter a brief description'></input>
-                        <label htmlFor="">Category</label>
-                        <select value={selectedOption1} onChange={handleSelectChange1} required>
+                        <h3 className='item-title'>Item Details</h3>
+                        <label className='item-name' htmlFor=""> Item Name </label>
+                        <input className='item-name-input' value={itemName} onChange={handleItemName} type='text' placeholder='Item Name'></input>
+                        <label className='item-description' htmlFor="">Description</label>
+                        <input className='item-description-input'value={itemDescription} onChange={handleDescription} type='text' placeholder='Please enter a brief description'></input>
+                        <label className='item-category' htmlFor="">Category</label>
+                        <select className='item-category-input'value={selectedOption1} onChange={handleSelectChange1} required>
                             {categoryNames.map(category => (
                                 <option key={category} value={category}>{category}</option>
                             ))}
@@ -157,7 +157,7 @@ function AddInventoryItem() {
                     </div>
                     <div className="details-container2">
                         <h3>Item Availability</h3>
-                        <h4>Status</h4>
+                        <h4 className='item-status'>Status</h4>
                         <div>
                             <input type="radio" id="inStockButton" name="inStock-button" value="inStock" checked={selectedRadioButton === 'inStock'} onChange={handleRadioChange} />
                             <label htmlFor="inStockButton">In Stock</label>
@@ -166,10 +166,10 @@ function AddInventoryItem() {
                             <input type="radio" id="OutOfStockButton" name="OutOfStock-button" value="outOfStock" checked={selectedRadioButton === 'outOfStock'} onChange={handleRadioChange} />
                             <label htmlFor="OutOfStockButton">Out of Stock</label>
                         </div>
-                        <label htmlFor="">Quantity</label>
-                        <input value={itemQuantity} onChange={handleItemQuantity} type='text' placeholder='0'></input>
-                        <label htmlFor="">Warehouse</label>
-                        <select value={selectedOption2} onChange={handleSelectChange2} required>
+                        <label className='item-quantity' htmlFor="">Quantity</label>
+                        <input className='item-quantity-input'value={itemQuantity} onChange={handleItemQuantity} type='text' placeholder='0'></input>
+                        <label className='item-warehouse'htmlFor="">Warehouse</label>
+                        <select className='item-warehouse-input'value={selectedOption2} onChange={handleSelectChange2} required>
                             {warehouseNames.map(warehouse => (
                                 <option key={warehouse.id} value={warehouse.warehouse_name}>{warehouse.warehouse_name}</option>
                             ))}

@@ -38,7 +38,7 @@ function InventoryListPage() {
             <SearchBar />
 
             {/* add path to link */}
-            <Link>
+            <Link to="/addInventoryItem">
               <button className="inventory-header__button">
                 + Add New Item
               </button>

@@ -7,7 +7,114 @@
     font-size: 12px;
 }
 
+.details-container1 {
+    @include flexbox(column, center, flex-start);
+}
+
+.details-container2 {
+    @include flexbox(column, center, flex-start);
+}
+
 .form {
     display: flex;
     flex-direction: column;
+}
+
+.item-name {
+    font-size: $mob-table-header-body-small;
+    color: $color-secondary-slate;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.item-name-input {
+    width: 80vw;
+    color: $color-primary-white;
+    font-size: $mob-label-link-button-body-medium;
+    border: 1px solid #BDC5D5;
+    border-radius: $button-form-tag-radius;
+    margin-bottom: $spacing-small;
+    padding: 0.5rem;
+}
+
+.item-title {
+    font-size: $mob-table-header-body-small;
+    color: $color-secondary-slate;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.item-description {
+    font-size: $mob-table-header-body-small;
+    color: $color-secondary-slate;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.item-description-input {
+    width: 80vw;
+    color: $color-primary-white;
+    font-size: $mob-label-link-button-body-medium;
+    border: 1px solid #BDC5D5;
+    border-radius: $button-form-tag-radius;
+    margin-bottom: $spacing-small;
+    padding: 0.5rem;
+}
+
+.item-category {
+    font-size: $mob-table-header-body-small;
+    color: $color-secondary-slate;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.item-category-input {
+    width: 80vw;
+    color: $color-primary-white;
+    font-size: $mob-label-link-button-body-medium;
+    border: 1px solid #BDC5D5;
+    border-radius: $button-form-tag-radius;
+    margin-bottom: $spacing-small;
+    padding: 0.5rem;
+}
+
+.item-status {
+    font-size: $mob-table-header-body-small;
+    color: $color-secondary-slate;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.item-quantity {
+    font-size: $mob-table-header-body-small;
+    color: $color-secondary-slate;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.item-quantity-input {
+    width: 80vw;
+    color: $color-primary-white;
+    font-size: $mob-label-link-button-body-medium;
+    border: 1px solid #BDC5D5;
+    border-radius: $button-form-tag-radius;
+    margin-bottom: $spacing-small;
+    padding: 0.5rem;
+}
+
+.item-warehouse {
+    font-size: $mob-table-header-body-small;
+    color: $color-secondary-slate;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.item-warehouse-input {
+    width: 80vw;
+    color: $color-primary-white;
+    font-size: $mob-label-link-button-body-medium;
+    border: 1px solid #BDC5D5;
+    border-radius: $button-form-tag-radius;
+    margin-bottom: $spacing-small;
+    padding: 0.5rem;
 }
