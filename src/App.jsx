@@ -15,10 +15,11 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header />
-        <Routes>
+        <Routes>    
           {/* <Route path="/InventoryDetails" element={<InventoryDetails />} /> */}
           <Route path="/" element={<HomePageWarehouse />} />
 
+<<<<<<< HEAD
           <Route path="/inventory" element={<InventoryListPage />} />
 
           {/* <Route path="/InventoryDetails" element={<InventoryDetails />} /> */}
@@ -27,24 +28,27 @@ function App() {
             element={<InventoryDetails />}
           />
 
+=======
+>>>>>>> remotes/origin/krisInstock
           <Route path="/warehousesdetails" element={<WarehouseDetails />} />
 
           <Route
             path="/warehouses/:id/inventories"
             element={<WarehouseDetails />}
+          
           />
-
+          
           <Route path="/editwarehouse" element={<WarehouseEdit />} />
-
+          
           <Route path="/inventory" element={<InventoryListPage />} />
 
-          <Route
-            path="/inventories/:inventoryId"
-            element={<InventoryDetails />}
-          />
+          <Route path="/inventories/:inventoryId" element={<InventoryDetails />} />
+          
+
 
           {/* <Route path="/InventoryDetails" element={<InventoryDetails />} /> */}
           {/* <Route path="/InventoryDetails/:inventoryId" element={<InventoryDetails />} /> */}
+          
 
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
