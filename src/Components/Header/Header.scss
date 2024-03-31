@@ -5,11 +5,12 @@
 
 .header {
   width: 100vw;
+  height: 35vh;
   background-color: $color-background-graphite;
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding-bottom: 5rem;
+  // padding-bottom: 5rem;
 
   &__logo {
     padding: 2rem 0 1rem 0;
@@ -51,9 +52,9 @@
     // background-color: $color-background-graphite;
   }
 
-  &__blank-space {
-    flex-grow: 1;
-  }
+  // &__blank-space {
+  //   flex-grow: 1;
+  // }
 }
 
 .button {
@@ -71,10 +72,13 @@ a {
 
 @include tablet {
   .header {
+    height: 15vh;
     &__logo-and-nav-bar {
+      width: 90vw;
       display: inline-flex;
       justify-content: space-between;
-      margin: 0 2rem;
+      // margin: 0 2rem;
+      margin-inline: auto;
     }
     &__button {
       margin: 0;
@@ -84,11 +88,13 @@ a {
 
 @include desktop {
   .header {
+    height: 17.5vh;
   }
 
-  .header__logo-and-nav-bar {
-    display: inline-flex;
-    justify-content: space-between;
-    margin: 0 5rem;
-  }
+  // .header__logo-and-nav-bar {
+  //   // width: 90vw;
+  //   display: inline-flex;
+  //   justify-content: space-between;
+  //   // margin: 0 5rem;
+  // }
 }
