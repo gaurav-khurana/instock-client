@@ -27,6 +27,9 @@
 // tablet view
 
 @include tablet {
+  .icons {
+    width: 9vw;
+  }
   .icons-container {
     width: 9vw;
   }
