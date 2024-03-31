@@ -7,6 +7,7 @@ import HomePageWarehouse from "./pages/HomePageWarehouse/HomePageWarehouse";
 import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
 import WarehouseEdit from "./pages/WarehouseEdit/WarehouseEdit";
 import InventoryCard from "./Components/InventoryCard/InventoryCard";
+import Footer from "./Components/Footer/Footer";
 
 import InventoryListPage from "./pages/InventoryListPage/InventoryListPage";
 
@@ -41,6 +42,8 @@ function App() {
 
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
+
+        <Footer />
       </BrowserRouter>
     </div>
   );
