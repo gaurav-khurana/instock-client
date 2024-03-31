@@ -67,9 +67,9 @@
     margin-right: $radio-space-small;
   }
 
-  &__text {
+  &__edit {
     font-size: $desk-label-link-button-body-medium;
-    color: $color-primary-black;
+    color: $color-primary-white;
     display: none;
 
     @include tablet {
@@ -77,17 +77,60 @@
     }
   }
 }
-  
-  .inventory-card {
-    width: 80vw;
+
+  .inventory-details__section {
+    width: 85vw;
     border-top: $divider-width solid $divider-color;
+    padding: 0 $spacing-small;
   
     @include flexbox(column, flex-start, flex-start);
+   
+    @include tablet {
+      flex-direction: row;
+// TODO
+      width: 100%;
+      flex-wrap: wrap;
+      padding: 2rem;
+//
+
+    }
   }
   
-  .inventory-category-container,
-  .status-QTY-container {
+  .inventory-category__container {
     @include flexbox(column, center, flex-start);
+
+// TODO
+@include tablet {
+  width: 50%;
+  padding-right: $spacing-small;
+  border-right: $divider-width solid $divider-color;
+}
+
+  }
+
+  .status-QTY-warehouse__container {
+    @include tablet {
+      // display: flex;
+      // flex-direction: column;
+
+      // TODO
+      width: 50%;
+      padding-left: $spacing-small;
+
+    }
+  }
+
+  .status-QTY__container {
+    @include flexbox(row, center, flex-start);
+  align-items: baseline;
+@include tablet {
+  @include flexbox(row, center, flex-start);
+justify-content: flex-start;
+  
+}
+
+
+
   }
   
   .inventory-category-container {
@@ -95,23 +138,17 @@
     margin-right: $spacing-big;
   }
   
-  .status-QTY-container {
-    width: 42vw;
-  }
-  
-  // inventory styles
-  
   .inventory {
-    &__title {
+    &__title-details {
       font-size: $mob-table-header-body-small;
       color: $color-secondary-slate;
       margin-top: 0.8rem;
       margin-bottom: 0.8rem;
   
-      &-container {
+      &--container {
         margin-bottom: 0.8rem;
   
-        @include flexbox(row, flex-start, center);
+        @include flexbox(column, flex-start);
       }
     }
   
@@ -148,6 +185,10 @@
   
   .category {
     @include flexbox(column, center, flex-start);
+
+    @include tablet{
+      padding-top: 1rem
+    }
   
     &-container {
       @include flexbox(row, center, center);
@@ -164,6 +205,8 @@
       color: $color-primary-black;
       margin-bottom: 0.8rem;
     }
+
+   
   }
   
   // status styles
@@ -171,16 +214,16 @@
   .status {
     &-container {
       margin-bottom: 0.8rem;
-  
       @include flexbox(row, flex-start, center);
+      width: 50vw;
     }
   
-    &__title {
-      font-size: $mob-table-header-body-small;
-      color: $color-secondary-slate;
-      margin-top: 0.8rem;
-      margin-bottom: 0.8rem;
-    }
+    // &__title {
+    //   font-size: $mob-table-header-body-small;
+    //   color: $color-secondary-slate;
+    //   margin-top: 0.8rem;
+    //   margin-bottom: 0.8rem;
+    // }
   
     &__text {
       font-size: $mob-label-link-button-body-medium;
@@ -213,6 +256,10 @@
         }
       }
     }
+    @include tablet {
+      width: 20vw;
+      
+    }
   }
   
   // quantity styles
@@ -221,13 +268,17 @@
     &-container {
       width: 45vw;
       @include flexbox(row, flex-start, center);
+
     }
-  
-    &__title {
-      font-size: $mob-table-header-body-small;
-      color: $color-secondary-slate;
-      margin-bottom: 1rem;
+    
+    @include tablet {
+      width: 20vw;
     }
+    // &__title {
+    //   font-size: $mob-table-header-body-small;
+    //   color: $color-secondary-slate;
+    //   margin-bottom: 1rem;
+    // }
   
     &__text {
       font-size: $mob-label-link-button-body-medium;
@@ -245,6 +296,12 @@
           display: inline-block;
         }
       }
+    }
+  }
+
+  .warehouse-inventory-details__container {
+    @include tablet {
+      padding-top: 1rem;
     }
   }
   
