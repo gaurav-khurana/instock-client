@@ -44,6 +44,7 @@ function HomePageWarehouse() {
             </Link>
           </article>
 
+          {/* static header for warehouse list for tablet & desktop */}
           <article className="warehouse-card-header--tablet">
             <div className="warehouse__title-container warehouse__title--tablet">
               <h3 className="warehouse__title">WAREHOUSE</h3>

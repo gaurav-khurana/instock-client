@@ -7,14 +7,14 @@ import IconsContainer from "../IconsContainer/IconsContainer";
 
 function InventoryCard({ inventory }) {
   return (
-    <div>
+    <>
       {/* InventoryCard */}
 
       <section className="inventory">
         <section className="inventory-card">
           <article className="inventory-category-container">
             <div className="inventory-container">
-              <div className="inventory__title-container">
+              <div className="inventory__title-container inventory__title-container--tablet">
                 <h3 className="inventory__title">INVENTORY ITEM</h3>
 
                 <img
@@ -31,10 +31,6 @@ function InventoryCard({ inventory }) {
                   <p className="inventory-name__title-name">
                     {inventory.item_name}
                   </p>
-                  {/* <p className="inventory-name__title-name">Television</p> */}
-                  {/* <p className="inventory-name__title-name">
-                  {warehouse.warehouse_name}
-                </p> */}
 
                   <img
                     className="warehouse-name__image"
@@ -46,7 +42,7 @@ function InventoryCard({ inventory }) {
             </div>
 
             <div className="category">
-              <div className="category-container">
+              <div className="category-container category-container--tablet">
                 <h3 className="category__title">CATEGORY</h3>
 
                 <img
@@ -55,19 +51,14 @@ function InventoryCard({ inventory }) {
                   alt="Sort Icon"
                 />
               </div>
-              {/* <img className="default hide-mobile" src="" alt="" /> */}
 
               <p className="category__text">{inventory.category}</p>
-              {/* <p className="category__text">Electronics</p> */}
-              {/* <p className="category__text">
-              {warehouse.address},{warehouse.city},{warehouse.country}
-            </p> */}
             </div>
           </article>
 
-          <article className="status-QTY-container">
+          <article className="status-QTY-warehouse-container">
             <div className="status">
-              <div className="status-container">
+              <div className="status-container status-container--tablet">
                 <h3 className="status__title">STATUS</h3>
 
                 <img
@@ -76,7 +67,7 @@ function InventoryCard({ inventory }) {
                   alt="Sort Icon"
                 />
               </div>
-              {/* use ternary operator to in-stock ? 'status__text--green' : 'status__text--red */}
+
               {inventory.status === "In Stock" ? (
                 <div className="status__text status__text--green">
                   {inventory.status}
@@ -86,18 +77,10 @@ function InventoryCard({ inventory }) {
                   {inventory.status}
                 </div>
               )}
-
-              {/* <div className="status__text status__text--green">
-                {inventory.status}
-              </div> */}
-              {/* <div className="status__text status__text--green">In Stock</div> */}
-              {/* <div className="status__text status__text--red">Out of Stock</div> */}
-              {/* <p className="status__text">Parmin Aujla</p> */}
-              {/* <p className="status__text">{warehouse.contact_name}</p> */}
             </div>
 
             <div className="QTY">
-              <div className="QTY-container">
+              <div className="QTY-container QTY-container--tablet">
                 <h3 className="QTY__title">QTY</h3>
 
                 <img
@@ -108,8 +91,22 @@ function InventoryCard({ inventory }) {
               </div>
 
               <p className="QTY__text">{inventory.quantity}</p>
-              {/* <p className="QTY__text">500</p> */}
-              {/* <p className="QTY__text">{warehouse.contact_phone}</p> */}
+            </div>
+
+            <div className="warehouse-inventory">
+              <div className="warehouse-inventory-container warehouse-inventory-container--tablet">
+                <h3 className="warehouse-inventory__title">WAREHOUSE</h3>
+
+                <img
+                  className="inventory__icon inventory__icon--mobile"
+                  src={SortIcon}
+                  alt="Sort Icon"
+                />
+              </div>
+
+              <p className="warehouse-inventory__text">
+                {inventory.warehouse_name}
+              </p>
             </div>
           </article>
         </section>
@@ -119,7 +116,7 @@ function InventoryCard({ inventory }) {
           inventoryName={inventory.item_name}
         />
       </section>
-    </div>
+    </>
   );
 }
 
