@@ -7,6 +7,7 @@ import HomePageWarehouse from "./pages/HomePageWarehouse/HomePageWarehouse";
 import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
 import WarehouseEdit from "./pages/WarehouseEdit/WarehouseEdit";
 import InventoryCard from "./Components/InventoryCard/InventoryCard";
+import Footer from "./Components/Footer/Footer";
 
 import InventoryListPage from "./pages/InventoryListPage/InventoryListPage";
 
@@ -19,17 +20,6 @@ function App() {
           {/* <Route path="/InventoryDetails" element={<InventoryDetails />} /> */}
           <Route path="/" element={<HomePageWarehouse />} />
 
-<<<<<<< HEAD
-          <Route path="/inventory" element={<InventoryListPage />} />
-
-          {/* <Route path="/InventoryDetails" element={<InventoryDetails />} /> */}
-          <Route
-            path="/inventories/:inventoryId"
-            element={<InventoryDetails />}
-          />
-
-=======
->>>>>>> remotes/origin/krisInstock
           <Route path="/warehousesdetails" element={<WarehouseDetails />} />
 
           <Route
@@ -52,6 +42,8 @@ function App() {
 
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
+
+        <Footer />
       </BrowserRouter>
     </div>
   );

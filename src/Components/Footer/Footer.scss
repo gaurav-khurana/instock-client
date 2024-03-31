@@ -1,0 +1,14 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.footer {
+color: $color-secondary-slate;    
+@include flexbox(column, center, flex-start);
+align-items: center;
+padding: $spacing-big;
+
+@include tablet{
+    font-size: $desk-table-header-body-small;
+}
+}
