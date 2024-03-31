@@ -19,17 +19,6 @@ function App() {
           {/* <Route path="/InventoryDetails" element={<InventoryDetails />} /> */}
           <Route path="/" element={<HomePageWarehouse />} />
 
-<<<<<<< HEAD
-          <Route path="/inventory" element={<InventoryListPage />} />
-
-          {/* <Route path="/InventoryDetails" element={<InventoryDetails />} /> */}
-          <Route
-            path="/inventories/:inventoryId"
-            element={<InventoryDetails />}
-          />
-
-=======
->>>>>>> remotes/origin/krisInstock
           <Route path="/warehousesdetails" element={<WarehouseDetails />} />
 
           <Route
