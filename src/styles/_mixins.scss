@@ -2,11 +2,9 @@
 
 // Mixins
 
-@mixin flexbox(
-  $direction: column,
+@mixin flexbox($direction: column,
   $justify-content: flex-start,
-  $align-items: flex-start
-) {
+  $align-items: flex-start) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify-content;
@@ -41,6 +39,18 @@
 
 @mixin desktop {
   @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+//mixin for both tablet and desktop
+
+@mixin tablet-desktop {
+  @include tablet {
+    @content;
+  }
+
+  @include desktop {
     @content;
   }
 }

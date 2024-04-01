@@ -48,7 +48,10 @@ function IconsContainer({
           alt="Delete Icon"
         />
 
-        <Link>
+        {/* <Link>
+          <img className="icons__edit" src={EditIcon} alt="Edit Icon" />
+        </Link> */}
+        <Link to={`/editInventoryItem/${inventoryId}`}>
           <img className="icons__edit" src={EditIcon} alt="Edit Icon" />
         </Link>
         <Modal
