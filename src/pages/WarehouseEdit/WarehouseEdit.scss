@@ -24,8 +24,8 @@
 }
 
 .warehouse-edit {
-    padding: $spacing-small;
-    padding-top: $spacing-big;
+    // padding: $spacing-small;
+    // padding-top: $spacing-big;
     border-top: $divider-width solid $divider-color;
 
     @include flexbox(column, center, flex-start);
@@ -34,7 +34,11 @@
         margin-top: $spacing-big;
         margin-bottom: $spacing-small;
 
-        @include flexbox(row, space-between, center);
+        @include flexbox(row, center, center);
+    }
+
+    &__image {
+        padding: 2rem 0 1rem 0;
     }
 
     &__title {
