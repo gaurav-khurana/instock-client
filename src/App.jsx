@@ -44,8 +44,8 @@ function App() {
 
 
           <Route path="/*" element={<PageNotFound />} />
-          <Route path="/addInventoryItem" element={<AddInventoryItem/>}/>
-          <Route path="/editInventoryItem" element={<EditInventoryItem/>}/>
+          <Route path="/addInventoryItem" element={<AddInventoryItem />} />
+          <Route path="/editInventoryItem/:inventoryId" element={<EditInventoryItem />} />
 
         </Routes>
 
