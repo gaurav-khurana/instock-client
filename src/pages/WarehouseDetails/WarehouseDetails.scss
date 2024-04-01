@@ -142,9 +142,29 @@
 
 @include tablet {
   .warehouse-details {
+    padding: $spacing-big;
+
+    @include flexbox(row, flex-start, center);
+
     &-main__content {
       margin-inline: auto;
       top: -8.5rem;
     }
+  }
+
+  .warehouse-address {
+    width: 40vw;
+    padding-bottom: 0;
+  }
+
+  .warehouse-name-info-container {
+    width: 50vw;
+    border-left: $divider-width solid $divider-color;
+    padding-left: $spacing-big;
+  }
+
+  .warehouse-contact-name,
+  .warehouse-info {
+    width: 20vw;
   }
 }

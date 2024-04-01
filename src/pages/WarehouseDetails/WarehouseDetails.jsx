@@ -52,7 +52,6 @@ function WarehouseDetails() {
   console.log("single warehouse ", singleWarehouse);
   console.log("all inventories ", allInventoriesForThatWarehouse);
 
-  
   return (
     singleWarehouse &&
     allInventoriesForThatWarehouse && (
@@ -96,8 +95,8 @@ function WarehouseDetails() {
                 <h3 className="warehouse-address__title"> WAREHOUSE ADDRESS</h3>
 
                 <p className="warehouse-address__text">
-                  {singleWarehouse.address}, {singleWarehouse.city},
-                  {singleWarehouse.country}
+                  {singleWarehouse.address},<br />
+                  {singleWarehouse.city},{singleWarehouse.country}
                 </p>
               </div>
 
