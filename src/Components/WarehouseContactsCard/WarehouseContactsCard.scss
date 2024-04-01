@@ -2,13 +2,46 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/variables" as *;
 
+* {
+    font-size: 12;
+}
+
 .warehouse-edit__header {
     width: 90vw;
     padding: 0 $spacing-small;
-
+    font-size: $mob-table-header-body-small;
     @include flexbox(row, space-between, center);
 }
 
-.warehouse-edit__form {
-    @include flexbox(column, center, center);
+.warehouse-edit__form{
+    @include flexbox(column, flex-start, flex-start);
+    padding: 0 $spacing-small;
+}
+
+.warehouse-contact,
+.warehouse-position,
+.warehouse-phone,
+.warehouse-email {
+    font-size: $mob-table-header-body-small;
+    font-weight: 600;
+    color: $color-primary-black;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    padding: 0;
+}
+
+.warehouse-contact__input,
+.warehouse-position__input,
+.warehouse-phone__input,
+.warehouse-email__input {
+    width: 80vw;
+    font-size: $mob-label-link-button-body-medium;
+    border: 1px solid #BDC5D5;
+    border-radius: $button-form-tag-radius;
+    margin-bottom: $spacing-small;
+    padding: 0.5rem;
+
+    @include tablet-desktop {
+        width: 40vw;
+    }
 }
