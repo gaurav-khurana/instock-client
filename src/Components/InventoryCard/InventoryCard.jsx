@@ -12,8 +12,8 @@ function InventoryCard({ inventory }) {
       {/* InventoryCard */}
 
       <section className="inventory">
-        <section className="inventory-card">
-          <article className="inventory-category-container">
+        <section className="inventory-card inventory-card--whd">
+          <article className="inventory-category-container inventory-category-container--whd">
             <div className="inventory-container">
               <div className="inventory__title-container inventory__title-container--tablet">
                 <h3 className="inventory__title">INVENTORY ITEM</h3>
@@ -57,7 +57,7 @@ function InventoryCard({ inventory }) {
             </div>
           </article>
 
-          <article className="status-QTY-warehouse-container">
+          <article className="status-QTY-warehouse-container status-QTY-warehouse-container--whd">
             <div className="status">
               <div className="status-container status-container--tablet">
                 <h3 className="status__title">STATUS</h3>

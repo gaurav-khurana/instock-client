@@ -136,7 +136,7 @@ function WarehouseDetails() {
             </section>
 
             {/* static header for inventory list for tablet & desktop */}
-            <article className="inventory-card-header--tablet">
+            <article className="whd-inventory-card-header--tablet">
               <div className="inventory__title-container inventory__title--tablet">
                 <h3 className="inventory__title">INVENTORY ITEM</h3>
 
@@ -182,7 +182,7 @@ function WarehouseDetails() {
               </h3>
             </article>
 
-            <section>
+            <section className="inventory-container">
               {allInventoriesForThatWarehouse?.map((inventory) => (
                 <InventoryCard key={inventory.id} inventory={inventory} />
               ))}

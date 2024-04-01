@@ -291,10 +291,14 @@ a {
     margin-right: 2rem;
   }
 
+  .inventory-container {
+    @include flexbox(column, center, center);
+  }
+
   .inventory {
     width: 83vw;
     padding: 0 $spacing-big;
-    margin-inline: auto;
+    // margin-inline: auto;
     border-top: $divider-width solid $divider-color;
 
     @include flexbox(row, center, center);
@@ -302,7 +306,7 @@ a {
     &-card {
       width: 73vw;
       border-top: 0;
-      margin-right: 1rem;
+      // margin-right: 1rem;
 
       @include flexbox(row, flex-start, center);
     }

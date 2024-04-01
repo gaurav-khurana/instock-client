@@ -167,4 +167,16 @@
   .warehouse-info {
     width: 20vw;
   }
+
+  .whd-inventory-card-header--tablet {
+    // width: 90vw;
+    padding-inline: $spacing-big;
+    @include flexbox(row, space-between, center);
+  }
+
+  .inventory-category-container--whd {
+  }
+  .status-QTY-warehouse-container--whd {
+    // width: 35vw;
+  }
 }
