@@ -1,0 +1,137 @@
+@use '../../styles/global' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/typography' as *;
+@use '../../styles/variables' as *;
+
+* {
+    font-size: 12px;
+}
+
+.main-container {
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: $color-background-light-grey;
+}
+
+.details-container {
+    @include tablet-desktop {
+        display: flex;
+    }
+}
+
+.details-container1,
+.details-container2 {
+    @include flexbox(column, center, flex-start);
+    border-top: $divider-width solid $divider-color;
+    background-color: $color-primary-white;
+
+    @include tablet-desktop {
+        border-right: $divider-width solid $divider-color;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+}
+
+.details-container2 {
+    @include flexbox(column, flex-start);
+}
+
+.details-container2__header {
+    font-size: $mob-sub-header;
+    padding-top: 2%;
+}
+
+.inventory-title-container {
+    img {
+        padding: 2rem 0 1rem 0;
+    }
+
+    @include flexbox(row, center, center);
+    padding-left: 2%;
+}
+
+.inventory-main-title {
+    font-size: $mob-page-header;
+    margin-top: $spacing-big;
+    margin-bottom: $spacing-small;
+    flex-grow: 1;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-name,
+.item-title,
+.item-description,
+.item-category,
+.item-status,
+.item-quantity,
+.item-warehouse,
+.in-stock,
+.out-of-stock {
+    font-size: $mob-table-header-body-small;
+    color: $color-primary-black;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.item-name-input,
+.item-description-input,
+.item-category-input,
+.item-quantity-input,
+.item-warehouse-input {
+    width: 80vw;
+    font-size: $mob-label-link-button-body-medium;
+    border: 1px solid #BDC5D5;
+    border-radius: $button-form-tag-radius;
+    margin-bottom: $spacing-small;
+    padding: 0.5rem;
+
+    @include tablet-desktop {
+        width: 40vw;
+    }
+}
+
+.item-description-input {
+    padding: 1rem 0 7rem 0;
+}
+
+.radio-buttons {
+    @include flexbox(row, center, center);
+}
+
+.buttons-container {
+    @include flexbox(row, center, center);
+    background-color: $color-background-light-grey;
+
+    @include tablet-desktop {
+        @include flexbox(row, flex-end, center);
+    }
+}
+
+.button {
+    width: 42vw;
+    font-size: $mob-label-link-button-body-medium;
+    border: 1px solid #BDC5D5;
+    border-radius: $button-form-tag-radius;
+    margin-bottom: $spacing-small;
+    padding: 0.5rem;
+    margin-right: 5%;
+
+    @include tablet-desktop {
+        width: 8vw;
+        margin-right: 0;
+    }
+}
+
+.add-button {
+    background-color: $color-primary-indigo;
+    color: $color-primary-white;
+
+    @include tablet-desktop {
+        margin-left: 2%;
+        margin-right: 5%;
+    }
+}
