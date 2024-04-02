@@ -6,13 +6,17 @@ import InventoryDetails from "./pages/InventoryDetails/InventoryDetails";
 import HomePageWarehouse from "./pages/HomePageWarehouse/HomePageWarehouse";
 import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
 import WarehouseEdit from "./pages/WarehouseEdit/WarehouseEdit";
+import WarehouseAdd from "./pages/WarehouseAdd/WarehouseAdd";
 import InventoryCard from "./Components/InventoryCard/InventoryCard";
 import Footer from "./Components/Footer/Footer";
 
 import InventoryListPage from "./pages/InventoryListPage/InventoryListPage";
 import AddInventoryItem from "./Components/AddInventoryItem/AddInventoryItem";
 import EditInventoryItem from "./Components/EditInventoryItem/EditInventoryItem";
+<<<<<<< HEAD
 import EditInventoryItemPage from "./pages/EditInventoryItemPage/EditInventoryItemPage";
+=======
+>>>>>>> remotes/origin/feature/JV2BT-17
 
 function App() {
   return (
@@ -35,6 +39,8 @@ function App() {
             element={<WarehouseEdit />}
           />
 
+          <Route path="/addwarehouse" element={<WarehouseAdd />} />
+
           <Route path="/inventory" element={<InventoryListPage />} />
 
           <Route
@@ -47,10 +53,13 @@ function App() {
 
           <Route path="/*" element={<PageNotFound />} />
           <Route path="/addInventoryItem" element={<AddInventoryItem />} />
+<<<<<<< HEAD
           {/* <Route
             path="/editInventoryItem"
             element={<EditInventoryItemPage />}
           /> */}
+=======
+>>>>>>> remotes/origin/feature/JV2BT-17
           <Route
             path="/editInventoryItem/:inventoryId"
             element={<EditInventoryItem />}

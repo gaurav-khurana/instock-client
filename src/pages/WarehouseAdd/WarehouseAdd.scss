@@ -1,0 +1,56 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+@use "../../styles/typography" as *;
+
+.warehouse-add-main {
+    width: 100vw;
+    background-color: $color-background-light-grey;
+
+    &__content {
+        width: 90vw;
+        margin: 0 $spacing-small;
+        background-color: $color-primary-white;
+        border-radius: 5px;
+        position: relative;
+        top: -4rem;
+    }
+}
+
+.warehouse-add-header {
+    width: 90vw;
+    padding: 0 $spacing-small;
+
+    @include flexbox(row, space-between, center);
+}
+
+.warehouse-add {
+    // padding: $spacing-small;
+    // padding-top: $spacing-big;
+    border-top: $divider-width solid $divider-color;
+
+    @include flexbox(column, center, flex-start);
+
+    &__name-containter {
+        margin-top: $spacing-big;
+        margin-bottom: $spacing-small;
+
+        @include flexbox(row, center, center);
+    }
+
+    &__image {
+        padding: 2rem 0 1rem 0;
+    }
+
+    &__title {
+        font-size: $mob-page-header;
+        color: $color-primary-black;
+        margin-left: $radio-space-big;
+    }
+
+    @include tablet {
+        padding: 0.8rem 1.6rem;
+        border-radius: $button-form-tag-radius;
+    }
+
+}
