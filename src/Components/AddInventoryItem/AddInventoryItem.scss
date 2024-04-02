@@ -1,250 +1,246 @@
-@use '../../styles/global' as *;
-@use '../../styles/mixins' as *;
-@use '../../styles/typography' as *;
-@use '../../styles/variables' as *;
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/typography" as *;
+@use "../../styles/variables" as *;
 
 * {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .main-container {
-    padding-left: 5%;
-    padding-right: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
 
-    background-color: $color-background-light-grey;
+  background-color: $color-background-light-grey;
 }
 
 .details-container {
-    @include tablet-desktop {
-        display: flex;
-    }
+  @include tablet-desktop {
+    display: flex;
+  }
 }
 
 .details-container1 {
-    @include flexbox(column, center, flex-start);
-    border-top: $divider-width solid $divider-color;
-    background-color: $color-primary-white;
+  @include flexbox(column, center, flex-start);
+  border-top: $divider-width solid $divider-color;
+  background-color: $color-primary-white;
 
-    @include tablet-desktop {
-        border-right: $divider-width solid $divider-color;
-        padding-left: 2%;
-        padding-right: 2%;
-    }
+  @include tablet-desktop {
+    border-right: $divider-width solid $divider-color;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
 }
 
 .details-container2 {
-    @include flexbox(column, center, flex-start);
-    border-top: $divider-width solid $divider-color;
-    background-color: $color-primary-white;
+  @include flexbox(column, center, flex-start);
+  border-top: $divider-width solid $divider-color;
+  background-color: $color-primary-white;
 
-    @include tablet-desktop {
-        padding-left: 2%;
-        padding-right: 2%;
-        @include flexbox(column, flex-start);
-    }
+  @include tablet-desktop {
+    padding-left: 2%;
+    padding-right: 2%;
+    @include flexbox(column, flex-start);
+  }
 }
 
 .details-container2__header {
-    font-size: $mob-sub-header;
+  font-size: $mob-sub-header;
 
-    @include tablet-desktop {
-        padding-top: 2%;
-    }
-
+  @include tablet-desktop {
+    padding-top: 2%;
+  }
 }
 
 .inventory-title-container {
-    img {
-        padding: 2rem 0 1rem 0;
-    }
+  img {
+    padding: 2rem 0 1rem 0;
+  }
 
-    @include flexbox(row, center, center);
+  @include flexbox(row, center, center);
 
-    @include tablet-desktop {
-        padding-left: 2%;
-    }
+  @include tablet-desktop {
+    padding-left: 2%;
+  }
 }
 
 .inventory-main-title {
-    font-size: $mob-page-header;
-    margin-top: $spacing-big;
-    margin-bottom: $spacing-small;
-    flex-grow: 1;
+  font-size: $mob-page-header;
+  margin-top: $spacing-big;
+  margin-bottom: $spacing-small;
+  flex-grow: 1;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .item-name {
-    font-size: $mob-table-header-body-small;
-    color: $color-primary-black;
-    margin-top: 0.8rem;
-    margin-bottom: 0.8rem;
+  font-size: $mob-table-header-body-small;
+  color: $color-primary-black;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 
 .item-name-input {
-    width: 80vw;
-    font-size: $mob-label-link-button-body-medium;
-    border: 1px solid #BDC5D5;
-    border-radius: $button-form-tag-radius;
-    margin-bottom: $spacing-small;
-    padding: 0.5rem;
+  width: 80vw;
+  font-size: $mob-label-link-button-body-medium;
+  border: 1px solid #bdc5d5;
+  border-radius: $button-form-tag-radius;
+  margin-bottom: $spacing-small;
+  padding: 0.5rem;
 
-    @include tablet-desktop {
-        width: 40vw;
-    }
+  @include tablet-desktop {
+    width: 40vw;
+  }
 }
 
 .item-title {
-    font-size: $mob-sub-header;
-    color: $color-primary-black;
-    margin-top: 0.8rem;
-    margin-bottom: 0.8rem;
+  font-size: $mob-sub-header;
+  color: $color-primary-black;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 
 .item-description {
-    font-size: $mob-table-header-body-small;
-    color: $color-primary-black;
-    margin-top: 0.8rem;
-    margin-bottom: 0.8rem;
-
-
+  font-size: $mob-table-header-body-small;
+  color: $color-primary-black;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 
 .item-description-input {
-    width: 80vw;
-    font-size: $mob-label-link-button-body-medium;
-    border: 1px solid #BDC5D5;
-    border-radius: $button-form-tag-radius;
-    margin-bottom: $spacing-small;
-    padding: 0.5rem;
+  width: 80vw;
+  font-size: $mob-label-link-button-body-medium;
+  border: 1px solid #bdc5d5;
+  border-radius: $button-form-tag-radius;
+  margin-bottom: $spacing-small;
+  padding: 0.5rem;
+  padding: 1rem 0 7rem 0;
+
+  @include tablet-desktop {
+    width: 40vw;
     padding: 1rem 0 7rem 0;
-
-    @include tablet-desktop {
-        width: 40vw;
-        padding: 1rem 0 7rem 0;
-
-    }
+  }
 }
 
 .item-category {
-    font-size: $mob-table-header-body-small;
-    color: $color-primary-black;
-    margin-top: 0.8rem;
-    margin-bottom: 0.8rem;
+  font-size: $mob-table-header-body-small;
+  color: $color-primary-black;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 
 .item-category-input {
-    width: 80vw;
+  width: 80vw;
 
-    font-size: $mob-label-link-button-body-medium;
-    border: 1px solid #BDC5D5;
-    border-radius: $button-form-tag-radius;
-    margin-bottom: $spacing-small;
-    padding: 0.5rem;
+  font-size: $mob-label-link-button-body-medium;
+  border: 1px solid #bdc5d5;
+  border-radius: $button-form-tag-radius;
+  margin-bottom: $spacing-small;
+  padding: 0.5rem;
 
-    @include tablet-desktop {
-        width: 40vw;
-    }
+  @include tablet-desktop {
+    width: 40vw;
+  }
 }
 
 .item-status {
-    font-size: $mob-table-header-body-small;
-    color: $color-primary-black;
-    margin-top: 0.8rem;
-    margin-bottom: 0.8rem;
+  font-size: $mob-table-header-body-small;
+  color: $color-primary-black;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 
 .radio-buttons {
-    @include flexbox(row, center, center);
+  @include flexbox(row, center, center);
 }
 
 .in-stock {
-    font-size: $mob-table-header-body-small;
-    color: $color-primary-black;
-    margin-top: 0.8rem;
-    margin-bottom: 0.8rem;
+  font-size: $mob-table-header-body-small;
+  color: $color-primary-black;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 
 .out-of-stock {
-    font-size: $mob-table-header-body-small;
-    color: $color-primary-black;
-    margin-top: 0.8rem;
-    margin-bottom: 0.8rem;
+  font-size: $mob-table-header-body-small;
+  color: $color-primary-black;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 
 .item-quantity {
-    font-size: $mob-table-header-body-small;
-    color: $color-primary-black;
-    margin-top: 0.8rem;
-    margin-bottom: 0.8rem;
+  font-size: $mob-table-header-body-small;
+  color: $color-primary-black;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 
 .item-quantity-input {
-    width: 80vw;
-    font-size: $mob-label-link-button-body-medium;
-    border: 1px solid #BDC5D5;
-    border-radius: $button-form-tag-radius;
-    margin-bottom: $spacing-small;
-    padding: 0.5rem;
+  width: 80vw;
+  font-size: $mob-label-link-button-body-medium;
+  border: 1px solid #bdc5d5;
+  border-radius: $button-form-tag-radius;
+  margin-bottom: $spacing-small;
+  padding: 0.5rem;
 
-    @include tablet-desktop {
-        width: 40vw;
-    }
+  @include tablet-desktop {
+    width: 40vw;
+  }
 }
 
 .item-warehouse {
-    font-size: $mob-table-header-body-small;
-    color: $color-primary-black;
-    margin-top: 0.8rem;
-    margin-bottom: 0.8rem;
+  font-size: $mob-table-header-body-small;
+  color: $color-primary-black;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 
 .item-warehouse-input {
-    width: 80vw;
-    font-size: $mob-label-link-button-body-medium;
-    border: 1px solid #BDC5D5;
-    border-radius: $button-form-tag-radius;
-    margin-bottom: $spacing-small;
-    padding: 0.5rem;
+  width: 80vw;
+  font-size: $mob-label-link-button-body-medium;
+  border: 1px solid #bdc5d5;
+  border-radius: $button-form-tag-radius;
+  margin-bottom: $spacing-small;
+  padding: 0.5rem;
 
-    @include tablet-desktop {
-        width: 40vw;
-    }
+  @include tablet-desktop {
+    width: 40vw;
+  }
 }
 
 .buttons-container {
-    @include flexbox(row, center, center);
-    background-color: $color-background-light-grey;
+  @include flexbox(row, center, center);
+  background-color: $color-background-light-grey;
 
-    @include tablet-desktop {
-        @include flexbox(row, flex-end, center);
-    }
+  @include tablet-desktop {
+    @include flexbox(row, flex-end, center);
+  }
 }
 
 .button {
-    width: 42vw;
-    font-size: $mob-label-link-button-body-medium;
-    border: 1px solid #BDC5D5;
-    border-radius: $button-form-tag-radius;
-    margin-bottom: $spacing-small;
-    padding: 0.5rem;
-    margin-right: 5%;
+  width: 42vw;
+  font-size: $mob-label-link-button-body-medium;
+  border: 1px solid #bdc5d5;
+  border-radius: $button-form-tag-radius;
+  margin-bottom: $spacing-small;
+  padding: 0.5rem;
+  margin-right: 5%;
 
-    @include tablet-desktop {
-        width: 8vw;
-        margin-right: 0;
-    }
+  @include tablet-desktop {
+    width: 8vw;
+    margin-right: 0;
+  }
 }
 
 .add-button {
-    background-color: $color-primary-indigo;
-    color: $color-primary-white;
+  background-color: $color-primary-indigo;
+  color: $color-primary-white;
 
-    @include tablet-desktop {
-        margin-left: 2%;
-        margin-right: 5%;
-    }
+  @include tablet-desktop {
+    margin-left: 2%;
+    margin-right: 5%;
+  }
 }

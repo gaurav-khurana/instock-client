@@ -178,133 +178,141 @@ function AddInventoryItem() {
 
   return (
     <>
-      <div className="main-container">
-        <div className="inventory-title-container">
-          <Link to={"/inventory"}>
-            <img src={arrowback} alt="arrow back" />
-          </Link>
-          <h1 className="inventory-main-title">Add New Inventory Item</h1>
-        </div>
-        <div>
-          <form className="form" onSubmit={handleSubmit}>
-            <div className="details-container">
-              <div className="details-container1">
-                <h3 className="item-title">Item Details</h3>
-                <label className="item-name" htmlFor="">
-                  {" "}
-                  Item Name{" "}
-                </label>
-                <input
-                  className="item-name-input"
-                  value={itemName}
-                  onChange={handleItemName}
-                  type="text"
-                  placeholder="Item Name"
-                ></input>
-                <label className="item-description" htmlFor="">
-                  Description
-                </label>
-                <input
-                  className="item-description-input"
-                  value={itemDescription}
-                  onChange={handleDescription}
-                  type="text"
-                  placeholder="Please enter a brief description"
-                ></input>
-                <label className="item-category" htmlFor="">
-                  Category
-                </label>
-                <select
-                  className="item-category-input"
-                  value={selectedOption1}
-                  onChange={handleSelectChange1}
-                  required
-                >
-                  <option value="" disabled selected>
-                    Please select
-                  </option>
-                  {categoryNames.map((category) => (
-                    <option key={category} value={category}>
-                      {category}
+      <main className="main">
+        <div className="main-container">
+          <div className="inventory-title-container">
+            <Link to={"/inventory"}>
+              <img src={arrowback} alt="arrow back" />
+            </Link>
+            <h1 className="inventory-main-title">Add New Inventory Item</h1>
+          </div>
+          <div>
+            <form className="form" onSubmit={handleSubmit}>
+              <div className="details-container">
+                <div className="details-container1">
+                  <h3 className="item-title">Item Details</h3>
+                  <label className="item-name" htmlFor="">
+                    {" "}
+                    Item Name{" "}
+                  </label>
+                  <input
+                    className="item-name-input"
+                    value={itemName}
+                    onChange={handleItemName}
+                    type="text"
+                    placeholder="Item Name"
+                  ></input>
+                  <label className="item-description" htmlFor="">
+                    Description
+                  </label>
+                  <input
+                    className="item-description-input"
+                    value={itemDescription}
+                    onChange={handleDescription}
+                    type="text"
+                    placeholder="Please enter a brief description"
+                  ></input>
+                  <label className="item-category" htmlFor="">
+                    Category
+                  </label>
+                  <select
+                    className="item-category-input"
+                    value={selectedOption1}
+                    onChange={handleSelectChange1}
+                    required
+                  >
+                    <option value="" disabled selected>
+                      Please select
                     </option>
-                  ))}
-                </select>
-              </div>
-              <div className="details-container2">
-                <h3 className="details-container2__header">
-                  Item Availability
-                </h3>
-                <h4 className="item-status">Status</h4>
-                <div className="radio-buttons">
-                  <div>
-                    <input
-                      type="radio"
-                      id="inStockButton"
-                      name="inStock-button"
-                      value="inStock"
-                      checked={selectedRadioButton === "inStock"}
-                      onChange={handleRadioChange}
-                    />
-                    <label className="in-stock" htmlFor="inStockButton">
-                      In Stock
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      type="radio"
-                      id="OutOfStockButton"
-                      name="OutOfStock-button"
-                      value="outOfStock"
-                      checked={selectedRadioButton === "outOfStock"}
-                      onChange={handleRadioChange}
-                    />
-                    <label className="out-of-stock" htmlFor="OutOfStockButton">
-                      Out of Stock
-                    </label>
-                  </div>
+                    {categoryNames.map((category) => (
+                      <option key={category} value={category}>
+                        {category}
+                      </option>
+                    ))}
+                  </select>
                 </div>
-                <label className="item-quantity" htmlFor="">
-                  Quantity
-                </label>
-                <input
-                  className="item-quantity-input"
-                  value={itemQuantity}
-                  onChange={handleItemQuantity}
-                  type="text"
-                  placeholder="0"
-                ></input>
-                <label className="item-warehouse" htmlFor="">
-                  Warehouse
-                </label>
-                <select
-                  className="item-warehouse-input"
-                  value={selectedOption2}
-                  onChange={handleSelectChange2}
-                  required
-                >
-                  <option value="" disabled selected>
-                    Please select
-                  </option>
-                  {warehouseNames.map((warehouse) => (
-                    <option key={warehouse.id} value={warehouse.warehouse_name}>
-                      {warehouse.warehouse_name}
+                <div className="details-container2">
+                  <h3 className="details-container2__header">
+                    Item Availability
+                  </h3>
+                  <h4 className="item-status">Status</h4>
+                  <div className="radio-buttons">
+                    <div>
+                      <input
+                        type="radio"
+                        id="inStockButton"
+                        name="inStock-button"
+                        value="inStock"
+                        checked={selectedRadioButton === "inStock"}
+                        onChange={handleRadioChange}
+                      />
+                      <label className="in-stock" htmlFor="inStockButton">
+                        In Stock
+                      </label>
+                    </div>
+                    <div>
+                      <input
+                        type="radio"
+                        id="OutOfStockButton"
+                        name="OutOfStock-button"
+                        value="outOfStock"
+                        checked={selectedRadioButton === "outOfStock"}
+                        onChange={handleRadioChange}
+                      />
+                      <label
+                        className="out-of-stock"
+                        htmlFor="OutOfStockButton"
+                      >
+                        Out of Stock
+                      </label>
+                    </div>
+                  </div>
+                  <label className="item-quantity" htmlFor="">
+                    Quantity
+                  </label>
+                  <input
+                    className="item-quantity-input"
+                    value={itemQuantity}
+                    onChange={handleItemQuantity}
+                    type="text"
+                    placeholder="0"
+                  ></input>
+                  <label className="item-warehouse" htmlFor="">
+                    Warehouse
+                  </label>
+                  <select
+                    className="item-warehouse-input"
+                    value={selectedOption2}
+                    onChange={handleSelectChange2}
+                    required
+                  >
+                    <option value="" disabled selected>
+                      Please select
                     </option>
-                  ))}
-                </select>
+                    {warehouseNames.map((warehouse) => (
+                      <option
+                        key={warehouse.id}
+                        value={warehouse.warehouse_name}
+                      >
+                        {warehouse.warehouse_name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
-            </div>
-            <div className="buttons-container">
-              <button className="button" type="button" onClick={handleCancel}>
-                Cancel
-              </button>
-              <button className="button add-button" type="submit">
-                {" "}
-                + Add Item
-              </button>
-            </div>
-          </form>
+              <div className="buttons-container">
+                <button className="button" type="button" onClick={handleCancel}>
+                  Cancel
+                </button>
+                <button className="button add-button" type="submit">
+                  {" "}
+                  + Add Item
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
+      </main>
     </>
   );
 }
