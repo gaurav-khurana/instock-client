@@ -39,16 +39,20 @@ function IconsContainer({
   }
 
   function handlePath() {
-    if (warehouseId !== undefined || warehouseId !== null) {
-      navigate(`/editwarehouse/${warehouseId}`);
-    } else {
+    if (warehouseId === undefined || warehouseId === null) {
+      console.log("i got inventory id", inventoryId);
       navigate(`/editInventoryItem/${inventoryId}`);
+      return;
+    } else {
+      console.log("i got warehouse id", warehouseId);
+      navigate(`/editwarehouse/${warehouseId}`);
     }
   }
 
   return (
     <div className="icons">
       <h3 className="icons__title--mobile icons__title--tablet ">ACTIONS</h3>
+
       <div className="icons-container">
         <img
           onClick={openModal}

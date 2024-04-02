@@ -1,11 +1,33 @@
 import "./WarehouseContactsAdd.scss";
 
-function WarehouseContactsAdd() {
+function WarehouseContactsAdd({ setName, setPosition, setNumber, setEmail }) {
+  // // TODO get details from contact
+
+  // const handleContactDetailsForm = async (event) => {
+  //   console.log(event.target);
+  // };
+  const handleName = (event) => {
+    setName(event.target.value);
+  };
+
+  const handlePosition = (event) => {
+    setPosition(event.target.value);
+  };
+  const handleNumber = (event) => {
+    setNumber(event.target.value);
+  };
+  const handleEmail = (event) => {
+    setEmail(event.target.value);
+  };
+
   return (
     <section className="warehouse-add">
       <div className="warehouse-add__details">
         <h2 className="warehouse-add__header">Contacts Details</h2>
-        <form className="warehouse-add__form">
+        <form
+          className="warehouse-add__form"
+          // onSubmit={handleContactDetailsForm}
+        >
           <label htmlFor="warehouseContact" className="warehouse-contact">
             Contact Name
           </label>
@@ -14,6 +36,7 @@ function WarehouseContactsAdd() {
             type="text"
             id="warehouseContact"
             name="warehouseContact"
+            onChange={handleName}
           />
           <label htmlFor="warehousePosition" className="warehouse-position">
             Position
@@ -23,6 +46,7 @@ function WarehouseContactsAdd() {
             type="text"
             id="warehousePosition"
             name="warehousePosition"
+            onChange={handlePosition}
           />
           <label htmlFor="warehousePhone" className="warehouse-phone">
             Phone Number
@@ -32,6 +56,7 @@ function WarehouseContactsAdd() {
             type="text"
             id="warehousePhone"
             name="warehousePhone"
+            onChange={handleNumber}
           />
           <label htmlFor="warehouseEmail" className="warehouse-email">
             Email
@@ -41,6 +66,7 @@ function WarehouseContactsAdd() {
             type="email"
             id="warehouseEmail"
             name="warehouseEmail"
+            onChange={handleEmail}
           />
         </form>
       </div>

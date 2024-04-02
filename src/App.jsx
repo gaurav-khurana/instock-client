@@ -7,9 +7,7 @@ import HomePageWarehouse from "./pages/HomePageWarehouse/HomePageWarehouse";
 import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
 import WarehouseEdit from "./pages/WarehouseEdit/WarehouseEdit";
 import WarehouseAdd from "./pages/WarehouseAdd/WarehouseAdd";
-import InventoryCard from "./Components/InventoryCard/InventoryCard";
 import Footer from "./Components/Footer/Footer";
-
 import InventoryListPage from "./pages/InventoryListPage/InventoryListPage";
 import AddInventoryItem from "./Components/AddInventoryItem/AddInventoryItem";
 import EditInventoryItem from "./Components/EditInventoryItem/EditInventoryItem";
@@ -20,7 +18,6 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          {/* <Route path="/InventoryDetails" element={<InventoryDetails />} /> */}
           <Route path="/" element={<HomePageWarehouse />} />
 
           <Route path="/warehousesdetails" element={<WarehouseDetails />} />
@@ -29,13 +26,12 @@ function App() {
             path="/warehouses/:id/inventories"
             element={<WarehouseDetails />}
           />
+          <Route path="/addwarehouse" element={<WarehouseAdd />} />
 
           <Route
             path="/editwarehouse/:warehouseId"
             element={<WarehouseEdit />}
           />
-
-          <Route path="/addwarehouse" element={<WarehouseAdd />} />
 
           <Route path="/inventory" element={<InventoryListPage />} />
 
@@ -44,15 +40,13 @@ function App() {
             element={<InventoryDetails />}
           />
 
-          {/* <Route path="/InventoryDetails" element={<InventoryDetails />} /> */}
-          {/* <Route path="/InventoryDetails/:inventoryId" element={<InventoryDetails />} /> */}
-
-          <Route path="/*" element={<PageNotFound />} />
           <Route path="/addInventoryItem" element={<AddInventoryItem />} />
+
           <Route
             path="/editInventoryItem/:inventoryId"
             element={<EditInventoryItem />}
           />
+          <Route path="/*" element={<PageNotFound />} />
         </Routes>
 
         <Footer />
