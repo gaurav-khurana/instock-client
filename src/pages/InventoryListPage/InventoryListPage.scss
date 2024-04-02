@@ -2,7 +2,6 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/variables" as *;
 
-// header section for inventories with title, searchbar & button
 .inventory-main {
   width: 100vw;
   background-color: $color-background-light-grey;
@@ -11,7 +10,7 @@
     width: 90vw;
     margin: 0 $spacing-small;
     background-color: $color-primary-white;
-    // border: $divider-width solid $divider-color; // remove later
+
     border-radius: 5px;
     position: relative;
     top: -4rem;
@@ -64,7 +63,6 @@
       font-size: $desk-page-header;
       margin-top: 2rem;
       flex-grow: 1;
-      // cn remove margins & give height to W.H header here
     }
 
     &__button {
@@ -85,7 +83,7 @@
 
   .inventory__title--tablet {
     width: 15vw;
-    // @include flexbox(row, flex-start, center);
+
     @include flexbox(row, center, center);
   }
 }
@@ -104,12 +102,10 @@
     padding: 0.8rem $spacing-big;
 
     @include flexbox(row, flex-start, center);
-    // @include flexbox(row, space-between, center);
   }
 
   .inventory-header {
     width: 83vw;
-    // padding: 0 $spacing-big;
 
     &__button {
       width: 12vw;
@@ -117,9 +113,7 @@
   }
 
   .inventory__title--tablet {
-    // width: 15vw;
     @include flexbox(row, flex-start, center);
-    // @include flexbox(row, center, center);
   }
 
   .address-container {

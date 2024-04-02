@@ -2,7 +2,6 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/variables" as *;
 
-// header section for warehouses with title, searchbar & button
 .main {
   width: 100vw;
   background-color: $color-background-light-grey;
@@ -11,7 +10,7 @@
     width: 90vw;
     margin: 0 $spacing-small;
     background-color: $color-primary-white;
-    // border: $divider-width solid $divider-color; // remove later
+
     border-radius: 5px;
     position: relative;
     top: -4rem;
@@ -21,8 +20,6 @@
 .warehouse-header {
   width: 90vw;
   padding: 0 $spacing-small;
-
-  // background-color: $colo;
 
   @include flexbox(column, center, flex-start);
 
@@ -68,7 +65,6 @@
     &__title {
       font-size: $desk-page-header;
       margin-top: 2rem;
-      // cn remove margins & give height to W.H header here
     }
 
     &__button {
@@ -104,12 +100,10 @@
     padding: 0.8rem $spacing-big;
 
     @include flexbox(row, flex-start, center);
-    // @include flexbox(row, space-between, center);
   }
 
   .warehouse-header {
     width: 83vw;
-    // padding: 0 $spacing-big;
 
     &__button {
       width: 12vw;

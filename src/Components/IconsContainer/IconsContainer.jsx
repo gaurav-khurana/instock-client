@@ -61,23 +61,12 @@ function IconsContainer({
           alt="Delete Icon"
         />
 
-        {/* <Link>
-          <img className="icons__edit" src={EditIcon} alt="Edit Icon" />
-        </Link> */}
-
-        {/* {warehouseId !== undefined ? (
-          <Link to={`/editwarehouse/${warehouseId}`} />
-        ) : (
-          <Link to={`/editInventoryItem/${inventoryId}`} />
-        )} */}
-        {/* <Link to={`/editInventoryItem/${inventoryId}`}/> */}
         <img
           onClick={handlePath}
           className="icons__edit"
           src={EditIcon}
           alt="Edit Icon"
         />
-        {/* </Link> */}
 
         <Modal
           isOpen={modalIsOpen}

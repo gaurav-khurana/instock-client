@@ -3,7 +3,7 @@ import BackArrow from "../../assets/Icons/arrow_back-24px.svg";
 import { Link, useNavigate } from "react-router-dom";
 import WarehouseDetailsAdd from "../../Components/WarehouseDetailsAdd/WarehouseDetailsAdd";
 import WarehouseContactsAdd from "../../Components/WarehouseContactsAdd/WarehouseContactsAdd";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 function WarehouseAdd() {
@@ -89,7 +89,6 @@ function WarehouseAdd() {
       console.log(newWarehouse);
 
       try {
-        //todo post new warehouse
         await axios.post(
           `${process.env.REACT_APP_BASE_URL}/warehouses`,
           newWarehouse

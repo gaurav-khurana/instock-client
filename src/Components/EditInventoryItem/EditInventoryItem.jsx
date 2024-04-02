@@ -22,7 +22,7 @@ function EditInventoryItem() {
         const response = await axios.get(
           `http://localhost:8080/inventories/${inventoryId}`
         );
-        // const { item_name, description, category, status, quantity, warehouse_id } = response.data;
+
         const inventory = response.data.foundInventory;
         console.log(response.data.foundInventory.item_name);
         setItemName(inventory.item_name);

@@ -36,7 +36,6 @@ function HomePageWarehouse() {
 
             <SearchBar />
 
-            {/* add path to link */}
             <Link to={"/addwarehouse"}>
               <button className="warehouse-header__button">
                 + Add New Address
@@ -44,7 +43,6 @@ function HomePageWarehouse() {
             </Link>
           </article>
 
-          {/* static header for warehouse list for tablet & desktop */}
           <article className="warehouse-card-header--tablet">
             <div className="warehouse__title-container warehouse__title--tablet">
               <h3 className="warehouse__title">WAREHOUSE</h3>

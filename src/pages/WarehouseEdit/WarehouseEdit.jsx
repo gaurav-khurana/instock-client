@@ -23,9 +23,6 @@ function WarehouseEdit() {
 
   // get params
   const warehouseId = useParams();
-  // console.log(typeof warehouseId);
-  // console.log(warehouseId);
-  // console.log(warehouseId.warehouseId);
 
   // useEffect func to get single warehouse & all inventories for it
   useEffect(() => {
@@ -36,9 +33,8 @@ function WarehouseEdit() {
         // console.log("i made axios call");
         const response = await axios.get(
           `${process.env.REACT_APP_BASE_URL}/warehouses/${warehouseId.warehouseId}`
-          // `http://localhost:8080/warehouses/${warehouseId.warehouseId}`
         );
-        // console.log(response.data);
+
         setSingleWarehouse(response.data);
       }
       getSingleWarehouse();
@@ -46,8 +42,6 @@ function WarehouseEdit() {
       console.log("Cant get Single warehouse & its data", error);
     }
   }, [setSingleWarehouse, warehouseId.warehouseId]);
-  // console.log(singleWarehouse);
-  // console.log("single warehouse ", singleWarehouse);
 
   const resetForm = () => {
     setWarehouseName("");

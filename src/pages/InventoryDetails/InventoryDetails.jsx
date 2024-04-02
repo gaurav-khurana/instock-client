@@ -4,16 +4,11 @@ import BackArrow from "../../assets/Icons/arrow_back-24px.svg";
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import SortIcon from "../../assets/Icons/sort-24px.svg";
-import WarehouseDetails from "../WarehouseDetails/WarehouseDetails";
 
 function InventoryDetails() {
   const [inventoryDetails, setInventoryDetails] = useState({});
   const [singleWarehouse, setSingleWarehouse] = useState({});
   const inventoryId = useParams();
-  console.log(inventoryId);
-  console.log(typeof inventoryId);
-  console.log(inventoryId.inventoryId);
 
   useEffect(() => {
     const getInventoryDetails = async () => {
@@ -22,8 +17,7 @@ function InventoryDetails() {
           `http://localhost:8080/inventories/${inventoryId.inventoryId}`
         );
         const inventoryData = response.data;
-        console.log(inventoryData.foundInventory);
-        console.log("working");
+
         setInventoryDetails(inventoryData.foundInventory);
       } catch (error) {
         console.error("No Inventory Details for you, my friend: ", error);
@@ -31,10 +25,8 @@ function InventoryDetails() {
     };
     getInventoryDetails();
   }, [setInventoryDetails]);
-  console.log(inventoryDetails);
 
   const warehouseId = inventoryDetails.warehouse_id;
-  console.log(warehouseId);
 
   useEffect(() => {
     const getSingleWarehouse = async () => {
@@ -42,10 +34,9 @@ function InventoryDetails() {
         const response = await axios.get(
           `http://localhost:8080/warehouses/${warehouseId}`
         );
-        console.log("i m here");
+
         const warehouseData = response.data;
-        console.log(warehouseData.data);
-        console.log("warehouse data");
+
         setSingleWarehouse(response.data);
       } catch (error) {
         console.log("Cant get Single warehouse & its inventories", error);
@@ -53,40 +44,6 @@ function InventoryDetails() {
     };
     getSingleWarehouse();
   }, [warehouseId]);
-
-  console.log(singleWarehouse);
-
-  // useEffect(() => {
-  //     const defaultId = "0";
-  //     const enableDefault = inventoryId || defaultId;
-
-  //     const getCurrentInventoryDetails = async (id) => {
-  //         try {
-  //             // const response = await axios.get(`http://localhost:8080/warehouses/${id}/inventories/`);
-  //             const response = await axios.get(`http://localhost:8080/inventories/${id}`);
-  //             setCurrentInventoryDetails(response.data);
-  //         } catch (error) {
-  //             console.error("Failed to fetch current inventory: ", error);
-  //         }
-  //     };
-  //     getCurrentInventoryDetails(enableDefault);
-  // }, [inventoryId]);
-
-  // useEffect(() => {
-  //     try {
-  //         async function getInventoryDetails() {
-  //             const response = await axios.get(
-  //                 `http://localhost:8080/inventories/${inventoryId.id}/inventories`
-  //             );
-  //             console.log(response.data);
-  //             setInventoryDetails(response.data);
-  //         }
-
-  //         getInventoryDetails();
-  //     } catch (error) {
-  //         console.log(`no go, dude`, error);
-  //     }
-  // }, [setInventoryDetails]);
 
   return (
     <>
@@ -103,20 +60,10 @@ function InventoryDetails() {
               </Link>
 
               <h1 className="inventory-details__title">
-                {/* Television */}
                 {inventoryDetails.item_name}
-                {/* TODO */}
-                {/* {singleWarehouse.warehouse_name} */}
-                {/* Television {inventory} */}
               </h1>
             </div>
 
-            {/* path here to edit inventory page */}
-            {/* <Link
-      TODO
-        to={"/editwarehouse"}
-        state={{ singleWarehouse: singleWarehouse }}
-      > */}
             <Link to={`/editInventoryItem/${inventoryId.inventoryId}`}>
               <div className="inventory-details__icon-container">
                 <img
@@ -126,8 +73,6 @@ function InventoryDetails() {
                 />
                 <p className="inventory-details__edit">Edit</p>
               </div>
-              {/* </Navigate> */}
-              {/* </Link> */}
             </Link>
           </article>
 
@@ -148,19 +93,9 @@ function InventoryDetails() {
               <div className="category">
                 <div className="category-container">
                   <h3 className="inventory__title-details">CATEGORY:</h3>
-
-                  {/* <img
-                                        className="inventory__icon inventory__icon--mobile"
-                                        src={SortIcon}
-                                        alt="Sort Icon"
-                                    /> */}
                 </div>
 
-                <p className="category__text">
-                  {/* TODO {inventory.category} */}
-                  {/* Electronicas */}
-                  {inventoryDetails.category}
-                </p>
+                <p className="category__text">{inventoryDetails.category}</p>
               </div>
             </section>
             <section className="status-QTY-warehouse__container">
@@ -168,12 +103,6 @@ function InventoryDetails() {
                 <div className="status">
                   <div className="status-container">
                     <h3 className="inventory__title-details">STATUS:</h3>
-
-                    {/* <img
-                                            className="inventory__icon inventory__icon--mobile"
-                                            src={SortIcon}
-                                            alt="Sort Icon"
-                                        /> */}
                   </div>
                   {inventoryDetails.status === "In Stock" ? (
                     <div className="status__text status__text--green">
@@ -188,11 +117,6 @@ function InventoryDetails() {
                 <div className="QTY">
                   <div className="QTY-container">
                     <h3 className="inventory__title-details">QUANTITY:</h3>
-                    {/* <img
-                                            className="inventory__icon inventory__icon--mobile"
-                                            src={SortIcon}
-                                            alt="Sort Icon"
-                                        /> */}
                   </div>
 
                   <p className="category__text">{inventoryDetails.quantity}</p>
@@ -206,9 +130,7 @@ function InventoryDetails() {
                   </div>
 
                   <p className="category__text">
-                    {/* Manhattan */}
                     {singleWarehouse.warehouse_name}
-                    {/* TODO {inventory.warehouse} */}
                   </p>
                 </div>
               </article>

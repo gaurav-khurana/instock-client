@@ -2,7 +2,6 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/variables" as *;
 
-// header section for warehouses with title, searchbar & button
 .warehouse-details-main {
   width: 100vw;
   background-color: $color-background-light-grey;
@@ -11,7 +10,7 @@
     width: 90vw;
     margin: 0 $spacing-small;
     background-color: $color-primary-white;
-    // border: $divider-width solid $divider-color; // remove later
+
     border-radius: 5px;
     position: relative;
     top: -3.5rem;
@@ -123,9 +122,6 @@
 }
 
 .warehouse-info {
-  // &-container {
-  // }
-
   &__title {
     font-size: $mob-table-header-body-small;
     color: $color-secondary-slate;
@@ -173,14 +169,7 @@
   }
 
   .whd-inventory-card-header--tablet {
-    // width: 90vw;
     padding-inline: $spacing-big;
     @include flexbox(row, space-between, center);
-  }
-
-  .inventory-category-container--whd {
-  }
-  .status-QTY-warehouse-container--whd {
-    // width: 35vw;
   }
 }

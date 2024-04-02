@@ -17,7 +17,7 @@ function InventoryListPage() {
         const response = await axios.get(
           `${process.env.REACT_APP_BASE_URL}/inventories`
         );
-        console.log(response.data);
+
         setallInventories(response.data);
       }
       getallInventories();
@@ -35,7 +35,6 @@ function InventoryListPage() {
 
             <SearchBar />
 
-            {/* add path to link */}
             <Link to="/addInventoryItem">
               <button className="inventory-header__button">
                 + Add New Item
@@ -43,7 +42,6 @@ function InventoryListPage() {
             </Link>
           </article>
 
-          {/* static header for inventory list for tablet & desktop */}
           <article className="inventory-card-header--tablet">
             <div className="inventory__title-container inventory__title--tablet">
               <h3 className="inventory__title">INVENTORY ITEM</h3>

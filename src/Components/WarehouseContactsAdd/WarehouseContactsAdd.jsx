@@ -1,11 +1,6 @@
 import "./WarehouseContactsAdd.scss";
 
 function WarehouseContactsAdd({ setName, setPosition, setNumber, setEmail }) {
-  // // TODO get details from contact
-
-  // const handleContactDetailsForm = async (event) => {
-  //   console.log(event.target);
-  // };
   const handleName = (event) => {
     setName(event.target.value);
   };
@@ -24,10 +19,7 @@ function WarehouseContactsAdd({ setName, setPosition, setNumber, setEmail }) {
     <section className="warehouse-add">
       <div className="warehouse-add__details">
         <h2 className="warehouse-add__header">Contacts Details</h2>
-        <form
-          className="warehouse-add__form"
-          // onSubmit={handleContactDetailsForm}
-        >
+        <form className="warehouse-add__form">
           <label htmlFor="warehouseContact" className="warehouse-contact">
             Contact Name
           </label>

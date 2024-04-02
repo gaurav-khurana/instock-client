@@ -187,10 +187,6 @@ a {
     font-size: $mob-label-link-button-body-medium;
     color: $color-primary-black;
     margin-bottom: 0.4rem;
-
-    // @include tablet {
-    //   font-size: $desk-label-link-button-body-medium;
-    // }
   }
 
   &__image {
@@ -276,10 +272,6 @@ a {
       margin-right: 1rem;
 
       @include flexbox(row, center, center);
-      // padding: 0 $spacing-big;
-    }
-
-    &__icon--mobile {
     }
   }
 
@@ -319,7 +311,6 @@ a {
     }
   }
   .contact-name-container {
-    // margin-right: 2vw;
     margin-bottom: 0;
   }
   .contact-name {
@@ -331,8 +322,6 @@ a {
 
   .info-container {
     width: 16vw;
-    // padding: 0.8rem 0;
-    // margin-right: 5rem;
   }
 
   .info {

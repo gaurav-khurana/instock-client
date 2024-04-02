@@ -19,7 +19,6 @@ function CustomModal({
     try {
       const response = await axios.delete(
         `${process.env.REACT_APP_BASE_URL}/warehouses/${warehouseId}`
-        // `http://localhost:8080/warehouses/${warehouseId}`
       );
       console.log("Warehouse deleted", response.data);
     } catch (error) {
@@ -33,7 +32,6 @@ function CustomModal({
     try {
       const response = await axios.delete(
         `${process.env.REACT_APP_BASE_URL}/inventories/${inventoryId}`
-        // `http://localhost:8080/inventories/${inventoryId}`
       );
       console.log("Inventory Deleted", response.data);
     } catch (error) {
@@ -99,13 +97,6 @@ function CustomModal({
             </a>
           </>
         )}
-        {/* <a
-          onClick={deleteWarehouse}
-          className="modal__icon modal__icon--delete"
-          href=""
-        >
-          Delete
-        </a> */}
       </div>
     </div>
   );

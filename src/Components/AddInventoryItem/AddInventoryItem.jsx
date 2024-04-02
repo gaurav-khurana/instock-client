@@ -159,7 +159,6 @@ function AddInventoryItem() {
         });
         alert("Added Successfully");
         resetForm();
-        // window.location.href = "/inventory";
         navigate("/inventory");
       } catch (error) {
         console.error("Error Adding a new inventory item", error.response);

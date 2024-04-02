@@ -6,12 +6,6 @@ function WarehouseDetailsAdd({
   setCity,
   setCountry,
 }) {
-  // // TODO get warehouse details
-  // const handleWarehouseForm = async (event) => {
-  //   console.log("i got warehouse form");
-  //   console.log(event);
-  // };
-
   const handlewarehouseName = (event) => {
     setWarehouseName(event.target.value);
   };
@@ -31,10 +25,7 @@ function WarehouseDetailsAdd({
     <section className="warehouse-add">
       <div className="warehouse-add__details">
         <h2 className="warehouse-add__header">Warehouse Details</h2>
-        <form
-          className="warehouse-add__form"
-          // onSubmit={handleWarehouseForm}
-        >
+        <form className="warehouse-add__form">
           <label htmlFor="warehouseName" className="warehouse-name">
             Warehouse Name
           </label>

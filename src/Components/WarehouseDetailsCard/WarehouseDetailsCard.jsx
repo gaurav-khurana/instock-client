@@ -7,10 +7,6 @@ function WarehouseDetailsCard({
   setCity,
   setCountry,
 }) {
-  // console.log(singleWarehouse.warehouse_name);
-  // console.log(singleWarehouse.warehouse_name);
-  // console.log(singlewarehouse.warehouse_name);
-
   const handlewarehouseName = (event) => {
     if (event.target.value === "") {
       setWarehouseName(singleWarehouse.warehouse_name);
@@ -56,11 +52,9 @@ function WarehouseDetailsCard({
             type="text"
             id="warehouseName"
             name="warehouseName"
-            // value={singlewarehouse}
             defaultValue={singleWarehouse.warehouse_name}
             onChange={handlewarehouseName}
             onSelect={handlewarehouseName}
-            // onSubmit={""}
           />
 
           <label htmlFor="warehouseAddress" className="warehouse-address">
@@ -72,7 +66,6 @@ function WarehouseDetailsCard({
             id="warehouseAddress"
             name="warehouseAddress"
             defaultValue={singleWarehouse.address}
-            // onSubmit={""}
             onChange={handleAddress}
             onSelect={handleAddress}
           />
@@ -85,7 +78,6 @@ function WarehouseDetailsCard({
             id="warehouseCity"
             name="warehouseCity"
             defaultValue={singleWarehouse.city}
-            // onSubmit={""}
             onChange={handleCity}
             onSelect={handleCity}
           />
@@ -98,7 +90,6 @@ function WarehouseDetailsCard({
             id="warehouseCountry"
             name="warehouseCountry"
             defaultValue={singleWarehouse.country}
-            // onSubmit={""}
             onChange={handleCountry}
             onSelect={handleCountry}
           />

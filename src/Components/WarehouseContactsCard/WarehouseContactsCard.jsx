@@ -7,11 +7,6 @@ function WarehouseContactsCard({
   setNumber,
   setEmail,
 }) {
-  // // TODO get details from contact
-
-  // const handleContactDetailsForm = async (event) => {
-  //   console.log(event.target);
-  // };
   const handleName = (event) => {
     // setName(event.target.value);
     if (event.target.value === "") {
@@ -22,7 +17,6 @@ function WarehouseContactsCard({
   };
 
   const handlePosition = (event) => {
-    // setPosition(event.target.value);
     if (event.target.value === "") {
       setPosition(singleWarehouse.contact_position);
     } else {
@@ -30,7 +24,6 @@ function WarehouseContactsCard({
     }
   };
   const handleNumber = (event) => {
-    // setNumber(event.target.value);
     if (event.target.value === "") {
       setNumber(singleWarehouse.contact_phone);
     } else {
@@ -38,7 +31,6 @@ function WarehouseContactsCard({
     }
   };
   const handleEmail = (event) => {
-    // setEmail(event.target.value);
     if (event.target.value === "") {
       setEmail(singleWarehouse.contact_email);
     } else {
@@ -59,7 +51,6 @@ function WarehouseContactsCard({
             id="warehouseContact"
             name="warehouseContact"
             defaultValue={singleWarehouse.contact_name}
-            // onSubmit={""}
             onChange={handleName}
             onSelect={handleName}
           />
@@ -72,7 +63,6 @@ function WarehouseContactsCard({
             id="warehousePosition"
             name="warehousePosition"
             defaultValue={singleWarehouse.contact_position}
-            // onSubmit={""}
             onChange={handlePosition}
             onSelect={handlePosition}
           />
@@ -85,7 +75,6 @@ function WarehouseContactsCard({
             id="warehousePhone"
             name="warehousePhone"
             defaultValue={singleWarehouse.contact_phone}
-            // onSubmit={""}
             onChange={handleNumber}
             onSelect={handleNumber}
           />
@@ -98,7 +87,6 @@ function WarehouseContactsCard({
             id="warehouseEmail"
             name="warehouseEmail"
             defaultValue={singleWarehouse.contact_email}
-            // onSubmit={""}
             onChange={handleEmail}
             onSelect={handleEmail}
           />

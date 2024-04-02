@@ -306,7 +306,6 @@ a {
     &-card {
       width: 73vw;
       border-top: 0;
-      // margin-right: 1rem;
 
       @include flexbox(row, flex-start, center);
     }

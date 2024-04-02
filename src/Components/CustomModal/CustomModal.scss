@@ -25,9 +25,6 @@
     color: $color-primary-black;
   }
 
-  //   a {
-  //   }
-
   &__icon {
     text-decoration: none;
     font-size: $mob-label-link-button-body-medium;
@@ -40,7 +37,6 @@
       border: $divider-width solid $divider-color;
     }
     &--delete {
-      // font-size: $mob-label-link-button-body-medium;
       color: $color-primary-white;
       background-color: $color-background-red;
     }

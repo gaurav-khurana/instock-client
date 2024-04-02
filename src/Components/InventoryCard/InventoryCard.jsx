@@ -9,8 +9,6 @@ import IconsContainer from "../IconsContainer/IconsContainer";
 function InventoryCard({ inventory }) {
   return (
     <>
-      {/* InventoryCard */}
-
       <section className="inventory">
         <section className="inventory-card inventory-card--whd">
           <article className="inventory-category-container inventory-category-container--whd">
@@ -24,8 +22,6 @@ function InventoryCard({ inventory }) {
                   alt="Sort Icon"
                 />
               </div>
-
-              {/* link path- goes to Single item in Inventory */}
 
               <Link to={`/inventories/${inventory.id}`}>
                 <div className="inventory-name-container">

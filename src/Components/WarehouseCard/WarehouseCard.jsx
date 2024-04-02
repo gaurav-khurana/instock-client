@@ -5,8 +5,6 @@ import SortIcon from "../../assets/Icons/sort-24px.svg";
 import { Link } from "react-router-dom";
 
 function WarehouseCard({ warehouse }) {
-  // console.log(warehouse);
-  // console.log(warehouse.id);
   return (
     <section className="warehouse">
       <section className="warehouse-card">
@@ -22,7 +20,6 @@ function WarehouseCard({ warehouse }) {
               />
             </div>
 
-            {/* link path INCORRECT - /warehouses/:id/inventories */}
             <Link to={`/warehouses/${warehouse.id}/inventories`}>
               <div className="warehouse-name-container">
                 <p className="warehouse-name__title-name">
@@ -49,7 +46,8 @@ function WarehouseCard({ warehouse }) {
             </div>
 
             <p className="address__text">
-              {warehouse.address},{warehouse.city},{warehouse.country}
+              {warehouse.address},<br />
+              {warehouse.city},{warehouse.country}
             </p>
           </div>
         </article>

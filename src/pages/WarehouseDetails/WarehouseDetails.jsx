@@ -49,8 +49,6 @@ function WarehouseDetails() {
       console.log("Cant get Single warehouse & its inventories", error);
     }
   }, [setSingleWarehouse, setallInventoriesForThatWarehouse, warehouseId.id]);
-  console.log("single warehouse ", singleWarehouse);
-  console.log("all inventories ", allInventoriesForThatWarehouse);
 
   return (
     singleWarehouse &&
@@ -73,11 +71,7 @@ function WarehouseDetails() {
                 </h1>
               </div>
 
-              {/* path here to edit warehouse page */}
-              <Link
-                to={`/editwarehouse/${warehouseId.id}`}
-                // state={{ singleWarehouse: singleWarehouse }}
-              >
+              <Link to={`/editwarehouse/${warehouseId.id}`}>
                 <div className="warehouse-details__icon-container">
                   <img
                     className="warehouse-details__icon"
@@ -135,7 +129,6 @@ function WarehouseDetails() {
               </article>
             </section>
 
-            {/* static header for inventory list for tablet & desktop */}
             <article className="whd-inventory-card-header--tablet">
               <div className="inventory__title-container inventory__title--tablet">
                 <h3 className="inventory__title">INVENTORY ITEM</h3>
