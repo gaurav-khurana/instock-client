@@ -37,7 +37,7 @@ function HomePageWarehouse() {
             <SearchBar />
 
             {/* add path to link */}
-            <Link>
+            <Link to={"/addwarehouse"}>
               <button className="warehouse-header__button">
                 + Add New Address
               </button>
