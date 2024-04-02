@@ -6,13 +6,13 @@ import InventoryDetails from "./pages/InventoryDetails/InventoryDetails";
 import HomePageWarehouse from "./pages/HomePageWarehouse/HomePageWarehouse";
 import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
 import WarehouseEdit from "./pages/WarehouseEdit/WarehouseEdit";
+import WarehouseAdd from "./pages/WarehouseAdd/WarehouseAdd";
 import InventoryCard from "./Components/InventoryCard/InventoryCard";
 import Footer from "./Components/Footer/Footer";
 
 import InventoryListPage from "./pages/InventoryListPage/InventoryListPage";
 import AddInventoryItem from "./Components/AddInventoryItem/AddInventoryItem";
 import EditInventoryItem from "./Components/EditInventoryItem/EditInventoryItem";
-
 
 function App() {
   return (
@@ -28,25 +28,28 @@ function App() {
           <Route
             path="/warehouses/:id/inventories"
             element={<WarehouseDetails />}
-
           />
 
           <Route path="/editwarehouse" element={<WarehouseEdit />} />
 
+          <Route path="/addwarehouse" element={<WarehouseAdd />} />
+
           <Route path="/inventory" element={<InventoryListPage />} />
 
-          <Route path="/inventories/:inventoryId" element={<InventoryDetails />} />
-
-
+          <Route
+            path="/inventories/:inventoryId"
+            element={<InventoryDetails />}
+          />
 
           {/* <Route path="/InventoryDetails" element={<InventoryDetails />} /> */}
           {/* <Route path="/InventoryDetails/:inventoryId" element={<InventoryDetails />} /> */}
 
-
           <Route path="/*" element={<PageNotFound />} />
           <Route path="/addInventoryItem" element={<AddInventoryItem />} />
-          <Route path="/editInventoryItem/:inventoryId" element={<EditInventoryItem />} />
-
+          <Route
+            path="/editInventoryItem/:inventoryId"
+            element={<EditInventoryItem />}
+          />
         </Routes>
 
         <Footer />

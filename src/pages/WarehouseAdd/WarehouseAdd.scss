@@ -3,7 +3,7 @@
 @use "../../styles/variables" as *;
 @use "../../styles/typography" as *;
 
-.warehouse-edit-main {
+.warehouse-add-main {
     width: 100vw;
     background-color: $color-background-light-grey;
 
@@ -17,14 +17,14 @@
     }
 }
 
-.warehouse-edit-header {
+.warehouse-add-header {
     width: 90vw;
     padding: 0 $spacing-small;
 
     @include flexbox(row, space-between, center);
 }
 
-.warehouse-edit {
+.warehouse-add {
     // padding: $spacing-small;
     // padding-top: $spacing-big;
     border-top: $divider-width solid $divider-color;
