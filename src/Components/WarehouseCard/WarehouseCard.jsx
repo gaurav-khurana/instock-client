@@ -5,7 +5,7 @@ import SortIcon from "../../assets/Icons/sort-24px.svg";
 import { Link } from "react-router-dom";
 
 function WarehouseCard({ warehouse }) {
-  console.log(warehouse);
+  // console.log(warehouse);
   // console.log(warehouse.id);
   return (
     <section className="warehouse">

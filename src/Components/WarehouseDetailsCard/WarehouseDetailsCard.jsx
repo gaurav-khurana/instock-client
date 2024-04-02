@@ -1,9 +1,48 @@
 import "./WarehouseDetailsCard.scss";
 
-function WarehouseDetailsCard(singlewarehouse) {
-  console.log(singlewarehouse.singleWarehouse.warehouse_name);
-  console.log(singlewarehouse.warehouse_name);
-  // NOTE! Need to passdown data to show what to edit.
+function WarehouseDetailsCard({
+  singleWarehouse,
+  setWarehouseName,
+  setAddress,
+  setCity,
+  setCountry,
+}) {
+  // console.log(singleWarehouse.warehouse_name);
+  // console.log(singleWarehouse.warehouse_name);
+  // console.log(singlewarehouse.warehouse_name);
+
+  const handlewarehouseName = (event) => {
+    if (event.target.value === "") {
+      setWarehouseName(singleWarehouse.warehouse_name);
+    } else {
+      setWarehouseName(event.target.value);
+    }
+  };
+
+  const handleAddress = (event) => {
+    if (event.target.value === "") {
+      setAddress(singleWarehouse.address);
+    } else {
+      setAddress(event.target.value);
+    }
+  };
+
+  const handleCity = (event) => {
+    if (event.target.value === "") {
+      setCity(singleWarehouse.city);
+    } else {
+      setCity(event.target.value);
+    }
+  };
+
+  const handleCountry = (event) => {
+    if (event.target.value === "") {
+      setCountry(singleWarehouse.country);
+    } else {
+      setCountry(event.target.value);
+    }
+  };
+
   return (
     <section className="warehouse-edit">
       <div className="warehouse-edit__details">
@@ -18,8 +57,10 @@ function WarehouseDetailsCard(singlewarehouse) {
             id="warehouseName"
             name="warehouseName"
             // value={singlewarehouse}
-            defaultValue={singlewarehouse.singleWarehouse.warehouse_name}
-            onSubmit={""}
+            defaultValue={singleWarehouse.warehouse_name}
+            onChange={handlewarehouseName}
+            onSelect={handlewarehouseName}
+            // onSubmit={""}
           />
 
           <label htmlFor="warehouseAddress" className="warehouse-address">
@@ -30,8 +71,10 @@ function WarehouseDetailsCard(singlewarehouse) {
             type="text"
             id="warehouseAddress"
             name="warehouseAddress"
-            defaultValue={singlewarehouse.singleWarehouse.address}
-            onSubmit={""}
+            defaultValue={singleWarehouse.address}
+            // onSubmit={""}
+            onChange={handleAddress}
+            onSelect={handleAddress}
           />
           <label htmlFor="warehouseCity" className="warehouse-city">
             City
@@ -41,8 +84,10 @@ function WarehouseDetailsCard(singlewarehouse) {
             type="text"
             id="warehouseCity"
             name="warehouseCity"
-            defaultValue={singlewarehouse.singleWarehouse.city}
-            onSubmit={""}
+            defaultValue={singleWarehouse.city}
+            // onSubmit={""}
+            onChange={handleCity}
+            onSelect={handleCity}
           />
           <label htmlFor="warehouseCountry" className="warehouse-country">
             Country
@@ -52,8 +97,10 @@ function WarehouseDetailsCard(singlewarehouse) {
             type="text"
             id="warehouseCountry"
             name="warehouseCountry"
-            defaultValue={singlewarehouse.singleWarehouse.country}
-            onSubmit={""}
+            defaultValue={singleWarehouse.country}
+            // onSubmit={""}
+            onChange={handleCountry}
+            onSelect={handleCountry}
           />
         </form>
       </div>

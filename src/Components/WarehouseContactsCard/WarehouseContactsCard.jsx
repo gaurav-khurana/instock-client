@@ -1,7 +1,50 @@
 import "./WarehouseContactsCard.scss";
 
-function WarehouseContactsCard(singlewarehouse) {
-  // NOTE! Need to passdown data to show what to edit.
+function WarehouseContactsCard({
+  singleWarehouse,
+  setName,
+  setPosition,
+  setNumber,
+  setEmail,
+}) {
+  // // TODO get details from contact
+
+  // const handleContactDetailsForm = async (event) => {
+  //   console.log(event.target);
+  // };
+  const handleName = (event) => {
+    // setName(event.target.value);
+    if (event.target.value === "") {
+      setName(singleWarehouse.contact_name);
+    } else {
+      setName(event.target.value);
+    }
+  };
+
+  const handlePosition = (event) => {
+    // setPosition(event.target.value);
+    if (event.target.value === "") {
+      setPosition(singleWarehouse.contact_position);
+    } else {
+      setPosition(event.target.value);
+    }
+  };
+  const handleNumber = (event) => {
+    // setNumber(event.target.value);
+    if (event.target.value === "") {
+      setNumber(singleWarehouse.contact_phone);
+    } else {
+      setNumber(event.target.value);
+    }
+  };
+  const handleEmail = (event) => {
+    // setEmail(event.target.value);
+    if (event.target.value === "") {
+      setEmail(singleWarehouse.contact_email);
+    } else {
+      setEmail(event.target.value);
+    }
+  };
   return (
     <section className="warehouse-edit">
       <div className="warehouse-edit__details">
@@ -15,8 +58,10 @@ function WarehouseContactsCard(singlewarehouse) {
             type="text"
             id="warehouseContact"
             name="warehouseContact"
-            defaultValue={singlewarehouse.singleWarehouse.contact_name}
-            onSubmit={""}
+            defaultValue={singleWarehouse.contact_name}
+            // onSubmit={""}
+            onChange={handleName}
+            onSelect={handleName}
           />
           <label htmlFor="warehousePosition" className="warehouse-position">
             Position
@@ -26,8 +71,10 @@ function WarehouseContactsCard(singlewarehouse) {
             type="text"
             id="warehousePosition"
             name="warehousePosition"
-            defaultValue={singlewarehouse.singleWarehouse.contact_position}
-            onSubmit={""}
+            defaultValue={singleWarehouse.contact_position}
+            // onSubmit={""}
+            onChange={handlePosition}
+            onSelect={handlePosition}
           />
           <label htmlFor="warehousePhone" className="warehouse-phone">
             Phone Number
@@ -37,8 +84,10 @@ function WarehouseContactsCard(singlewarehouse) {
             type="text"
             id="warehousePhone"
             name="warehousePhone"
-            defaultValue={singlewarehouse.singleWarehouse.contact_phone}
-            onSubmit={""}
+            defaultValue={singleWarehouse.contact_phone}
+            // onSubmit={""}
+            onChange={handleNumber}
+            onSelect={handleNumber}
           />
           <label htmlFor="warehouseEmail" className="warehouse-email">
             Email
@@ -48,8 +97,10 @@ function WarehouseContactsCard(singlewarehouse) {
             type="email"
             id="warehouseEmail"
             name="warehouseEmail"
-            defaultValue={singlewarehouse.singleWarehouse.contact_email}
-            onSubmit={""}
+            defaultValue={singleWarehouse.contact_email}
+            // onSubmit={""}
+            onChange={handleEmail}
+            onSelect={handleEmail}
           />
         </form>
       </div>

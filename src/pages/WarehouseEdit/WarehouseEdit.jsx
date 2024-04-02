@@ -1,6 +1,6 @@
 import "./WarehouseEdit.scss";
 import BackArrow from "../../assets/Icons/arrow_back-24px.svg";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import WarehouseDetailsCard from "../../Components/WarehouseDetailsCard/WarehouseDetailsCard";
 import WarehouseContactsCard from "../../Components/WarehouseContactsCard/WarehouseContactsCard";
 import { useEffect, useState } from "react";
@@ -10,66 +10,145 @@ function WarehouseEdit() {
   // get state from global location obj in window
 
   const [singleWarehouse, setSingleWarehouse] = useState({});
+  const [warehouseName, setWarehouseName] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [country, setCountry] = useState("");
+  const [name, setName] = useState("");
+  const [position, setPosition] = useState("");
+  const [number, setNumber] = useState("");
+  const [email, setEmail] = useState("");
+
+  const navigate = useNavigate();
 
   // get params
   const warehouseId = useParams();
-  console.log(typeof warehouseId);
-  console.log(warehouseId);
-  console.log(warehouseId.warehouseId);
+  // console.log(typeof warehouseId);
+  // console.log(warehouseId);
+  // console.log(warehouseId.warehouseId);
 
   // useEffect func to get single warehouse & all inventories for it
   useEffect(() => {
-    try {
-      // func to single warehouse & set state
+    // func to single warehouse & set state
 
+    try {
       async function getSingleWarehouse() {
+        // console.log("i made axios call");
         const response = await axios.get(
           `${process.env.REACT_APP_BASE_URL}/warehouses/${warehouseId.warehouseId}`
+          // `http://localhost:8080/warehouses/${warehouseId.warehouseId}`
         );
-        console.log(response.data);
+        // console.log(response.data);
         setSingleWarehouse(response.data);
       }
-
       getSingleWarehouse();
     } catch (error) {
       console.log("Cant get Single warehouse & its data", error);
     }
-  }, [setSingleWarehouse, warehouseId.id]);
-  console.log("single warehouse ", singleWarehouse);
+  }, [setSingleWarehouse, warehouseId.warehouseId]);
+  // console.log(singleWarehouse);
+  // console.log("single warehouse ", singleWarehouse);
+
+  const resetForm = () => {
+    setWarehouseName("");
+    setAddress("");
+    setCity("");
+    setCountry("");
+    setName("");
+    setPosition("");
+    setNumber("");
+    setEmail("");
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const newWarehouse = {
+      warehouse_name: warehouseName,
+      address: address,
+      city: city,
+      country: country,
+      contact_name: name,
+      contact_position: position,
+      contact_phone: number,
+      contact_email: email,
+    };
+    console.log(newWarehouse);
+
+    try {
+      //todo post new warehouse
+      await axios.put(
+        `${process.env.REACT_APP_BASE_URL}/warehouses/${warehouseId.warehouseId}`,
+        newWarehouse
+      );
+      console.log("Put request sent to server.");
+      alert("Added Successfully");
+      resetForm();
+      navigate("/");
+    } catch (error) {
+      console.log("Error Modifiying a new warehouse item", error);
+      alert("Failed to Modifiying the new warehouse. Please try again later.");
+    }
+  };
+
+  const handleCancel = (event) => {
+    event.preventDefault();
+    resetForm();
+    alert("Form submission cancelled");
+    navigate("/");
+  };
 
   return (
-    <>
-      <main className="warehouse-edit-main">
-        <div className="warehouse-edit-main__content">
-          <article className="warehouse-edit-header">
-            <div className="warehouse-edit__name-container">
+    singleWarehouse && (
+      <>
+        <main className="warehouse-edit-main">
+          <div className="warehouse-edit-main__content">
+            <article className="warehouse-edit-header">
+              <div className="warehouse-edit__name-container">
+                <Link to={"/"}>
+                  <img
+                    className="warehouse-edit__image"
+                    src={BackArrow}
+                    alt="Back Arrow"
+                  />
+                </Link>
+
+                <h1 className="warehouse-edit__title">Edit Warehouse</h1>
+              </div>
+            </article>
+            <WarehouseDetailsCard
+              singleWarehouse={singleWarehouse}
+              setWarehouseName={setWarehouseName}
+              setAddress={setAddress}
+              setCity={setCity}
+              setCountry={setCountry}
+            />
+
+            <WarehouseContactsCard
+              singleWarehouse={singleWarehouse}
+              setName={setName}
+              setPosition={setPosition}
+              setNumber={setNumber}
+              setEmail={setEmail}
+            />
+            <div className="buttons-container">
               <Link to={"/"}>
-                <img
-                  className="warehouse-edit__image"
-                  src={BackArrow}
-                  alt="Back Arrow"
-                />
+                <button className="button" type="button" onClick={handleCancel}>
+                  Cancel
+                </button>
               </Link>
-
-              <h1 className="warehouse-edit__title">Edit Warehouse</h1>
-            </div>
-          </article>
-          <WarehouseDetailsCard singleWarehouse={singleWarehouse} />
-
-          <WarehouseContactsCard singleWarehouse={singleWarehouse} />
-          <div className="buttons-container">
-            <Link to={"/"}>
-              <button className="button" type="button">
-                Cancel
+              <button
+                className="button add-button"
+                type="submit"
+                onClick={handleSubmit}
+              >
+                Save
               </button>
-            </Link>
-            <button className="button add-button" type="submit">
-              Save
-            </button>
+            </div>
           </div>
-        </div>
-      </main>
-    </>
+        </main>
+      </>
+    )
   );
 }
 

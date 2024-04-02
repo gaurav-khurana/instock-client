@@ -98,7 +98,7 @@
 .warehouse-name-info-container {
   width: 90vw;
 
-  @include flexbox(row, flex-start, flex-start);
+  @include flexbox(column, flex-start, flex-start);
 }
 
 .warehouse-contact-name {
