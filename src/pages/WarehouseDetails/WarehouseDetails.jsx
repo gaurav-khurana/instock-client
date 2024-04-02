@@ -54,7 +54,6 @@ function WarehouseDetails() {
   console.log("single warehouse ", singleWarehouse);
   console.log("all inventories ", allInventoriesForThatWarehouse);
 
-  
   return (
     singleWarehouse &&
     allInventoriesForThatWarehouse && (
@@ -80,8 +79,8 @@ function WarehouseDetails() {
 
               {/* path here to edit warehouse page */}
               <Link
-                to={"/editwarehouse"}
-                state={{ singleWarehouse: singleWarehouse }}
+                to={`/editwarehouse/${warehouseId.id}`}
+                // state={{ singleWarehouse: singleWarehouse }}
               >
                 {/* <Navigate to={"/editwarehouse" state: {singleWarehouse}}> */}
                 <div className="warehouse-details__icon-container">

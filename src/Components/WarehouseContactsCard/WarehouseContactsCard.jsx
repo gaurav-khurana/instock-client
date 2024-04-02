@@ -15,7 +15,7 @@ function WarehouseContactsCard(singlewarehouse) {
             type="text"
             id="warehouseContact"
             name="warehouseContact"
-            value={singlewarehouse.singleWarehouse.contact_name}
+            defaultValue={singlewarehouse.singleWarehouse.contact_name}
             onSubmit={""}
           />
           <label htmlFor="warehousePosition" className="warehouse-position">
@@ -26,7 +26,7 @@ function WarehouseContactsCard(singlewarehouse) {
             type="text"
             id="warehousePosition"
             name="warehousePosition"
-            value={singlewarehouse.singleWarehouse.contact_position}
+            defaultValue={singlewarehouse.singleWarehouse.contact_position}
             onSubmit={""}
           />
           <label htmlFor="warehousePhone" className="warehouse-phone">
@@ -37,7 +37,7 @@ function WarehouseContactsCard(singlewarehouse) {
             type="text"
             id="warehousePhone"
             name="warehousePhone"
-            value={singlewarehouse.singleWarehouse.contact_phone}
+            defaultValue={singlewarehouse.singleWarehouse.contact_phone}
             onSubmit={""}
           />
           <label htmlFor="warehouseEmail" className="warehouse-email">
@@ -48,7 +48,7 @@ function WarehouseContactsCard(singlewarehouse) {
             type="email"
             id="warehouseEmail"
             name="warehouseEmail"
-            value={singlewarehouse.singleWarehouse.contact_email}
+            defaultValue={singlewarehouse.singleWarehouse.contact_email}
             onSubmit={""}
           />
         </form>
