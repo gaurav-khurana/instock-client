@@ -58,9 +58,11 @@ function WarehouseEdit() {
 
           <WarehouseContactsCard singleWarehouse={singleWarehouse} />
           <div className="buttons-container">
-            <button className="button" type="button">
-              Cancel
-            </button>
+            <Link to={"/"}>
+              <button className="button" type="button">
+                Cancel
+              </button>
+            </Link>
             <button className="button add-button" type="submit">
               Save
             </button>
