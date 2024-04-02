@@ -1,7 +1,7 @@
 import "./IconsContainer.scss";
 import EditIcon from "../../assets/Icons/edit-24px.svg";
 import DeleteIcon from "../../assets/Icons/delete_outline-24px.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Modal from "react-modal";
 import CustomModal from "../CustomModal/CustomModal";
@@ -24,6 +24,7 @@ function IconsContainer({
   inventoryName,
 }) {
   const [modalIsOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   function openModal() {
     setIsOpen(true);
@@ -35,6 +36,14 @@ function IconsContainer({
 
   function closeModal() {
     setIsOpen(false);
+  }
+
+  function handlePath() {
+    if (warehouseId !== undefined || warehouseId !== null) {
+      navigate(`/editwarehouse/${warehouseId}`);
+    } else {
+      navigate(`/editInventoryItem/${inventoryId}`);
+    }
   }
 
   return (
@@ -51,9 +60,21 @@ function IconsContainer({
         {/* <Link>
           <img className="icons__edit" src={EditIcon} alt="Edit Icon" />
         </Link> */}
-        <Link to={`/editInventoryItem/${inventoryId}`}>
-          <img className="icons__edit" src={EditIcon} alt="Edit Icon" />
-        </Link>
+
+        {/* {warehouseId !== undefined ? (
+          <Link to={`/editwarehouse/${warehouseId}`} />
+        ) : (
+          <Link to={`/editInventoryItem/${inventoryId}`} />
+        )} */}
+        {/* <Link to={`/editInventoryItem/${inventoryId}`}/> */}
+        <img
+          onClick={handlePath}
+          className="icons__edit"
+          src={EditIcon}
+          alt="Edit Icon"
+        />
+        {/* </Link> */}
+
         <Modal
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}

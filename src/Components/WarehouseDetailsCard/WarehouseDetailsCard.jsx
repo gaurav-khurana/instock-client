@@ -18,7 +18,7 @@ function WarehouseDetailsCard(singlewarehouse) {
             id="warehouseName"
             name="warehouseName"
             // value={singlewarehouse}
-            value={singlewarehouse.singleWarehouse.warehouse_name}
+            defaultValue={singlewarehouse.singleWarehouse.warehouse_name}
             onSubmit={""}
           />
 
@@ -30,7 +30,7 @@ function WarehouseDetailsCard(singlewarehouse) {
             type="text"
             id="warehouseAddress"
             name="warehouseAddress"
-            value={singlewarehouse.singleWarehouse.address}
+            defaultValue={singlewarehouse.singleWarehouse.address}
             onSubmit={""}
           />
           <label htmlFor="warehouseCity" className="warehouse-city">
@@ -41,7 +41,7 @@ function WarehouseDetailsCard(singlewarehouse) {
             type="text"
             id="warehouseCity"
             name="warehouseCity"
-            value={singlewarehouse.singleWarehouse.city}
+            defaultValue={singlewarehouse.singleWarehouse.city}
             onSubmit={""}
           />
           <label htmlFor="warehouseCountry" className="warehouse-country">
@@ -52,7 +52,7 @@ function WarehouseDetailsCard(singlewarehouse) {
             type="text"
             id="warehouseCountry"
             name="warehouseCountry"
-            value={singlewarehouse.singleWarehouse.country}
+            defaultValue={singlewarehouse.singleWarehouse.country}
             onSubmit={""}
           />
         </form>

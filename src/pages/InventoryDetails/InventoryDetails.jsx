@@ -117,17 +117,18 @@ function InventoryDetails() {
         to={"/editwarehouse"}
         state={{ singleWarehouse: singleWarehouse }}
       > */}
-
-            <div className="inventory-details__icon-container">
-              <img
-                className="inventory-details__icon"
-                src={EditIcon}
-                alt="Edit Icon"
-              />
-              <p className="inventory-details__edit">Edit</p>
-            </div>
-            {/* </Navigate> */}
-            {/* </Link> */}
+            <Link to={`/editInventoryItem/${inventoryId.inventoryId}`}>
+              <div className="inventory-details__icon-container">
+                <img
+                  className="inventory-details__icon"
+                  src={EditIcon}
+                  alt="Edit Icon"
+                />
+                <p className="inventory-details__edit">Edit</p>
+              </div>
+              {/* </Navigate> */}
+              {/* </Link> */}
+            </Link>
           </article>
 
           <section className="inventory-details__section">

@@ -13,6 +13,7 @@ import Footer from "./Components/Footer/Footer";
 import InventoryListPage from "./pages/InventoryListPage/InventoryListPage";
 import AddInventoryItem from "./Components/AddInventoryItem/AddInventoryItem";
 import EditInventoryItem from "./Components/EditInventoryItem/EditInventoryItem";
+import EditInventoryItemPage from "./pages/EditInventoryItemPage/EditInventoryItemPage";
 
 function App() {
   return (
@@ -30,7 +31,10 @@ function App() {
             element={<WarehouseDetails />}
           />
 
-          <Route path="/editwarehouse" element={<WarehouseEdit />} />
+          <Route
+            path="/editwarehouse/:warehouseId"
+            element={<WarehouseEdit />}
+          />
 
           <Route path="/addwarehouse" element={<WarehouseAdd />} />
 
@@ -46,6 +50,10 @@ function App() {
 
           <Route path="/*" element={<PageNotFound />} />
           <Route path="/addInventoryItem" element={<AddInventoryItem />} />
+          {/* <Route
+            path="/editInventoryItem"
+            element={<EditInventoryItemPage />}
+          /> */}
           <Route
             path="/editInventoryItem/:inventoryId"
             element={<EditInventoryItem />}
