@@ -13,7 +13,10 @@ import Footer from "./Components/Footer/Footer";
 import InventoryListPage from "./pages/InventoryListPage/InventoryListPage";
 import AddInventoryItem from "./Components/AddInventoryItem/AddInventoryItem";
 import EditInventoryItem from "./Components/EditInventoryItem/EditInventoryItem";
+<<<<<<< HEAD
 import EditInventoryItemPage from "./pages/EditInventoryItemPage/EditInventoryItemPage";
+=======
+>>>>>>> develop
 
 function App() {
   return (
