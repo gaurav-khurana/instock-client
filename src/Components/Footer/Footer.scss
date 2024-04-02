@@ -3,12 +3,13 @@
 @use "../../styles/variables" as *;
 
 .footer {
-color: $color-secondary-slate;    
-@include flexbox(column, center, flex-start);
-align-items: center;
-padding: $spacing-big;
+  color: $color-secondary-slate;
+  background-color: $color-background-light-grey;
+  padding: $spacing-big;
 
-@include tablet{
+  @include flexbox(column, center, center);
+
+  @include tablet {
     font-size: $desk-table-header-body-small;
-}
+  }
 }

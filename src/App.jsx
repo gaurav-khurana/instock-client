@@ -6,6 +6,7 @@ import InventoryDetails from "./pages/InventoryDetails/InventoryDetails";
 import HomePageWarehouse from "./pages/HomePageWarehouse/HomePageWarehouse";
 import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
 import WarehouseEdit from "./pages/WarehouseEdit/WarehouseEdit";
+import WarehouseAdd from "./pages/WarehouseAdd/WarehouseAdd";
 import InventoryCard from "./Components/InventoryCard/InventoryCard";
 import Footer from "./Components/Footer/Footer";
 
@@ -33,6 +34,8 @@ function App() {
             path="/editwarehouse/:warehouseId"
             element={<WarehouseEdit />}
           />
+
+          <Route path="/addwarehouse" element={<WarehouseAdd />} />
 
           <Route path="/inventory" element={<InventoryListPage />} />
 

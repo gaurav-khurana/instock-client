@@ -5,6 +5,7 @@ import BackArrow from "../../assets/Icons/arrow_back-24px.svg";
 import InventoryCard from "../../Components/InventoryCard/InventoryCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import SortIcon from "../../assets/Icons/sort-24px.svg";
 
 function WarehouseDetails() {
   // state to get & set data
@@ -26,8 +27,6 @@ function WarehouseDetails() {
       async function getSingleWarehouse() {
         const response = await axios.get(
           `${process.env.REACT_APP_BASE_URL}/warehouses/${warehouseId.id}`
-          // `http://localhost:8080/warehouses/${warehouseId.id}`
-          // `http://localhost:8080/warehouses/1`
         );
         console.log(response.data);
         setSingleWarehouse(response.data);
@@ -40,7 +39,6 @@ function WarehouseDetails() {
       async function getallInventoriesForThatWarehouse() {
         const response = await axios.get(
           `${process.env.REACT_APP_BASE_URL}/warehouses/${warehouseId.id}/inventories`
-          // `http://localhost:8080/warehouses/${warehouseId.id}/inventories`
         );
 
         console.log(response.data);
@@ -71,9 +69,7 @@ function WarehouseDetails() {
                 </Link>
 
                 <h1 className="warehouse-details__title">
-                  {/* Washington */}
                   {singleWarehouse.warehouse_name}
-                  {/* Washington {warehouse} */}
                 </h1>
               </div>
 
@@ -82,7 +78,6 @@ function WarehouseDetails() {
                 to={`/editwarehouse/${warehouseId.id}`}
                 // state={{ singleWarehouse: singleWarehouse }}
               >
-                {/* <Navigate to={"/editwarehouse" state: {singleWarehouse}}> */}
                 <div className="warehouse-details__icon-container">
                   <img
                     className="warehouse-details__icon"
@@ -92,36 +87,17 @@ function WarehouseDetails() {
 
                   <p className="warehouse-details__text">Edit</p>
                 </div>
-                {/* </Navigate> */}
               </Link>
-
-              {/* <Link>
-              {" "}
-              add path to link
-              <button className="warehouse-header__button">
-                + Add New Address
-              </button>
-            </Link> */}
             </article>
 
             <section className="warehouse-details">
-              {/* needs warehouse data to read data */}
-              {/* <WarehouseCard /> */}
-
               <div className="warehouse-address">
-                {/* <div className="warehouse-address-container"> */}
                 <h3 className="warehouse-address__title"> WAREHOUSE ADDRESS</h3>
 
-                {/* </div> */}
-
                 <p className="warehouse-address__text">
-                  {/* 503 Broadway, New York, USA */}
-                  {singleWarehouse.address}, {singleWarehouse.city},
-                  {singleWarehouse.country}
+                  {singleWarehouse.address},<br />
+                  {singleWarehouse.city},{singleWarehouse.country}
                 </p>
-                {/* <p className="warehouse-address__text">
-                  {warehouse.address},{warehouse.city},{warehouse.country}
-                </p> */}
               </div>
 
               <article className="warehouse-name-info-container">
@@ -135,14 +111,10 @@ function WarehouseDetails() {
                   <p className="warehouse-contact-name__text">
                     {singleWarehouse.contact_name}
                   </p>
-                  {/* <p className="warehouse-contact-name__text">Parmin Aujla</p> */}
-                  {/* <p className="warehouse-contact-name__text">{warehouse.contact_name}</p> */}
 
                   <p className="warehouse-contact-name__text--position">
-                    {/* Warehouse Manager */}
                     {singleWarehouse.contact_position}
                   </p>
-                  {/* <p className="warehouse-contact-name__text--position">{warehouse.contact_position}</p> */}
                 </div>
 
                 <div className="warehouse-info">
@@ -152,28 +124,68 @@ function WarehouseDetails() {
                     </h3>
                   </div>
 
-                  {/* <p className="warehouse-info__text">+1 (629) 555-0129</p> */}
                   <p className="warehouse-info__text">
                     {singleWarehouse.contact_phone}
                   </p>
-                  {/* <p className="warehouse-info__text">{warehouse.contact_phone}</p> */}
 
-                  {/* <p className="warehouse-info__text">paujla@instock.com</p> */}
                   <p className="warehouse-info__text">
                     {singleWarehouse.contact_email}
                   </p>
-                  {/* <p className="warehouse-info__text">{warehouse.contact_email}</p> */}
                 </div>
               </article>
             </section>
 
-            <section>
-              {/* Inventory Items in this warehouse */}
-              {/* map inventories for this */}
+            {/* static header for inventory list for tablet & desktop */}
+            <article className="whd-inventory-card-header--tablet">
+              <div className="inventory__title-container inventory__title--tablet">
+                <h3 className="inventory__title">INVENTORY ITEM</h3>
+
+                <img
+                  className="inventory__icon inventory__icon--mobile"
+                  src={SortIcon}
+                  alt="Sort Icon"
+                />
+              </div>
+
+              <div className="category-container inventory__title--tablet">
+                <h3 className="category__title">CATEGORY</h3>
+
+                <img
+                  className="inventory__icon inventory__icon--mobile"
+                  src={SortIcon}
+                  alt="Sort Icon"
+                />
+              </div>
+
+              <div className="status-container inventory__title--tablet">
+                <h3 className="status__title">STATUS</h3>
+
+                <img
+                  className="inventory__icon inventory__icon--mobile"
+                  src={SortIcon}
+                  alt="Sort Icon"
+                />
+              </div>
+
+              <div className="QTY-container inventory__title--tablet">
+                <h3 className="QTY__title">QTY</h3>
+
+                <img
+                  className="inventory__icon inventory__icon--mobile"
+                  src={SortIcon}
+                  alt="Sort Icon"
+                />
+              </div>
+
+              <h3 className="icons__title--mobile warehouse__title--tablet">
+                ACTIONS
+              </h3>
+            </article>
+
+            <section className="inventory-container">
               {allInventoriesForThatWarehouse?.map((inventory) => (
                 <InventoryCard key={inventory.id} inventory={inventory} />
               ))}
-              {/* <InventoryCard /> */}
             </section>
           </div>
         </main>

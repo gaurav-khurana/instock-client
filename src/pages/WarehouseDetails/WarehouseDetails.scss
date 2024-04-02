@@ -138,13 +138,49 @@
   }
 }
 
+.whd-inventory-card-header--tablet {
+  display: none;
+}
+
 // tablet view
 
 @include tablet {
   .warehouse-details {
+    padding: $spacing-big;
+
+    @include flexbox(row, flex-start, center);
+
     &-main__content {
       margin-inline: auto;
       top: -8.5rem;
     }
+  }
+
+  .warehouse-address {
+    width: 40vw;
+    padding-bottom: 0;
+  }
+
+  .warehouse-name-info-container {
+    width: 50vw;
+    border-left: $divider-width solid $divider-color;
+    padding-left: $spacing-big;
+  }
+
+  .warehouse-contact-name,
+  .warehouse-info {
+    width: 20vw;
+  }
+
+  .whd-inventory-card-header--tablet {
+    // width: 90vw;
+    padding-inline: $spacing-big;
+    @include flexbox(row, space-between, center);
+  }
+
+  .inventory-category-container--whd {
+  }
+  .status-QTY-warehouse-container--whd {
+    // width: 35vw;
   }
 }

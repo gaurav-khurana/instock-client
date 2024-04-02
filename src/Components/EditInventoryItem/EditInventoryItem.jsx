@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import "./EditInventoryItem.scss";
 import axios from "axios";
 
@@ -14,6 +14,7 @@ function EditInventoryItem() {
   const [warehouseNames, setWarehouseNames] = useState([]);
   const [categoryNames, setCategoryNames] = useState([]);
   const [selectedWarehouseId, setSelectedWarehouseId] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchInventoryItem = async () => {
@@ -181,6 +182,8 @@ function EditInventoryItem() {
           }
         );
         alert("Inventory item updated successfully");
+
+        navigate("/inventory");
       } catch (error) {
         console.error("Error updating inventory item:", error);
         alert("Failed to update inventory item. Please try again later.");
@@ -191,16 +194,19 @@ function EditInventoryItem() {
   const handleCancel = (event) => {
     event.preventDefault();
     resetForm();
+    navigate("/inventory");
   };
 
   return (
     <>
       <div className="main-container">
         <div className="inventory-title-container">
-          <img
-            src={require("../../assets/Icons/arrow_back-24px.svg").default}
-            alt="arrow back"
-          />
+          <Link to={"/inventory"}>
+            <img
+              src={require("../../assets/Icons/arrow_back-24px.svg").default}
+              alt="arrow back"
+            />
+          </Link>
           <h1 className="inventory-main-title">Edit Inventory Item</h1>
         </div>
         <div>
@@ -313,6 +319,7 @@ function EditInventoryItem() {
               <button className="button" type="button" onClick={handleCancel}>
                 Cancel
               </button>
+
               <button className="button add-button" type="submit">
                 Save
               </button>
