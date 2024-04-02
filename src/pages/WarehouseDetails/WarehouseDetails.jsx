@@ -75,7 +75,7 @@ function WarehouseDetails() {
 
               {/* path here to edit warehouse page */}
               <Link
-                to={"/editwarehouse"}
+                to={`/editwarehouse/${warehouseId.id}`}
                 state={{ singleWarehouse: singleWarehouse }}
               >
                 <div className="warehouse-details__icon-container">

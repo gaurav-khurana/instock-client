@@ -30,7 +30,10 @@ function App() {
             element={<WarehouseDetails />}
           />
 
-          <Route path="/editwarehouse" element={<WarehouseEdit />} />
+          <Route
+            path="/editwarehouse/:warehouseId"
+            element={<WarehouseEdit />}
+          />
 
           <Route path="/inventory" element={<InventoryListPage />} />
 
@@ -44,10 +47,10 @@ function App() {
 
           <Route path="/*" element={<PageNotFound />} />
           <Route path="/addInventoryItem" element={<AddInventoryItem />} />
-          <Route
+          {/* <Route
             path="/editInventoryItem"
             element={<EditInventoryItemPage />}
-          />
+          /> */}
           <Route
             path="/editInventoryItem/:inventoryId"
             element={<EditInventoryItem />}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./AddInventoryItem.scss";
 import axios from "axios";
 import arrowback from "../../assets/Icons/arrow_back-24px.svg";
+import { Link, useNavigate } from "react-router-dom";
 
 function AddInventoryItem() {
   const [itemName, setItemName] = useState("");
@@ -14,6 +15,8 @@ function AddInventoryItem() {
   const [categoryNames, setCategoryNames] = useState([]);
 
   const [selectedWarehouseId, setSelectedWarehouseId] = useState("");
+
+  const navigate = useNavigate();
 
   const handleItemName = (event) => {
     setItemName(event.target.value);
@@ -156,7 +159,8 @@ function AddInventoryItem() {
         });
         alert("Added Successfully");
         resetForm();
-        window.location.href = "/";
+        // window.location.href = "/inventory";
+        navigate("/inventory");
       } catch (error) {
         console.error("Error Adding a new inventory item", error.response);
         alert("Failed to add a new inventory. Please try again later.");
@@ -169,13 +173,16 @@ function AddInventoryItem() {
   const handleCancel = (event) => {
     event.preventDefault();
     resetForm();
+    navigate("/inventory");
   };
 
   return (
     <>
       <div className="main-container">
         <div className="inventory-title-container">
-          <img src={arrowback} alt="arrow back" />
+          <Link to={"/inventory"}>
+            <img src={arrowback} alt="arrow back" />
+          </Link>
           <h1 className="inventory-main-title">Add New Inventory Item</h1>
         </div>
         <div>
