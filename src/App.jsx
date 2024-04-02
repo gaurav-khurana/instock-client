@@ -13,7 +13,6 @@ import Footer from "./Components/Footer/Footer";
 import InventoryListPage from "./pages/InventoryListPage/InventoryListPage";
 import AddInventoryItem from "./Components/AddInventoryItem/AddInventoryItem";
 import EditInventoryItem from "./Components/EditInventoryItem/EditInventoryItem";
-import EditInventoryItemPage from "./pages/EditInventoryItemPage/EditInventoryItemPage";
 
 function App() {
   return (
@@ -50,10 +49,6 @@ function App() {
 
           <Route path="/*" element={<PageNotFound />} />
           <Route path="/addInventoryItem" element={<AddInventoryItem />} />
-          {/* <Route
-            path="/editInventoryItem"
-            element={<EditInventoryItemPage />}
-          /> */}
           <Route
             path="/editInventoryItem/:inventoryId"
             element={<EditInventoryItem />}
