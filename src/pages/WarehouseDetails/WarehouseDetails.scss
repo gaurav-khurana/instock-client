@@ -138,6 +138,10 @@
   }
 }
 
+.whd-inventory-card-header--tablet {
+  display: none;
+}
+
 // tablet view
 
 @include tablet {
